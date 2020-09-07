@@ -66,7 +66,7 @@ The course is aimed at researchers, (Master and PhD level) students, data analys
 #### Day 1
 
 | Time        | Topic                |
-| ----------- | -------------------- |
+| :---------- | :------------------- |
 | 17:00-18:00 | Introductory Lecture |
 | 18:00-19:00 | Interacting with R |
 | 19:00-20:00 | Basic Data Structures |
@@ -76,7 +76,7 @@ The course is aimed at researchers, (Master and PhD level) students, data analys
 #### Day 2
 
 | Time        | Topic                |
-| ----------- | -------------------- |
+| :---------- | :------------------- |
 | 17:00-19:00 | Importing and Inspecting Data |
 | 19:00-20:00 | Basic and Some Advanced Plotting |
 | 20:00-20:30 | Break |
@@ -85,7 +85,7 @@ The course is aimed at researchers, (Master and PhD level) students, data analys
 #### Day 3
 
 | Time        | Topic                |
-| ----------- | -------------------- |
+| :---------- | :------------------- |
 | 17:00-19:30 | Statistics with Continuous Outcomes |
 | 19:30-20:00 | Break |
 | 20:00-21:00 | Statistics with Categorical Outcomes |
