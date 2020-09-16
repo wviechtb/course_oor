@@ -150,7 +150,7 @@ The following are relevant links for the course itself:
 * [Stream at Twitch](https://www.twitch.tv/wviechtb) (where to go to watch the stream once it goes live)
 * [Chat Only](https://www.twitch.tv/popout/wviechtb/chat) (in case you have another computer showing the stream, but want to ask questions)
 * [Course Website](http://www.wvbauer.com/doku.php/course_oor) (the 'official' course website, but this repo contains the same materials)
-* [Pre-Course Questionnaire](https://forms.gle/VgrFRyzP252VicBa9)
+* [Pre-Course Questionnaire](https://forms.gle/VgrFRyzP252VicBa9) (a short questionnaire to obtain a bit more information about your background)
 
 The following are relevant links in general:
 
