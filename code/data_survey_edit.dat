@@ -1,0 +1,436 @@
+id	age	sex	marital	children	educ	source	smoke	smokenum	lotr1	lotr2	lotr3	lotr4	lotr5	lotr6	mastery1	mastery2	mastery3	mastery4	mastery5	mastery6	mastery7	panas1	panas2	panas3	panas4	panas5	panas6	panas7	panas8	panas9	panas10	panas11	panas12	panas13	panas14	panas15	panas16	panas17	panas18	panas19	panas20	swls1	swls2	swls3	swls4	swls5	pss1	pss2	pss3	pss4	pss5	pss6	pss7	pss8	pss9	pss10	rses1	rses2	rses3	rses4	rses5	rses6	rses7	rses8	rses9	rses10	lotr	mastery	pss	rses	posaff	negaff
+1	24	female	married first time	yes	undergraduate degree	life in general	no	0	3	4	3	4	4	4	3	4	3	3	4	3	2	5	5	4	4	4	5	5	5	5	5	5	5	5	3	5	3	5	5	4	4	5	6	5	4	3	3	3	4	3	2	3	3	3	3	2	4	4	4	4	4	4	4	3	2	2	22	22	29	35	49	42
+2	39	male	living with partner	yes	undergraduate degree	work	yes	2	2	3	4	3	2	5	3	4	3	2	4	3	2	4	5	4	5	3	3	3	2	5	4	4	4	4	3	2	2	2	3	4	4	7	6	5	7	5	2	2	3	1	2	3	1	2	3	3	3	4	4	4	4	4	3	2	4	2	19	21	22	34	35	35
+3	48	female	married first time	yes	some secondary school	children	no	0	3	5	3	3	2	3	2	3	3	2	3	3	3	2	1	2	2	1	1	3	1	1	1	1	1	1	2	2	2	1	1	2	1	7	7	7	6	6	1	2	2	2	2	2	2	2	2	2	4	3	2	3	4	3	3	3	3	3	19	19	19	31	15	14
+4	41	male	remarried	yes	some secondary school	work	no	0	3	5	5	3	5	5	3	4	4	4	4	4	3	5	5	3	5	2	5	5	5	5	5	5	5	4	2	5	5	5	5	3	1	7	6	7	7	6	4	3	5	1	2	3	3	2	5	3	4	4	4	4	4	4	4	4	4	4	26	26	31	40	49	36
+5	23	male	single	no	undergraduate degree	work	no	0	3	4	3	4	3	1	4	4	3	4	2	3	3	1	1	1	1	1	1	1	2	3	1	1	1	1	1	1	1	1	1	1	1	3	3	4	3	3	2	2	3	4	3	2	2	3	3	3	2	2	3	2	1	2	2	2	2	3	18	23	27	21	12	11
+6	31	female	married first time	yes	undergraduate degree	life in general	no	0	2	4	2	4	2	3	4	3	3	3	3	4	3	2	1	1	3	1	2	1	1	1	1	3	1	1	1	1	1	1	1	1	1	2	2	2	2	2	1	1	3	2	3	2	2	3	2	2	2	3	3	3	3	2	2	2	2	2	17	23	21	24	14	12
+7	30	female	separated	no	some additional training	money/finances	no	0	3	1	1	2	2	1	1	2	1	1	2	1	1	1	4	4	1	3	1	1	4	1	3	4	1	1	3	1	4	2	1	4	4	1	1	1	1	1	4	4	4	4	4	4	4	3	4	4	2	3	1	2	1	2	2	1	1	1	10	9	39	16	11	37
+8	23	male	steady relationship	no	undergraduate degree	work	yes	100	4	5	3	5	4	4	3	4	4	3	3	2	2	1	3	4	1	2	1	1	5	1	4	4	1	2	5	2	5	1	1	4	2	5	5	5	4	6	3	3	5	3	4	5	4	5	2	5	4	4	4	4	4	3	3	2	3	3	25	21	39	34	12	38
+9	18	female	steady relationship	no	some secondary school	spouse/partner	yes	40	3	2	2	2	2	2	2	2	2	2	2	1	1	2	4	4	1	4	1	1	4	1	1	1	1	1	4	1	4	1	1	4	4	2	2	2	1	1	4	4	5	4	5	4	3	4	5	5	2	2	2	2	1	1	1	1	1	1	13	12	43	14	11	34
+10	23	male	single	no	graduate degree		no	0	1	3	1	2	1	1	2	1	2	2	2	1	3	2	5	5	2	4	2	2	5	2	3	4	2	2	5	2	5	2	2	5	5	1	1	1	1	1	4	5	5	5	5	5	4	5	4	4	2	2	2	3	3	1	1	1	4	4	9	13	46	23	20	46
+11	27	male	single	no	high school	work	yes	100	5	5	5	5	5	5	4	4	4	4	4	4	1	4	4	3	4	2	5	4	4	5	2	3	3	4	2	4	4	4	4	5	4	5	5	5	5	3	2	2	5	1	2	2	2	3	1	3	4	4	4	4	4	3	3	2	4	3	30	25	23	35	41	33
+12	34	female	married first time	yes	undergraduate degree	family	no	0	4	5	4	5	5	5	4	4	4	4	4	2	4	4	5	3	4	1	4	3	4	3	1	4	4	4	2	3	1	5	3	2	2	6	7	6	7	5	2	1	2	1	1	2	2	2	1	2	4	4	4	1	4	4	4	4	4	4	28	26	16	37	37	25
+13	35	male	single	no	some additional training	life in general	no	0	2	2	5	1	4	2	2	4	2	2	2	2	3	2	2	3	1	2	1	1	2	1	1	3	1	1	2	1	1	1	1	2	2	1	1	1	1	1	3	5	4	3	3	3	3	3	4	3	2	3	3	2	3	1	3	2	2	2	16	17	34	23	11	20
+14	43	female	married first time	yes	some secondary school	spouse/partner	no	0	4	3	3	3	3	4	2	4	3	3	4	1	1	3	5	1	1	5	5	1	4	1	5	5	1	1	1	1	5	1	1	5	5	1	1	2	2	2	4	4	4	4	5	5	5	5	1	5	4	4	4	1	4	3	3	1	2	1	20	18	42	27	16	41
+15	50	male	married first time	yes	some additional training	work	no	0	4	3	1	2	3	4	3	4	3	3	3	3	2	1	1	1	3	1	5	3	3	3	1	5	1	1	1	1	1	1	1	1	1	5	5	5	6	6	3	2	3	1	2	1	1	1	3	2	4	4	4	4	4	3	3	4	4	4	17	21	19	38	20	16
+16	57	male	married first time	no	some additional training	health/illness	yes	200	1	3	5	3	1	1	1	4	4	2	2	1	1	3	3	5	1	5	5	2	4	3	1	3	1	3	5	1	4	3	3	5	2	1	1	1	3	1	3	4	4	4	1	3	2	1	3	5	1	4	3	4	3	2	1	1	3	3	14	15	30	25	25	37
+17	37	female	separated	yes	high school	work	no	0	3	3	3	4	3	3	2	3	4	4	4	3	3	3	5	3	1	5	3	3	4	1	5	5	1	2	2	1	5	2	2	4	5	2	2	2	6	2	5	5	5	4	3	2	3	3	5	5	2	2	2	2	3	1	1	1	2	2	19	23	40	18	19	43
+18	41	female	divorced	yes	graduate degree	work	no	0	4	3	4	4	2	4	2	4	1	1	2	3	3	3	4	1	2	2	4	2	2	3	4	4	1	2	1	1	2	3	2	2	2	5	4	5	5	2	4	4	4	3	4	5	4	4	5	5	4	4	4	4	4	3	4	2	2	4	21	16	42	35	23	24
+19	19	female	single	no	high school	life in general	no	0	4	2	4	2	3	2	2	2	2	2	4	1	1	2	5	5	3	4	2	3	2	1	1	3	2	2	5	3	3	2	2	5	3	3	1	2	1	2	5	5	5	3	4	5	3	4	5	5	4	4	1	3	2	2	2	1	1	1	17	14	44	21	22	36
+20	25	female	single	no	undergraduate degree	work	no	0	4	4	3	5	5	5	4	4	4	2	4	3	4	4	4	5	1	2	3	2	5	2	1	5	3	3	5	3	2	3	3	5	5	1	1	4	7	7	3	4	5	2	3	3	3	4	1	5	4	4	4	3	4	3	4	4	2	4	26	25	33	36	27	39
+21	23	male	single	no	high school	work	no	0	4	1	3	2	2	2	2	3	3	2	3	4	3	4	2	2	2	3	5	1	2	2	2	2	2	1	2	3	2	1	1	1	1	4	4	2	2	5	3	3	4	4	4	4	3	4	5	5	3	3	3	2	2	2	3	3	3	4	14	20	39	28	22	19
+22	53	female	married first time	no	some secondary school	health/illness	no	0	3	1	5	1	1	2	1	2	1	1	4	1	1	2	5	1	1	1	4	1	5	1	5	5	1	2	2	1	1	1	3	5	5	7	6	7	2	1	5	5	5	1	5	5	3	3	5	5	4	3	1	3	1	1	2	1	2	2	13	11	42	20	17	35
+23	47	female	married first time	yes	some additional training	work	no	0	5	2	5	4	4	5	3	3	2	2	4	2	4	5	3	3	4	3	5	5	4	5	4	4	5	4	3	5	3	5	3	3	2	6	6	6	7	7	5	3	4	1	3	3	3	2	3	2	4	4	4	4	4	4	4	2	4	4	25	20	29	38	46	32
+24	36	female	separated	yes	some secondary school	work	no	0	2	2	3	2	2	3	3	3	3	3	4	3	2	5	4	4	3	4	5	3	4	3	5	3	2	2	4	2	4	2	4	4	4	3	4	4	3	6	3	3	4	3	4	3	4	3	4	3	4	4	3	3	2	3	3	2	2	3	14	21	34	29	31	40
+25	21	male	single	no	high school	work	no	0	3	3	3	3	4	5	3	3	2	2	3	2	2	4	4	4	3	2	5	4	5	2	2	5	4	2	4	4	1	4	4	5	5	4	5	5	5	4	3	4	5	1	3	5	2	2	3	3	4	4	4	3	1	4	3	4	2	2	21	17	31	31	36	37
+26	26	female	living with partner	yes	undergraduate degree	work	no	0	4	4	4	4	4	4	2	2	3	2	3	4	4	5	3	2	4	1	4	3	1	4	1	2	3	4	1	2	1	4	5	1	1	3	4	5	5	3	4	4	4	3	3	2	2	3	5	4	4	4	4	4	4	3	4	3	2	4	24	20	34	36	38	14
+27	48	female	remarried	yes	some additional training	work	no	0	3	3	3	3	4	4	2	3	2	2	3	2	1	4	5	5	4	1	2	3	5	3	5	5	2	3	5	4	2	3	3	5	3	3	5	5	5	1	5	4	5	3	3	5	3	3	2	4	4	4	3	4	2	3	3	4	3	3	20	15	37	33	31	41
+28	24	female	single	no	some additional training	work	no	0	3	5	4	4	5	5	2	4	3	3	3	2	1	3	5	4	3	1	4	3	5	4	3	3	2	4	4	3	2	3	4	5	5	6	5	7	5	4	3	3	4	3	2	3	3	2	4	4	4	4	4	4	4	3	3	3	3	4	26	18	31	36	33	37
+29	25	male	single	no	undergraduate degree	work	no	0	3	3	4	4	3	4	3	3	4	4	3	3	3	3	1	1	2	2	2	2	2	2	1	3	1	1	1	2	2	2	4	1	1	5	6	5	5	4	1	2	3	2	3	2	1	3	2	1	4	4	4	4	4	3	4	4	3	4	21	23	20	38	21	15
+30	47	female	married first time	yes	high school	money/finances	no	0	2	1	2	1	2	4	1	2	2	1	3	2	3	2	4	1	1	1	3	1	2	1	2	4	1	2	1	1	1	1	1	3	3	1	1	1	1	1	3	4	4	3	4	3	2	2	4	3	2	2	3	2	3	1	2	2	1	2	12	14	32	20	14	22
+31	18	male	single	no	high school	life in general	no	0	4	5	5	5	5	5	4	2	4	4	2	2	4	1	5	4	5	1	5	5	5	1	5	5	1	2	4	1	1	1	5	1	1	7	7	5	7	1	5	4	2	2	3	1	1	3	1	4	4	4	3	3	4	2	2	1	1	3	29	22	26	27	27	32
+32	24	female	married first time	no	some additional training	work	yes	150	2	1	3	1	1	1	2	2	2	2	2	1	1	3	5	4	1	1	1	2	5	1	3	3	1	2	2	2	1	3	2	4	4	2	2	3	1	3	4	4	5	4	4	3	3	4	5	5	3	3	3	3	2	2	2	1	1	3	9	12	41	23	18	32
+33	36	male	married first time	yes	some additional training	money/finances	no	0	3	5	3	5	2	4	3	4	2	4	3	2	3	4	2	1	1	1	3	4	1	3	2	2	1	3	1	1	1	3	4	1	1	5	5	5	7	5	2	1	2	1	2	2	2	1	2	1	4	4	4	3	4	3	3	2	4	4	22	21	16	35	27	13
+34	49	female	remarried	yes	some secondary school	family	no	0	4	5	4	5	4	5	3	4	4	3	4	4	4	3	3	1	4	1	3	2	1	3	1	2	2	2	1	2	1	2	1	2	1	5	5	5	5	5	2	2	3	2	2	1	2	2	1	1	3	3	4	3	4	3	3	3	4	4	27	26	18	34	24	14
+35	21	female	steady relationship	no	undergraduate degree	work	no	0	4	5	3	5	5	4	4	4	4	4	4	4	2	2	1	1	3	1	3	1	4	2	2	3	1	3	1	3	3	2	2	2	2	6	6	6	6	3	2	2	3	2	2	2	2	2	2	2	4	4	4	4	4	4	3	4	4	4	26	26	21	39	22	20
+36	45	female	remarried	yes	some additional training	work	yes	30	2	1	2	1	5	5	2	4	4	4	4	4	3	5	1	1	4	1	5	5	1	5	1	1	5	4	1	4	1	5	4	1	1	1	7	7	7	5	2	2	4	1	2	4	2	2	4	4	4	4	4	1	4	4	4	4	4	4	16	25	27	37	46	10
+37	18	male	single	no	high school	friendships	no	0	3	2	3	4	3	4	2	4	3	1	4	3	3	2	1	1	2	1	3	3	1	2	1	1	1	1	1	3	1	2	2	1	1	3	6	6	5	5	2	3	2	3	4	2	3	3	3	2	4	4	4	4	3	4	4	3	4	4	19	20	27	38	21	10
+38	45	female	remarried	no	some additional training	life in general	no	0	2	3	1	3	3	4	4	2	2	3	3	3	3	2	4	4	3	1	2	2	4	2	1	2	1	1	2	1	1	1	1	3	1	6	6	6	6	6	3	3	3	2	3	3	2	2	4	3	3	3	4	3	3	3	2	2	4	4	16	20	28	31	16	23
+39	69	male	married first time	no	some secondary school	health/illness	no	0	4	5	3	3	2	4	3	3	2	2	3	2	2	4	4	4	4	3	4	3	3	3	4	4	1	4	4	2	2	4	4	4	5	6	5	6	3	6	3	4	4	2	2	4	3	3	4	4	4	4	2	3	3	3	3	2	2	3	21	17	33	29	33	37
+40	33	male	single	no	undergraduate degree	work	no	0	4	5	4	5	5	5	3	3	3	3	4	4	1	5	5	2	5	2	4	3	3	2	3	5	5	5	2	5	1	5	5	5	3	1	1	1	1	1	4	3	4	2	3	3	3	3	3	3	4	4	3	4	4	4	1	4	3	3	28	21	31	34	44	31
+41	24	female	single	no	undergraduate degree	work	no	0	4	5	4	5	5	5	3	4	3	4	3	3	4	5	1	1	4	1	5	5	1	5	1	1	3	3	1	4	1	5	5	1	1	6	7	7	5	6	1	1	2	1	1	1	2	1	1	1	4	4	4	4	4	4	4	4	4	4	28	24	12	40	44	10
+42	22	male	living with partner	no	some secondary school	money/finances	yes	150	2	2	2	1	1	2	2	4	4	4	4	3	1	4	1	1	3	2	5	4	2	3	3	2	4	4	2	5	2	5	3	1	1	2	2	3	2	2	3	3	4	4	4	4	2	3	4	3	3	3	3	4	2	2	2	1	1	1	10	22	34	22	40	17
+43	43	female	remarried	no	undergraduate degree	work	no	0	2	2	3	3	4	4	2	3	2	2	3	4	3	4	3	1	2	2	4	3	3	4	2	2	1	4	1	1	2	2	3	1	1	2	6	4	3	4	4	3	3	3	4	4	4	4	4	4	3	3	4	3	4	3	3	4	3	2	18	19	37	32	28	18
+44	48	female	married first time	no	high school	friendships	no	0	5	5	5	5	5	5	4	4	4	2	4	4	4	4	1	1	5	1	5	4	1	4	1	1	4	4	1	3	1	4	4	1	1	4	6	6	3	3	1	1	1	1	2	1	1	1	2	1	4	4	4	4	4	4	4	4	4	4	30	26	12	40	41	10
+45	30	female	single	no	some additional training	work	yes	25	3	3	3	3	3	4	2	3	3	4	3	2	3	4	3	2	4	2	4	5	2	5	3	2	5	4	2	3	2	4	5	4	4	4	5	4	4	3	3	3	4	3	3	4	3	4	4	4	3	4	3	3	3	3	3	3	2	2	19	20	35	29	43	26
+46	46	female	remarried	yes	high school	lack of time	no	0	3	1	5	1	3	4	2	4	1	1	4	3	2	3	4	2	1	1	4	5	2	3	4	4	5	4	1	5	1	5	5	5	5	6	6	6	6	6	4	5	5	2	1	5	3	2	5	5	4	4	4	4	3	3	3	1	1	2	17	17	37	29	40	29
+47	24	male	steady relationship	no	undergraduate degree	friendships	no	0	2	3	3	4	4	3	3	3	2	3	4	1	2	4	5	4	2	3	2	1	4	4	3	4	2	2	4	3	4	1	1	4	1	3	3	2	3	1	3	4	4	3	4	4	3	4	4	3	4	4	3	3	2	3	2	2	2	2	19	18	36	27	22	36
+48	63	male	married first time	no	undergraduate degree	children	no	0	2	5	4	5	5	5	3	3	4	3	3	4	4	5	1	1	3	1	4	4	1	3	1	1	1	3	1	1	1	3	3	1	1	2	6	5	5	2	3	1	1	1	2	2	1	1	2	1	4	4	4	4	4	4	4	3	4	4	26	24	15	39	30	10
+49	20	female	single	no	some additional training	health/illness	no	0	3	1	4	2	2	2	1	2	3	3	2	1	2	2	4	3	2	2	3	4	3	2	2	4	2	2	3	2	3	3	2	2	2	1	2	1	1	1	4	4	4	4	5	4	4	4	4	4	2	2	3	2	3	1	1	3	1	1	14	14	41	19	24	28
+50	22	female	steady relationship	no	undergraduate degree	work	no	0	1	2	1	2	2	2	2	4	2	4	3	2	3	5	4	4	2	2	5	3	4	2	5	4	4	3	5	4	4	3	3	2	2	4	3	3	5	5	4	4	3	4	3	3	4	4	5	3	4	3	3	3	3	1	2	1	1	1	10	20	37	22	34	36
+51	21	female	steady relationship	no	some secondary school	work	no	0	3	4	3	4	4	3	3	3	4	1	4	4	4	4	4	1	1	1	1	4	2	1	1	2	1	2	1	3	1	3	3	1	2	5	3	3	4	4	2	2	3	2	3	1	2	2	2	1	4	4	4	4	4	2	2	1	4	4	21	23	20	33	23	16
+52	37	female	married first time	yes	some additional training	money/finances	yes	2	4	4	4	5	5	5	4	4	4	1	4	4	4	5	1	1	4	1	5	4	1	5	1	3	3	5	1	5	1	4	5	1	1	6	6	6	6	5	2	1	2	1	1	1	1	1	2	1	4	4	4	4	1	3	3	4	1	4	27	25	13	32	45	12
+53	39	female	married first time	yes	undergraduate degree	family	no	0	2	2	1	1	2	2	1	2	1	1	2	2	2	2	4	1	1	1	3	5	2	1	3	4	1	1	1	1	1	1	3	1	1	4	3	5	3	1	4	3	3	4	4	3	3	4	4	3	3	3	3	2	3	2	1	2	2	3	10	11	35	24	19	19
+54	32	male	living with partner	yes	some additional training	work	no	0	3	5	3	4	5	4	4	3	3	4	4	4	3	3	1	1	3	1	3	3	1	4	1	2	3	4	1	3	1	3	4	1	1	5	5	5	5	3	1	1	1	2	2	1	2	2	1	1	4	4	4	4	4	3	4	4	4	4	24	25	14	39	33	11
+55	54	male	married first time	no	undergraduate degree	lack of time	no	0	4	5	4	4	2	5	4	4	4	4	4	4	4	4	1	1	2	1	4	4	1	4	1	1	3	3	1	4	1	5	4	2	1	6	6	7	7	7	1	1	2	1	2	1	1	1	2	1	4	4	4	4	4	4	4	4	4	4	24	28	13	40	37	11
+56	27	female	married first time	yes	some secondary school	children	no	0	3	3	5	4	1	2	3	4	4	4	4	1	1	5	5	4	3	1	5	4	5	5	2	4	4	5	4	4	1	3	5	4	1	6	7	5	7	4	3	2	4	2	3	4	2	3	4	4	4	4	4	4	4	2	2	1	2	2	18	21	31	29	43	31
+57	21	female	single	no	high school	work	no	0	3	3	4	4	3	4	4	2	2	2	2	4	3	4	4	2	5	1	5	5	4	4	3	1	4	3	2	5	4	5	5	5	3	4	5	5	5	4	2	4	4	3	3	2	2	3	3	2	3	4	4	3	4	4	4	4	2	3	21	19	28	35	45	29
+58	65	female	divorced	no	some secondary school	life in general	no	0	5	5	5	5	5	5	4	4	4	4	4	4	4	5	1	1	5	1	5	5	2	5	2	2	5	5	1	4	1	4	4	1	1	6	6	6	6	6	3	2	3	4	3	2	2	2	3	3	4	4	4	4	4	4	4	4	4	4	30	28	27	40	47	13
+59	32	female	married first time	no	some additional training		no	0	3	3	4	4	5	4	4	4	4	4	4	3	3	4	2	1	1	1	3	4	1	4	1	3	1	1	1	1	1	1	1	1	1	4	4	4	3	2	2	2	2	2	3	2	3	3	2	2	4	4	4	2	4	4	3	2	3	4	23	26	23	34	21	13
+60	42	female	married first time	yes	some additional training	money/finances	no	0	4	2	3	3	3	3	2	4	3	3	2	3	3	2	3	1	1	1	1	2	2	2	1	3	2	3	1	1	1	2	3	1	1	3	4	4	1	2	2	3	2	2	4	3	3	3	2	2	4	4	4	3	1	4	3	4	3	4	18	20	26	34	19	15
+61	38	male	single	no	undergraduate degree	life in general	no	0	4	2	5	3	1	4	1	4	3	3	4	3	1	5	1	1	4	4	5	5	2	5	5	4	5	5	1	5	1	5	5	2	2	5	4	3	4	2	3	2	3	1	2	3	3	2	3	3	4	4	3	3	4	4	3	1	1	1	19	19	25	28	49	23
+62	26	female	single	no	some additional training		no	0	2	5	4	2	2	4	2	3	4	3	3	3	2	2	2	1	2	1	3	4	1	3	1	2	1	2	1	1	1	3	1	1	1	5	5	4	4	2	3	2	3	2	3	3	3	3	4	3	4	4	3	4	4	4	4	4	3	4	19	20	29	38	22	12
+63	52	female	remarried	yes	some additional training	lack of time	no	0	4	5	4	5	5	5	2	3	2	2	3	3	4	4	1	2	4	1	5	5	1	4	1	1	5	4	2	4	1	5	4	2	1	7	7	7	7	6	2	5	3	1	2	4	4	2	2	4	4	4	4	3	4	4	4	4	4	4	28	19	29	39	44	13
+64	36	female	steady relationship	no	high school	work	no	0	3	2	2	2	3	3	2	2	3	3	3	2	2	2	4	3	2	1	2	1	4	2	3	3	2	2	2	2	2	2	3	5	5	5	5	5	4	2	4	5	5	4	4	3	4	3	3	4	3	3	3	3	3	3	3	2	3	2	15	17	39	28	20	32
+65	60	female	married first time	yes	graduate degree	family	no	0	5	2	4	5	5	5	1	2	1	1	2	1	2	4	5	4	2	1	3	3	4	2	3	4	3	4	4	3	3	3	5	4	4	6	3	6	6	2	5	4	4	2	3	4	3	3	4	4	3	3	3	3	4	3	3	2	2	2	26	10	36	28	32	36
+66	33	female	married first time	yes	some secondary school	children	no	0	1	1	1	1	1	5	1	2	1	1	4	1	1	3	5	5	1	1	1	5	5	1	1	5	5	1	1	4	5	5	1	5	1	1	2	2	3	1	3	5	5	4	5	2	5	5	1	5	1	2	1	3	1	2	1	1	1	1	10	11	40	14	27	34
+67	54	male	married first time	no	some secondary school		no	0	3	3	3	4	4	3	2	2	2	3	2	2	3	4	3	4	4	2	3	5	2	3	4	4	3	3	4	5	3	4	3	4	3	5	6	3	3	2	3	3	3	3	3	2	3	3	4	2	4	4	2	3	2	3	3	3	3	4	20	16	29	31	37	33
+68	68	female	divorced	no	high school	family	no	0	5	5	5	5	5	5	4	4	4	4	4	4	4	4	1	1	3	1	5	5	1	3	1	1	5	5	1	2	1	3	5	1	1	7	7	7	7	7	3	1	1	1	1	1	1	1	2	1	4	4	4	4	4	4	4	4	4	4	30	28	13	40	40	10
+69	66	female	married first time	no	some secondary school	health/illness	no	0	5	3	4	5	5	4	2	3	1	1	4	2	2	5	2	1	4	1	3	3	1	4	1	2	3	3	2	4	1	4	4	3	1	6	6	7	7	6	4	3	3	3	4	3	3	3	3	4	4	4	4	3	4	4	4	4	4	4	26	15	33	39	37	15
+70	24	female	living with partner	no	undergraduate degree	life in general	yes	210	5	5	4	5	5	4	3	4	4	4	4	4	4	4	1	1	4	1	5	5	1	4	1	1	3	4	1	2	1	3	4	1	1	4	6	6	7	2	2	1	4	3	2	5	2	4	2	4	4	4	4	4	4	4	4	4	4	4	28	27	29	40	38	10
+71	38	female	single	no	graduate degree	work	no	0	3	5	4	5	5	5	4	4	4	4	4	3	4	5	2	2	3	1	5	4	1	4	1	2	1	4	2	5	2	5	4	2	1	4	5	6	5	4	2	1	2	1	1	2	1	1	3	1	4	4	4	3	4	4	3	4	3	4	27	27	15	37	40	16
+72	57	female	married first time	no	some additional training	money/finances	no	0	3	4	5	4	4	4	3	4	3	3	4	1	1	5	1	1	3	1	3	5	1	3	1	1	3	4	1	3	1	3	5	1	1	5	6	4	4	4	3	3	2	2	3	4	3	3	3	3	4	4	3	4	2	4	2	2	1	1	24	19	29	27	37	10
+73	50	male	separated	yes	graduate degree	spouse/partner	no	0	3	5	2	3	2	3	3	3	3	3	1	2	3	1	5	3	1	1	3	4	5	3	1	2	1	3	4	2	3	2	3	4	4	2	2	2	2	2	1	4	4	2	3	5	2	4	2	4	4	4	2	4	4	3	3	2	3	3	18	18	31	32	23	32
+74	50	male	married first time	yes	graduate degree	work	no	0	3	4	3	4	4	4	4	2	1	4	3	2	3	2	4	3	2	2	3	1	4	1	1	2	1	3	4	3	2	2	1	3	2	3	4	1	3	3	3	3	5	2	2	4	2	3	2	4	2	4	3	2	4	1	2	1	2	2	22	19	30	23	19	27
+75	24	female	single	no	some additional training	life in general	yes	150	1	4	4	2	3	3	3	3	2	4	4	3	1	3	1	1	2	2	3	3	2	3	1	2	2	1	1	3	1	2	3	1	1	2	2	3	5	7	3	4	3	3	3	2	3	3	4	3	3	2	3	3	3	2	2	1	1	3	17	20	31	23	25	13
+76	46	female	married first time	yes	some secondary school	money/finances	no	0	3	2	5	4	2	4	4	3	2	3	4	3	4	5	5	4	3	2	3	4	4	4	3	3	1	2	3	2	1	3	3	3	1	6	6	6	6	6	4	3	3	2	2	4	2	2	2	1	4	4	4	3	4	4	4	4	4	4	20	23	25	39	30	29
+77	70	female	married first time	no	some secondary school	spouse/partner	no	0	5	5	5	5	5	5	2	3	3	1	4	1	1	4	5	1	4	1	2	5	5	4	1	1	3	4	1	1	1	2	3	4	4	2	2	2	2	2	5	5	4	2	3	5	2	3	5	4	4	4	1	3	1	4	4	1	2	3	30	15	38	27	32	24
+78	30	female	married first time	yes	some secondary school	family	no	0	2	2	5	2	3	4	1	3	1	4	4	2	4	3	1	4	4	1	2	4	1	3	1	2	1	1	3	4	1	1	3	3	1	5	6	7	7	2	1	1	4	2	2	2	2	2	2	2	4	4	4	4	4	3	3	1	4	4	18	19	20	35	26	18
+79	21	female	single	no	high school	work	no	0	4	3	3	4	3	4	3	3	2	3	2	2	3	3	4	4	1	2	4	3	4	2	2	4	3	3	4	4	4	3	3	4	3	3	6	5	5	5	3	3	5	3	3	3	4	4	4	4	4	4	4	3	3	3	3	3	2	2	21	18	36	31	29	35
+80	46	female	living with partner	no	some additional training	work	no	0	1	1	1	2	1	2	1	2	1	1	2	1	1	3	3	2	4	1	3	4	3	1	4	4	2	2	2	3	4	2	3	2	1	3	3	3	5	3	3	4	4	4	3	5	4	4	4	4	3	3	3	2	2	2	2	2	1	1	8	9	39	21	27	26
+81	58	male	married first time	yes	graduate degree	money/finances	no	0	4	5	4	5	5	4	3	4	4	4	4	4	4	3	1	1	5	1	4	4	1	4	1	1	4	4	1	4	1	4	4	1	1	7	7	7	7	7	1	1	1	4	2	1	1	1	1	1	4	4	4	4	4	4	4	4	3	1	27	27	14	36	40	10
+82	23	female	single	no	some additional training	work	no	0	3	4	5	3	4	4	3	4	2	3	3	2	2	4	4	4	4	1	4	3	4	4	1	3	4	3	4	4	1	4	3	4	4	3	4	5	6	4	3	2	4	2	2	2	3	3	3	2	3	4	4	3	4	3	3	4	3	3	23	19	26	34	37	30
+83	49	male	married first time	no	graduate degree	work	no	0	3	2	3	2	3	3	3	3	1	3	3	3	2	4	4	3	2	2	4	4	3	3	4	4	2	3	3	3	3	3	3	4	4	2	2	2	2	1	3	3	3	3	3	3	3	4	4	3	4	4	3	3	3	3	3	2	1	3	16	18	32	29	31	34
+84	25	female	single	no	undergraduate degree	lack of time	yes	10	4	4	4	5	3	3	3	3	3	3	3	4	4	4	1	1	3	2	2	4	3	4	2	2	3	4	1	4	2	4	4	3	3	6	6	6	6	6	3	2	3	1	1	3	1	1	1	2	4	4	4	4	4	4	4	4	3	4	23	23	18	39	36	20
+85	33	male	single	no	some additional training	life in general	yes	200	4	5	4	4	4	5	3	3	2	2	3	4	3	4	1	2	3	1	4	3	1	4	1	3	3	3	1	4	2	3	3	1	1	5	5	5	5	5	1	1	2	1	2	2	1	2	2	2	4	4	4	4	4	3	3	4	4	4	26	20	16	38	34	14
+86	32	male	married first time	yes	some additional training	spouse/partner	no	0	3	3	3	3	3	3	2	3	3	3	3	3	3	4	2	1	4	1	4	4	1	1	1	2	3	3	1	1	1	2	2	1	1	6	6	6	6	6	3	3	3	3	3	2	3	3	4	3	3	3	3	3	3	3	3	3	3	3	18	20	30	30	28	12
+87	42	male	married first time	yes	some secondary school	life in general	no	0	4	2	4	5	5	4	4	3	4	4	3	4	4	4	1	1	3	1	3	3	1	3	1	1	2	4	1	3	1	2	4	1	1	5	5	5	6	5	1	2	2	2	2	1	2	2	2	1	3	4	4	4	4	4	3	4	3	3	24	26	17	36	31	10
+88	26	male	single	no	high school	work	no	0	4	3	5	2	3	4	2	4	4	3	4	4	3	4	3	2	4	1	5	4	2	4	2	3	5	3	1	5	1	4	4	3	2	2	2	2	2	4	2	5	4	2	3	2	2	3	5	4	4	4	4	4	4	4	4	3	3	4	21	24	32	38	42	20
+89	25	female	steady relationship	no	graduate degree	health/illness	yes	7	4	5	3	5	4	5	4	3	4	4	4	2	3	4	4	4	4	4	3	2	4	3	3	3	2	2	3	2	2	3	2	3	1	4	6	5	6	7	3	4	4	3	2	2	3	3	4	1	4	4	4	4	4	3	4	1	3	3	26	24	29	34	27	31
+90	36	female	married first time	yes	high school	children	no	0	3	3	4	3	5	5	3	4	3	1	4	1	4	5	2	1	4	1	5	5	2	5	3	2	4	4	1	4	2	5	4	1	1	6	6	6	6	4	3	2	4	2	2	3	3	3	4	2	4	4	4	4	4	4	4	4	3	4	23	20	28	39	45	16
+91	24	male	single	no	undergraduate degree	work	no	0	4	4	4	4	4	4	3	4	2	3	4	3	3	4	2	1	4	1	3	4	1	4	1	2	3	4	1	4	1	4	3	2	2	5	6	5	4	3	4	4	3	2	2	3	3	3	3	4	4	4	2	2	2	2	2	4	2	3	24	22	31	27	37	14
+92	56	female	married first time	no	some additional training		no	0	5	5	5	5	2	5	4	4	4	4	4	4	4	4	1	1	3	1	4	4	1	5	1	1	3	4	1	2	1	4	5	1	1	6	7	7	7	6	1	1	2	4	1	2	1	1	1	1	4	4	4	4	4	4	4	4	4	4	27	28	15	40	38	10
+93	40	male	married first time	yes	some secondary school	money/finances	no	0	4	4	4	4	4	4	3	4	4	3	4	3	3	2	4	3	2	1	3	2	3	3	4	4	2	2	3	2	3	2	2	3	3	3	3	3	3	4	3	4	3	3	4	3	3	3	4	4	3	4	3	3	1	4	3	2	3	3	24	24	34	29	22	31
+94	36	male	single	no	undergraduate degree	lack of time	no	0	3	5	5	3	5	5	4	4	4	4	1	4	3	4	2	1	4	1	5	4	2	3	1	2	4	4	1	2	1	3	5	2	2	3	3	6	2	2	3	1	2	1	1	3	1	1	2	1	4	4	4	4	4	4	4	4	4	4	26	24	16	40	38	15
+95	23	female	living with partner	no	undergraduate degree	work	yes	4	2	5	4	5	3	4	2	3	4	3	4	2	3	5	3	2	3	3	3	3	3	3	2	4	4	3	2	4	2	4	3	1	1	5	6	6	7	7	4	3	4	3	3	5	3	4	3	4	4	4	4	4	3	3	3	3	1	1	23	21	36	30	35	23
+96	26	male	married first time	no	undergraduate degree	work	yes	5	3	3	4	5	3	5	3	4	4	4	4	4	4	4	1	1	4	1	4	5	1	4	1	1	5	4	1	3	1	3	3	1	1	7	7	7	7	6	1	1	3	1	1	1	2	1	2	2	4	4	4	4	4	4	4	3	4	4	23	27	15	39	39	10
+97	60	female	married first time	yes	some additional training	money/finances	no	0	3	5	3	5	5	5	4	4	1	3	4	4	4	5	1	3	5	1	3	5	2	5	1	1	5	5	3	5	2	5	5	2	1	6	6	6	6	3	2	3	3	2	2	4	2	2	2	1	4	4	4	3	4	4	3	3	2	4	26	24	23	35	48	17
+98	27	male	steady relationship	no	high school	work	no	0	3	3	3	3	4	4	3	2	4	3	4	3	3	3	3	5	3	2	4	4	3	3	3	3	3	3	5	3	2	3	3	4	3	3	4	3	6	4	3	4	4	3	3	3	3	3	3	3	3	3	3	2	3	3	2	2	2	2	20	22	32	25	32	33
+99	70	male	married first time	no	graduate degree	work	no	0	3	3	5	5	4	5	3	3	3	3	3	4	4	5	1	1	3	1	2	5	1	3	1	1	2	2	1	1	1	3	3	1	1	7	7	7	7	4	1	2	2	2	3	1	1	2	3	2	4	4	4	3	3	4	1	4	3	4	25	23	19	34	29	10
+100	46	female	divorced	no	some additional training	work	no	0	3	4	4	4	5	4	4	1	4	4	4	4	4	5	2	1	3	1	4	4	1	4	2	2	4	4	1	4	1	3	4	2	1	5	6	5	5	3	4	2	4	2	3	3	2	2	5	3	4	4	4	4	4	4	4	1	4	4	24	25	30	37	39	14
+101	39	female	divorced	yes	undergraduate degree	friendships	no	0	4	4	3	4	4	4	2	4	3	3	2	3	2	3	4	2	2	1	4	3	4	3	4	4	2	2	2	3	2	2	2	5	5	4	3	3	2	2	3	4	5	3	3	4	3	3	3	4	3	4	3	3	3	3	3	3	2	3	23	19	35	30	26	33
+102	55	female	married first time	no	some secondary school	family	no	0	4	4	5	5	4	3	3	3	4	1	3	2	2	5	4	1	5	1	5	5	3	3	5	2	2	4	1	4	2	5	4	2	1	5	2	5	6	6	4	4	3	2	2	3	3	2	5	4	4	4	4	4	3	3	4	3	2	4	25	18	32	35	42	22
+103	33	male	married first time	no	undergraduate degree	work	no	0	3	5	4	5	5	5	2	1	2	3	3	4	4	3	1	1	1	1	3	3	2	3	1	1	2	3	1	2	1	2	4	1	1	6	5	7	7	6	2	2	2	3	1	5	2	2	2	1	4	4	4	3	4	4	4	4	4	4	27	19	22	39	26	11
+104	38	female	divorced	no	undergraduate degree	work	no	0	2	3	3	3	4	3	3	3	2	4	3	3	2	3	4	2	2	2	3	1	2	3	4	3	2	2	4	1	3	2	2	3	2	3	3	4	2	3	4	4	4	2	3	4	2	3	4	3	3	3	4	3	2	2	3	2	3	3	18	20	33	28	21	29
+105	26	male	single	no	some additional training	work	yes	60	2	3	3	2	3	4	2	3	2	2	3	2	2	4	3	2	4	2	3	2	4	3	4	4	2	2	4	3	2	3	3	3	3	5	6	6	6	4	3	2	3	3	3	3	3	3	4	2	3	3	3	3	3	3	3	2	2	3	17	16	29	28	29	31
+106	31	female	married first time	yes	some additional training	money/finances	yes	40	3	3	5	4	4	5	3	4	3	4	4	3	4	5	2	1	5	1	5	5	2	4	1	1	5	5	1	4	1	4	5	1	1	7	5	5	6	7	2	2	2	2	2	3	2	2	3	2	4	4	4	4	4	4	4	4	2	4	24	25	22	38	47	12
+107	27	male	steady relationship	no	some additional training	money/finances	yes	7	1	3	3	4	5	4	4	4	3	4	4	2	1	3	2	3	1	1	4	1	1	2	3	4	1	3	2	1	3	3	4	2	1	4	5	5	4	1	1	3	3	3	3	2	3	2	3	2	3	4	4	3	3	4	2	2	3	2	20	22	25	30	23	22
+108	35	female	single	no	graduate degree	lack of time	yes	110	3	5	3	4	5	4	3	3	2	2	4	3	2	3	4	2	2	1	3	3	4	2	1	3	2	3	1	3	3	3	2	4	4	5	5	5	4	6	3	4	5	3	3	5	3	3	4	5	3	3	3	3	2	2	3	2	3	3	24	19	38	27	26	27
+109	44	male	married first time	yes	some additional training	work	yes	100	3	4	3	4	5	3	3	3	4	3	4	3	4	3	1	1	4	1	3	3	1	2	1	2	3	3	1	2	1	2	4	1	1	5	4	5	7	7	3	1	1	2	2	1	3	2	2	2	4	4	4	3	4	3	4	4	3	4	22	24	19	37	29	11
+110	46	female	divorced	yes	some additional training	money/finances	no	0	4	4	5	5	5	5	4	4	4	4	4	3	4	5	3	1	4	1	5	5	1	4	1	2	5	5	1	5	2	4	5	2	1	2	3	3	2	2	2	3	3	1	3	3	2	2	2	3	4	4	3	4	3	2	2	2	2	3	28	27	24	29	47	15
+111	28	female	living with partner	no	high school	life in general	no	0	5	4	4	5	5	5	4	4	4	4	4	4	4	4	1	1	4	1	5	5	1	5	2	2	4	4	1	4	1	4	4	1	1	7	7	7	7	7	2	2	1	1	2	2	2	1	2	1	4	4	4	4	4	4	4	4	4	1	28	28	16	37	43	12
+112	37	female	married first time	no	graduate degree	work	no	0	4	5	4	5	4	4	3	3	3	4	3	3	4	5	5	2	1	2	4	4	4	4	2	2	4	4	1	4	2	4	4	1	1	6	6	6	6	6	2	2	2	2	2	2	2	2	2	2	4	4	4	4	4	4	4	3	1	2	26	23	20	34	38	22
+113	74	female	widowed	no	undergraduate degree	health/illness	no	0	5	3	4	5	5	4	1	3	3	4	4	4	4	5	1	1	5	1	4	4	1	3	1	1	4	4	1	5	1	5	4	1	1	7	7	7	6	7	2	2	1	2	2	1	2	2	1	1	4	4	4	4	4	4	4	4	4	4	26	23	16	40	43	10
+114	82	female	widowed	no	some additional training	health/illness	no	0	4	5	4	5	5	4	3	3	3	3	4	3	4	3	3	1	3	1	3	3	1	2	1	1	1	3	1	1	1	3	3	1	1	6	5	6	6	6	3	2	3	2	2	3	2	2	3	2	3	3	4	3	4	2	4	4	4	4	27	23	24	35	25	12
+115	43	male	single	no	some additional training	work	no	0	3	3	4	3	4	4	3	3	4	4	4	4	3	4	1	1	3	1	4	5	2	4	1	2	4	4	1	1	1	3	4	1	1	4	4	2	2	4	3	3	3	2	2	3	3	3	3	4	4	4	4	4	4	3	3	2	3	3	21	25	29	34	36	12
+116	24	female	single	no	undergraduate degree	work	no	0	2	3	4	4	4	4	3	4	2	3	4	3	4	5	3	2	4	1	5	3	2	4	1	4	5	4	3	5	3	5	3	4	3	5	5	5	4	4	2	4	4	3	2	3	2	2	3	2	3	3	3	3	4	3	3	2	3	3	21	23	27	30	43	26
+117	36	male	married first time	yes	high school	work	no	0	1	3	4	3	5	4	1	3	3	3	3	2	2	3	4	2	2	1	1	3	2	3	2	4	3	3	1	2	4	3	3	1	1	3	5	4	4	6	3	3	4	4	4	4	3	3	3	5	3	4	4	3	4	2	4	2	2	4	20	17	36	32	26	22
+118	45	male	married first time	yes	graduate degree	work	no	0	3	5	4	5	5	5	4	4	4	4	4	4	4	4	1	1	4	1	5	5	1	5	3	3	4	4	1	4	1	4	5	1	1	5	5	5	4	3	2	1	1	1	2	2	2	2	2	2	4	4	4	1	4	4	4	4	4	4	27	28	17	37	44	14
+119	50	male	married first time	yes	some additional training	money/finances	yes	200	2	4	3	3	3	4	3	3	3	4	4	4	4	3	1	1	3	1	4	4	1	3	1	2	4	4	1	3	1	4	4	1	1	3	2	4	2	3	3	3	3	2	3	3	2	3	3	3	4	4	4	4	4	4	4	4	4	4	19	25	28	40	36	11
+120	27	male	single	no	undergraduate degree	work	yes	20	2	2	3	3	3	3	3	3	3	3	3	2	2	2	2	1	2	1	2	3	2	3	1	2	1	2	1	3	1	3	3	3	2	1	2	2	1	1	3	4	3	3	4	2	3	3	4	2	4	3	4	4	2	2	3	3	4	4	16	19	31	33	24	16
+121	21	male	single	no	high school	lack of time	no	0	4	5	4	5	4	4	4	4	3	4	4	4	4	5	2	1	2	1	5	5	1	5	2	2	5	5	1	5	1	5	5	1	1	6	7	5	4	3	3	2	3	1	1	2	1	1	5	2	4	4	4	4	2	4	3	4	4	4	26	27	21	37	47	13
+122	31	male	living with partner	no	graduate degree	lack of time	no	0	2	3	2	3	3	3	2	2	2	2	2	2	3	2	3	1	3	3	3	2	4	1	3	3	2	2	1	4	3	2	2	4	4	3	4	3	3	3	2	3	4	4	3	3	3	3	3	3	3	3	4	3	4	3	3	2	3	4	16	15	31	32	23	29
+123	49	female	married first time	yes	some additional training	children	yes	150	5	5	5	5	5	5	3	4	4	4	4	4	4	3	2	1	2	1	3	3	1	3	1	2	1	3	1	3	1	4	3	1	1	5	6	6	6	5	3	3	2	1	2	2	2	2	2	1	4	4	4	4	4	4	4	4	4	4	30	27	20	40	28	12
+124	49	male	married first time	yes	some secondary school				3	2	4	2	2	4	2	3	3	3	3	1	1	5	4	1	4	1	5	5	2	3	5	3	2	4	1	5	1	5	5	5	2	5	5	5	4	4	3	3	2	2	3	2	2	2	3	3	2	1	1	3	2	4	2	3	3	3	17	16	25	24	43	25
+125	48	female	married first time	no	high school	money/finances	no	0	2	5	3	3	4	3	4	2	4	4	3	2	4	4	2	2	3	4	2	3	2	2	1	3	1	4	4	3	3	3	3	3	2	3	3	4	4	5	3	3	3	2	2	3	2	2	3	2	4	4	4	4	4	3	2	2	4	4	20	23	25	35	28	26
+126	20	female	single	no	high school	work	no	0	3	4	3	4	5	5	2	3	4	4	1	3	3	5	4	3	3	2	4	3	3	3	2	3	4	3	3	5	3	4	4	3	2	4	6	4	2	2	5	3	4	3	2	4	3	3	4	3	4	4	3	3	3	3	3	4	2	2	24	20	34	31	38	28
+127	25	male	divorced	no	undergraduate degree	work	yes	20	4	5	4	2	4	4	4	4	4	4	4	3	4	3	1	1	4	1	4	4	2	4	1	1	3	3	1	5	1	5	4	2	1	5	5	6	6	6	2	3	2	2	1	1	1	1	2	1	4	4	4	4	4	4	4	4	4	4	23	27	16	40	39	12
+128	58	female	remarried	no	some secondary school	life in general	no	0	5	5	5	4	5	5	3	4	3	3	2	4	4	4	2	1	5	1	5	5	1	5	1	1	4	5	1	4	1	4	5	1	1	6	6	6	6	3	2	2	3	1	1	2	2	1	4	2	4	4	4	4	4	4	4	4	4	4	29	23	20	40	46	11
+129	31	male	married first time	yes	some additional training	work	no	0	4	5	5	5	5	5	4	4	4	4	4	4	4	4	2	2	5	1	5	4	1	5	1	2	4	4	2	4	1	5	5	2	1	5	6	6	7	3	3	4	3	2	3	3	2	1	4	1	4	4	4	4	4	4	4	4	4	4	29	28	26	40	45	15
+130	29	female	single	no	some secondary school	money/finances	no	0	3	5	5	5	5	5	4	4	4	4	4	4	4	5	1	1	4	1	5	4	1	5	1	1	4	4	1	5	1	5	4	1	1	5	5	5	4	7	2	2	3	1	1	2	3	2	3	2	4	4	4	4	4	4	4	4	4	4	28	28	21	40	45	10
+131	22	male	single	no	undergraduate degree	life in general	yes	2	3	4	5	3	3	2	3	3	2	4	4	3	3	5	3	2	4	1	5	4	3	3	4	3	5	5	1	3	1	5	5	2	2	2	6	4	3	1	3	3	4	2	2	4	2	2	4	3	4	4	4	3	4	3	3	2	3	4	20	22	29	34	44	22
+132	20	female	living with partner	no	some additional training	money/finances	yes	100	2	3	2	2	4	2	3	3	3	2	4	2	3	2	4	1	3	3	4	2	2	2	4	4	4	2	1	2	5	2	3	3	3	2	2	2	6	2	3	3	4	3	5	3	4	4	4	4	4	3	3	3	3	2	2	1	2	1	15	20	37	24	26	30
+133	21	male	single	no	undergraduate degree	work	no	0	5	4	4	4	3	3	3	4	3	2	4	3	3	4	4	4	2	1	2	2	4	3	1	1	1	2	4	1	1	3	2	1	1	5	6	6	6	6	3	3	3	2	3	3	3	2	3	2	4	4	4	4	4	4	4	4	4	4	23	22	27	40	22	22
+134	26	female	single	no	undergraduate degree	work	yes	3	4	4	5	4	4	4	4	4	4	4	4	4	3	5	1	1	4	1	5	5	2	4	1	1	5	4	1	4	1	5	5	2	2	6	6	7	7	5	3	2	3	1	2	2	2	2	4	2	4	4	4	4	4	4	4	4	3	3	25	27	23	38	46	13
+135	39	male	living with partner	no	some additional training	life in general	no	0	2	4	4	2	2	2	2	3	3	2	4	1	3	3	5	4	2	2	5	3	3	2	3	4	2	3	3	3	1	3	4	4	3	3	3	3	3	1	3	3	4	3	3	4	3	3	3	3	4	3	4	3	1	2	2	2	3	2	16	18	32	26	30	32
+136	24	female	single	no	high school	spouse/partner	no	0	2	3	3	4	3	2	4	4	4	4	4	4	3	3	2	1	2	2	4	4	4	4	1	1	2	2	2	4	1	2	2	2	1	4	4	4	3	3	4	4	4	2	3	4	3	3	3	3	3	3	4	3	4	3	3	2	2	3	17	27	33	30	29	17
+137	38	female	married first time	yes	undergraduate degree		no	0	3	5	5	5	5	5	2	4	2	3	3	3	4	5	5	1	4	1	4	4	1	4	1	4	1	1	1	2	1	2	4	1	1	6	6	6	6	6	5	4	5	1	1	5	2	1	5	4	4	4	4	4	4	4	4	4	4	4	28	21	33	40	31	17
+138	53	female	divorced	no	graduate degree	work	no	0	4	5	4	4	4	5	2	2	2	2	3	4	1	3	4	1	3	2	3	2	4	3	2	2	2	3	1	2	5	2	3	1	1	2	2	3	2	2	3	3	4	1	4	4	2	5	5	5	4	4	4	4	4	4	3	4	4	4	26	16	36	39	26	23
+139	31	female	married first time	yes	some additional training	money/finances	no	0	3	3	3	3	1	2	2	3	2	2	3	3	1	5	3	2	5	1	4	4	2	4	1	2	5	5	1	5	1	5	4	2	1	4	4	4	4	4	3	2	3	2	2	2	2	2	1	1	4	4	4	4	4	4	3	4	2	4	15	16	20	37	46	16
+140	21	male	single		undergraduate degree	work	no	0	2	5	4	5	5	5	3	4	4	4	4	2	3	5	4	1	2	5	4	3	3	1	1	4	4	4	1	3	1	3	4	1	1	4	4	5	7	6	1	1	3	1	3	2	3	2	2	3	4	4	4	4	4	4	4	4	4	4	26	24	21	40	33	22
+141	53	female	married first time	yes	some additional training	family	no	0	4	3	5	3	4	4	3	3	3	3	3	3	1	5	3	1	5	1	4	5	2	3	1	2	5	4	2	4	2	4	4	3	1	5	5	5	5	4	3	4	4	2	3	3	3	2	3	2	3	3	3	3	4	3	2	4	2	4	23	19	29	31	43	18
+142	42	female	married first time	yes	high school	life in general	no	0	3	5	3	3	4	3	3	3	4	3	4	2	4	4	3	4	2	4	2	2	3	2	2	2	2	3	3	2	4	2	2	2	2	2	2	2	5	2	3	4	5	3	3	4	3	3	3	4	3	4	3	2	2	2	1	1	1	1	21	23	35	20	23	29
+143	68	female	married first time	no	high school	health/illness	no	0	3	5	4	5	5	4	4	2	2	2	3	3	2	3	5	2	5	1	4	3	5	5	4	3	3	3	2	4	4	3	4	2	2	5	5	3	4	6	3	4	3	2	3	3	3	2	5	3	4	4	4	4	4	3	4	4	3	4	26	18	31	38	37	30
+144	47	male	married first time	yes	some additional training	work	no	0	3	1	2	3	4	4	2	3	1	3	4	2	2	5	4	1	2	3	4	3	1	2	4	4	3	3	2	4	1	4	3	5	4	5	3	3	2	1	4	4	4	3	2	4	3	3	5	4	4	4	4	3	4	4	3	4	3	4	17	17	36	37	33	29
+145	48	male	married first time	yes	some additional training	work	no	0	3	5	4	5	3	4	3	4	4	4	3	4	4	5	2	1	4	1	5	5	2	3	1	1	4	4	1	4	1	5	4	1	1	4	4	4	5	6	3	1	3	2	2	2	3	2	5	2	4	4	4	4	4	4	3	4	3	4	24	26	25	38	43	12
+146	18	male	steady relationship	no	high school	work	yes	35	2	1	3	2	3	3	2	2	1	3	2	2	3	3	2	1	2	2	3	4	1	2	4	3	3	4	1	1	1	2	3	3	3	3	4	2	3	1	4	4	4	3	4	3	2	3	4	4	3	3	3	3	2	3	2	3	1	2	14	15	35	25	27	21
+147	39	female	married first time	yes	undergraduate degree	work	yes	20	2	4	3	4	2	4	2	3	3	3	2	4	3	4	4	2	5	1	4	3	3	3	2	3	2	4	2	2	1	3	4	4	4	3	3	3	3	2	2	2	3	2	3	3	2	2	3	2	3	3	3	3	4	3	2	2	3	3	19	20	24	29	34	26
+148	57	male	remarried	no	high school	money/finances	yes	160	3	4	5	5	5	5	4	4	4	4	4	4	4	5	1	1	4	2	4	4	1	4	1	2	5	5	1	4	2	5	5	2	2	3	2	6	5	7	3	1	1	2	2	1	1	2	4	2	4	4	4	3	4	4	4	4	4	4	27	28	19	39	45	15
+149	34	male	living with partner	no	some additional training	work	yes	210	4	2	3	3	4	4	4	4	4	4	4	2	1	4	3	3	5	1	4	5	2	3	1	5	4	3	3	3	3	4	3	4	4	4	4	6	4	6	4	3	5	3	2	2	2	2	3	3	4	4	4	4	4	4	3	4	3	2	20	23	29	36	38	29
+150	41	female	divorced	yes	some additional training	family	no	0	3	5	5	5	5	5	4	4	4	4	4	1	2	4	4	2	1	1	4	5	3	5	2	4	4	3	2	5	2	5	4	3	3	2	3	6	4	3	3	3	5	2	2	4	3	3	3	4	4	4	4	4	4	3	4	1	4	4	28	23	32	36	40	26
+151	30	female	married first time	yes	some secondary school	money/finances	yes	10	1	4	3	3	1	3	2	3	1	1	1	4	3	3	1	1	2	1	3	5	1	3	1	1	2	2	1	3	1	5	4	1	1	2	2	4	2	1	2	3	3	2	3	3	2	4	2	2	4	4	4	3	2	4	3	4	2	4	15	15	26	34	32	10
+152	19	female	steady relationship	no	high school	work	no	0	1	3	2	3	4	3	3	4	2	3	4	2	1	3	4	2	1	1	2	1	3	2	3	3	3	3	4	2	3	3	2	2	1	5	3	5	5	5	4	3	4	3	3	3	3	3	4	4	4	3	4	3	3	2	3	1	2	2	16	19	34	27	22	26
+153	26	male	living with partner	no	some additional training	friendships	no	0	2	3	3	3	3	3	3	3	2	3	3	2	3	3	2	1	1	1	3	3	1	3	1	3	3	4	1	3	1	3	3	1	1	4	4	3	3	3	3	3	4	3	2	3	3	3	3	2	3	4	4	4	2	3	3	4	4	4	17	19	29	35	29	13
+154	46	male	married first time	yes	undergraduate degree	work	no	0	4	5	5	5	5	5	4	4	4	4	4	4	4	4	1	1	1	1	4	5	1	4	1	1	5	5	1	4	1	5	4	1	1	6	6	6	7	6	2	2	1	1	2	2	2	1	2	2	4	4	4	4	3	4	4	4	4	4	29	28	17	39	41	10
+155	58	female	married first time	no	undergraduate degree	life in general	no	0	4	5	4	4	5	5	3	3	4	4	4	4	4	4	2	1	3	1	2	4	2	3	1	2	2	4	1	3	2	4	3	2	1	4	6	4	6	4	3	3	4	2	3	4	3	2	4	3	3	3	4	4	4	3	4	3	3	4	27	26	31	35	32	15
+156	44	female	widowed	yes	some additional training	work	no	0	4	5	5	5	5	5	3	3	1	4	3	4	4	3	1	1	2	1	3	3	1	2	1	1	4	3	1	3	1	4	4	1	1	7	6	6	5	5	2	2	3	2	1	3	2	2	2	1	4	4	4	3	4	4	4	3	4	3	29	22	20	37	31	10
+157	30	female	married first time	no	high school	money/finances	no	0	2	3	5	4	3	4	2	3	3	3	3	2	3	3	4	4	5	1	3	2	5	2	3	4	2	2	3	5	1	2	3	3	2	4	5	5	6	5	5	4	4	3	4	3	3	3	4	3	4	4	3	3	3	3	2	2	1	2	21	19	36	27	29	30
+158	21	male	steady relationship	no	high school	work	yes	3	3	4	4	4	5	5	3	4	3	3	4	3	2	4	2	2	4	2	4	5	2	4	3	3	4	3	2	4	3	4	3	4	4	4	7	5	6	5	4	4	4	3	2	3	2	3	4	3	4	4	4	4	4	4	4	3	3	4	25	22	32	38	39	27
+159	22	female	single	no	high school	work	yes	1	5	4	4	4	3	3	3	3	2	4	2	2	1	3	4	2	4	4	3	4	3	4	4	4	2	3	2	3	4	3	3	2	2	4	6	5	5	3	3	4	3	3	3	3	3	3	4	3	3	3	3	2	3	2	2	1	2	2	23	17	32	23	32	31
+160	35	female	married first time	yes	graduate degree	work	yes	50	3	5	4	4	5	4	2	2	2	3	3	3	2	5	3	2	4	1	5	4	3	4	3	3	4	3	1	4	2	5	3	3	2	4	4	6	6	4	3	3	5	2	2	4	2	3	4	3	4	4	4	3	4	4	4	4	2	2	25	17	31	35	41	23
+161	46	male	separated	no	some additional training	friendships	no	0	5	5	4	5	5	4	3	4	3	3	3	3	3	4	2	1	1	1	3	4	1	3	2	2	3	3	1	3	2	3	4	1	1	4	6	6	6	4	3	3	3	3	3	3	3	3	3	3	4	4	4	4	4	4	4	4	2	2	28	22	30	36	31	14
+162	22	female	single	no	undergraduate degree	work	yes	5	5	5	4	5	5	5	1	4	4	4	4	4	4	5	2	1	4	1	5	4	1	4	2	2	4	3	1	5	1	5	4	1	1	6	6	6	5	6	2	3	2	2	2	1	2	1	2	1	4	4	4	4	4	4	4	4	3	4	29	25	18	39	43	13
+163	27	female	married first time	no	undergraduate degree	work	no	0	3	4	4	4	4	3	4	3	4	4	4	4	4	5	2	1	3	1	5	4	1	3	1	2	5	5	1	4	1	5	5	2	1	5	6	6	6	6	3	2	3	2	3	3	2	2	2	2	4	4	4	3	4	3	3	2	4	4	22	27	24	35	44	13
+164	20	female	single	no	high school	health/illness	yes	125	2	2	3	4	4	3	3	4	3	3	3	4	1	2	2	4	2	1	5	3	2	4	4	5	2	4	2	1	1	2	3	4	3	3	5	2	3	3	2	4	5	3	3	2	2	3	3	1	2	4	3	4	2	2	1	2	1	1	18	21	28	22	28	28
+165	42	female	separated	no	graduate degree	money/finances	yes	7	5	4	2	4	3	5	2	4	3	1	4	1	1	4	1	1	4	1	5	5	1	4	3	1	3	3	2	2	1	3	5	1	1	1	4	1	7	1	3	3	3	2	3	3	2	3	3	3	4	4	4	4	1	4	3	1	2	1	23	16	28	28	38	13
+166	25	female	married first time	no	some additional training	work	yes	3	3	4	4	4	5	4	3	4	4	4	4	3	2	5	1	1	3	1	4	4	1	4	1	1	4	4	1	4	1	4	4	1	1	6	6	6	6	5	2	3	3	2	2	3	2	2	3	2	4	4	4	4	4	4	4	4	3	3	24	24	24	38	40	10
+167	31	female	married first time	yes	undergraduate degree	children	no	0	3	5	4	5	4	5	4	4	4	4	4	3	4	4	2	3	5	1	4	3	2	5	1	2	4	4	2	5	1	4	4	2	1	6	6	7	6	7	1	1	3	1	2	3	2	3	1	2	4	4	4	4	4	3	4	3	4	3	26	27	19	37	42	17
+168	60	female	divorced	no	some additional training	work	yes	150	3	4	3	2	4	4	2	3	4	2	4	3	1	4	2	1	2	1	3	3	2	3	1	1	1	4	1	3	1	3	3	1	1	3	1	2	3	2	2	2	2	2	3	1	3	2	2	2	3	4	4	4	3	3	2	1	3	4	20	19	21	31	29	12
+169	24	female	single	no	high school	work	no	0	4	4	4	4	2	4	3	3	3	3	2	2	2	3	3	1	3	1	4	4	2	3	1	1	3	3	1	3	1	3	3	1	1	4	4	3	3	4	3	3	2	3	3	3	3	4	3	2	4	3	2	3	2	3	3	3	3	3	22	18	29	29	32	13
+170	36	female	married first time	yes	some additional training	children	no	0	2	4	3	4	4	5	2	3	3	3	3	2	3	3	4	2	2	2	3	4	4	3	4	4	3	3	2	3	3	3	3	3	3	4	4	5	5	5	3	3	4	3	3	4	3	3	4	3	3	3	4	3	4	3	3	2	3	4	22	19	33	32	30	31
+171	36	male	single	no	graduate degree	life in general	no	0	4	3	3	4	5	5	3	4	4	4	4	4	3	3	2	1	3	1	3	2	2	3	3	2	2	2	2	2	1	3	2	1	2	4	4	4	4	4	3	2	2	2	2	2	3	3	3	2	4	4	4	4	4	4	4	4	4	4	24	26	24	40	25	17
+172	24	female	steady relationship	no	high school	money/finances	yes	25	1	4	3	2	3	4	3	3	3	3	3	4	3	4	3	2	2	1	3	2	2	3	2	2	3	3	2	3	1	2	3	4	4	4	4	5	5	5	3	3	3	2	2	2	2	2	3	2	4	4	4	3	4	4	4	4	3	4	17	22	24	38	28	23
+173	47	male	remarried	yes	graduate degree	work	no	0	4	4	4	4	3	4	4	4	4	4	4	4	4	4	1	1	2	1	3	4	1	3	1	3	3	3	1	3	1	3	4	1	1	5	5	5	6	3	1	2	2	1	2	2	2	2	3	2	4	4	4	4	4	3	3	2	2	4	23	28	19	34	32	12
+174	34	female	single	yes	some additional training	money/finances	yes		3	4	4	3	3	3	3	4	3	3	3	3	4	4	3	1	3	1	4	4	1	3	1	3	2	4	1	5	1	4	4	1	1	3	3	4	4	4	3	3	4	3	3	3	2	3	3	2	4	4	4	3	4	3	3	2	4	4	20	23	29	35	37	14
+175	54	male	married first time	yes	some additional training	work	no	0	3	3	4	3	3	4	3	3	3	3	3	3	3	4	2	1	3	1	3	3	1	1	1	1	2	3	1	3	1	3	3	2	1	3	3	4	4	4	3	2	3	3	3	2	3	2	3	2	4	4	4	3	3	4	4	3	4	4	20	21	26	37	28	12
+176	20	male	single	yes	high school	work	no	0	3	4	4	4	4	4	3	4	4	4	3	4	3	5	1	1	3	1	5	4	1	5	1	2	4	4	1	2	1	4	4	1	1	3	4	3	3	6	3	2	2	2	3	3	2	3	3	2	4	4	3	4	3	3	3	4	4	4	23	25	25	36	40	11
+177	55	male	married first time	no	graduate degree	life in general	no	0	4	3	4	3	4	5	3	4	2	1	4	4	4	5	1	1	4	1	4	5	1	4	1	1	4	5	1	2	1	4	4	1	1	5	5	5	5	4	3	2	1	2	2	1	2	1	3	1	2	4	4	4	4	4	4	4	4	4	23	22	18	38	41	10
+178	30	male	married first time	yes	some additional training	money/finances	no	0	3	3	4	4	4	4	3	4	3	3	2	2	2	3	3	1	3	1	3	5	4	4	3	4	3	3	2	3	1	3	2	3	1	3	2	2	6	4	4	3	4	3	3	3	3	3	5	4	4	4	4	4	1	2	2	2	2	3	22	19	35	28	32	23
+179	41	female	living with partner	no	undergraduate degree		no	0	5	3	3	3	4	3	1	4	3	4	4	2	3	2	4	2	1	1	3	3	4	3	3	3	2	3	2	2	1	2	3	4	4	2	3	1	2	2	4	3	5	3	3	3	4	3	4	2	4	4	2	3	4	3	1	4	2	3	21	21	34	30	24	28
+180	23	female	single	no	high school	work	no	0	4	5	5	5	5	5	4	4	4	4	3	4	4	4	1	1	2	2	4	3	1	4	1	2	5	4	1	4	3	5	5	2	1	6	7	6	6	7	2	1	2	1	1	4	2	1	3	1	4	4	4	4	4	4	4	2	4	4	29	27	18	38	40	15
+181	22	male	single	no	some additional training	family	no	0	3	4	4	4	1	4	3	4	4	4	4	3	3	4	2	1	5	2	4	4	2	4	4	3	4	4	2	5	3	5	4	3	1	2	3	3	1	7	2	3	3	1	2	3	3	3	3	3	4	4	4	4	4	3	3	4	2	3	20	25	26	35	43	23
+182	44	female	married first time	yes	undergraduate degree	work	no	0	4	2	4	3	3	3	1	4	3	3	4	3	3	5	3	2	4	1	5	5	2	5	3	3	3	5	2	3	2	4	5	2	1	5	5	5	5	4	3	4	3	1	2	2	2	2	3	4	4	4	4	1	2	3	2	2	3	3	19	21	26	28	44	21
+183	21	female	steady relationship	no	undergraduate degree	work	no	0	4	4	4	4	3	4	3	4	3	1	3	4	4	4	1	1	5	1	5	4	3	4	3	3	5	4	1	5	2	4	2	3	3	5	5	6	6	5	2	2	4	1	2	2	2	2	3	2	4	4	4	4	3	3	3	4	2	3	23	22	22	34	42	21
+184	23	female	single	no	some additional training	work	no	0	2	3	5	3	3	3	3	4	2	3	4	3	2	3	4	1	3	1	5	5	3	5	2	4	2	2	1	5	1	4	5	1	1	4	6	6	6	5	3	4	3	2	3	3	3	3	4	3	4	4	4	4	4	3	3	1	1	4	19	21	31	32	39	19
+185	66	male	married first time	no	some additional training	health/illness	no	0	1	5	5	5	4	4	4	4	4	4	4	4	3	4	1	1	4	1	5	5	1	5	1	1	3	4	1	3	1	4	5	1	1	7	7	7	7	7	3	1	3	2	2	2	1	1	2	2	4	4	4	4	4	4	4	4	4	4	24	27	19	40	42	10
+186	39	male	married first time	yes	some additional training	money/finances	no	0	1	5	4	4	3	3	4	1	3	4	4	3	3	5	2	1	4	1	4	5	1	4	3	3	5	5	1	4	1	4	5	1	2	5	6	5	6	2	3	2	3	2	3	1	2	2	3	2	4	4	4	4	1	4	3	4	4	4	20	22	23	36	45	16
+187	50	female	separated	no	undergraduate degree	children	no	0	2	3	3	3	2	3	3	3	2	3	4	4	4	4	3	1	2	1	3	4	1	5	2	2	1	1	1	2	1	1	3	1	1	3	1	5	5	3	3	3	3	2	2	2	2	2	4	3	4	4	4	4	4	4	4	4	4	4	16	23	26	40	26	14
+188	51	male	remarried	yes	graduate degree	health/illness	yes	80	3	5	3	3	4	4	2	3	2	3	2	3	2	1	4	4	5	1	4	3	4	3	3	4	1	4	3	2	1	1	3	3	2	3	3	6	6	1	3	3	4	3	3	5	3	4	3	4	4	4	4	4	4	3	3	3	2	4	22	17	35	35	27	29
+189	49	female	steady relationship	yes	graduate degree	health/illness	no	0	3	4	4	4	4	4	3	3	3	2	3	4	4	5	2	2	2	1	4	5	2	5	1	1	4	5	2	3	1	4	5	1	1	7	7	7	7	3	3	3	3	2	2	2	3	2	3	3	4	4	4	4	4	4	4	4	4	4	23	22	26	40	42	14
+190	51	female	steady relationship	no	high school	work	no	0	3	5	3	5	5	3	4	4	4	3	3	4	4	4	2	1	2	1	4	3	1	3	1	1	2	4	1	2	1	4	4	1	1	3	4	4	5	3	2	2	3	2	3	4	2	3	3	2	4	4	4	3	4	3	4	4	3	4	24	26	26	37	32	11
+191	38	female	married first time	yes	graduate degree	children	no	0	3	5	4	4	5	5	4	4	4	4	4	4	4	4	2	1	4	1	2	4	1	4	1	2	3	3	1	3	1	3	3	1	1	5	7	5	6	5	3	2	2	2	2	2	2	1	2	1	3	4	4	4	4	3	2	2	2	2	26	28	19	30	33	12
+192	50	male	divorced	no	undergraduate degree	work	no	0	2	3	2	3	2	3	3	3	2	3	2	2	2	4	3	2	2	1	3	3	1	3	2	3	1	3	2	2	1	2	3	3	2	2	1	4	3	2	3	3	4	3	3	4	3	3	3	4	4	4	4	3	4	3	3	2	3	3	15	17	33	33	26	20
+193	49	male	married first time	yes	undergraduate degree	work	no	0	3	5	4	5	5	5	4	3	4	4	4	4	4	5	3	1	3	1	4	5	1	4	1	1	4	5	1	3	1	4	5	1	1	4	4	4	6	5	3	2	2	1	2	3	2	3	3	3	4	4	4	4	3	4	3	2	4	4	27	27	24	36	42	12
+194	25	female	living with partner	no	graduate degree	money/finances	yes	140	3	3	4	4	5	5	3	4	4	4	4	3	2	4	5	2	3	4	4	3	4	3	1	3	2	4	1	3	4	3	4	4	1	5	4	4	3	2	5	3	4	2	2	4	2	2	3	2	3	3	3	1	4	3	3	2	3	4	24	24	29	29	33	29
+195	47	male	married first time	yes	undergraduate degree	work	no	0	3	3	2	3	3	2	3	3	3	3	3	3	1	3	3	2	4	1	4	3	3	4	2	2	3	3	3	2	1	2	2	3	2	3	3	5	5	4	3	2	3	2	2	2	3	1	2	3	4	4	4	4	4	3	3	4	3	3	16	19	23	36	30	22
+196	36	female	married first time	yes	undergraduate degree	work	no	0	3	3	5	3	4	4	3	4	3	3	4	3	3	4	3	3	4	1	5	2	3	4	1	3	3	4	2	3	2	4	4	4	4	6	6	6	6	6	3	3	5	2	2	4	3	3	4	4	4	4	4	4	4	3	3	2	4	4	22	23	33	36	37	26
+197	52	female	married first time	yes	primary school	health/illness	no	0	5	2	4	4	1	4	2	1	2	1	1	1	1	3	4	2	3	1	3	2	5	3	1	3	1	3	1	2	1	3	1	2	2	1	3	1	3	1	2	3	4	3	5	3	4	4	3	2	4	4	2	4	1	4	3	4	4	4	20	9	33	34	24	22
+198	25	male	single	no	undergraduate degree	work	no	0	4	3	4	2	4	4	3	4	3	1	3	2	2	3	3	1	3	2	3	2	1	2	1	3	3	2	1	4	2	3	2	2	1	4	4	3	3	3	3	3	3	4	3	3	3	3	2	4	4	3	3	3	4	3	3	1	1	2	21	18	31	27	27	17
+199	22	male	single	no	some additional training	money/finances	yes	60	1	3	3	3	2	3	3	4	4	4	4	2	4	5	3	2	1	1	4	5	1	1	3	3	4	2	1	2	1	3	2	3	3	2	2	2	3	1	3	3	4	2	3	4	3	4	5	3	4	4	3	4	3	2	2	1	1	1	15	25	34	25	29	21
+200	51	female	married first time	no	undergraduate degree	family	no	0	5	5	5	5	5	5	4	4	3	4	4	1	3	5	3	1	5	1	5	5	1	5	1	1	2	3	1	1	1	3	4	1	1	6	6	6	7	7	1	1	2	1	2	3	2	2	1	3	4	4	4	4	4	4	4	4	4	4	30	23	18	40	38	12
+201	42	male	married first time	yes	undergraduate degree	money/finances	no	0	4	3	2	3	4	3	2	3	2	3	3	2	3	4	2	1	2	2	3	2	1	3	1	1	4	3	1	4	2	3	3	2	2	3	2	4	3	3	3	3	3	2	3	4	3	3	3	3	4	4	2	3	4	3	2	2	1	2	19	18	30	27	31	15
+202	41	female	steady relationship	no	undergraduate degree	work	yes	7	3	4	3	5	5	4	3	3	3	4	4	4	4	5	2	1	3	2	4	4	1	3	2	2	4	4	1	4	2	5	4	2	1	6	6	6	6	7	3	2	3	1	2	2	2	1	2	1	3	3	4	4	4	4	4	4	4	4	24	25	19	38	40	16
+203	43	male	married first time	yes	some additional training	work	no	0	4	3	4	2	3	5	2	3	2	1	4	2	2	5	2	1	3	1	3	3	1	3	2	3	3	3	1	2	1	4	2	1	1	5	5	2	2	1	3	3	2	3	3	3	2	4	4	2	3	3	3	3	3	3	3	3	3	4	21	16	29	31	31	14
+204	35	female	remarried	yes	some secondary school	life in general	no	0	3	4	4	5	4	4	3	4	3	3	3	2	2	4	5	2	4	1	4	4	4	4	2	3	3	3	1	3	4	4	3	3	3	3	3	4	4	3	3	3	4	2	3	4	3	3	3	4	3	4	3	4	4	4	4	3	4	4	24	20	32	37	36	28
+205	28	female	married first time	no	some secondary school	work	no	0	3	2	2	3	3	3	2	3	1	2	3	3	3	3	4	4	3	1	3	2	2	2	2	2	2	3	4	3	2	3	2	3	4	6	5	6	6	6	3	4	5	3	2	3	3	3	4	4	3	4	2	3	1	3	3	2	2	2	16	17	34	25	26	28
+206	28	female	married first time	yes	high school	family	no	0	5	3	4	3	2	4	4	3	1	2	4	4	3	4	3	2	5	1	5	5	1	3	1	1	3	3	1	4	1	4	4	1	1	6	6	7	7	7	2	3	2	2	3	3	3	3	3	2	4	4	4	4	4	3	3	1	3	2	21	21	26	32	40	13
+207	28	female	married first time	yes	graduate degree	spouse/partner	no	0	3	3	5	5	4	5	3	4	2	3	4	4	3	4	2	1	4	1	5	3	1	3	1	2	4	5	1	3	1	4	3	1	1	2	2	2	5	3	3	3	2	2	3	3	2	3	3	2	4	4	4	3	4	3	3	3	3	4	25	23	26	35	38	12
+208	41	male	married first time	yes	high school	life in general	no	0	3	5	5	2	4	4	4	4	4	3	4	4	4	5	1	2	4	1	4	5	1	3	1	3	4	5	2	5	1	5	4	2	1	1	5	4	7	4	3	2	2	2	2	2	2	2	3	2	4	3	4	4	3	4	4	4	4	4	23	27	22	38	44	15
+209	40	male	married first time	yes	undergraduate degree	friendships	no	0	2	2	3	4	3	5	2	2	3	3	2	2	2	5	3	1	4	2	3	5	3	3	3	3	2	4	1	4	2	4	4	3	3	2	2	2	2	2	3	2	2	3	3	2	3	3	2	1	4	4	4	4	4	3	4	4	2	3	19	16	24	36	38	24
+210	27	female	single	no	undergraduate degree	lack of time	no	0	4	5	4	4	4	4	3	4	3	3	4	3	3	4	2	1	4	1	5	5	2	4	1	3	5	3	1	4	2	4	4	1	1	5	5	5	5	5	3	4	3	2	2	2	3	2	3	2	4	4	4	4	4	4	4	4	4	4	25	23	26	40	42	15
+211	23	male	living with partner	no	undergraduate degree	work	no	0	3	4	4	4	3	5	3	3	3	3	4	3	3	4	3	2	4	1	4	3	3	2	1	3	4	4	3	4	1	4	4	3	3	5	5	5	4	5	2	3	3	2	2	2	3	2	2	2	4	4	4	4	4	3	4	3	3	4	23	22	23	37	37	23
+212	45	female	married first time	yes	undergraduate degree	work	no	0	5	5	5	5	5	5	3	4	4	4	4	4	4	5	2	1	3	1	5	5	3	4	1	3	4	4	1	3	1	4	4	3	1	7	7	7	7	7	3	2	4	2	1	4	3	2	4	3	4	4	4	4	4	4	4	4	4	4	30	27	28	40	41	17
+213	48	female	remarried	no	some secondary school	work	no	0	4	3	5	5	5	5	4	4	4	4	4	4	3	4	1	1	4	1	5	5	2	4	1	2	3	3	1	3	1	5	5	1	1	5	4	6	6	6	3	3	3	1	2	3	2	2	3	2	4	4	4	4	4	4	4	4	4	4	27	27	24	40	41	12
+214	33	male	married first time	yes	some additional training	work	yes	20	4	5	4	5	5	5	4	4	4	3	4	2	2	2	3	1	4	3	5	3	3	5	2	2	4	5	1	4	4	5	4	3	2	2	2	3	3	2	3	3	3	2	2	3	2	1	5	3	3	4	4	3	4	4	2	3	3	3	28	23	27	33	41	24
+215	27	female	married first time	no	some secondary school	work	no	0	5	3	4	2	2	5	1	4	1	1	3	2	2	5	3	3	4	1	5	5	3	3	2	2	3	3	3	3	2	5	4	2	2	6	6	6	6	3	3	2	2	2	2	2	3	2	3	3	4	4	1	3	4	4	4	4	4	1	21	14	24	33	40	23
+216	22	female	single	no	undergraduate degree	work	no	0	5	5	5	5	5	5	4	4	4	4	4	4	3	4	2	3	4	1	4	4	2	4	2	2	3	4	2	4	1	3	4	3	2	5	7	7	7	7	2	3	3	1	2	3	1	1	3	2	4	4	4	1	4	4	4	3	4	2	30	27	21	34	38	20
+217	31	male	steady relationship	no	undergraduate degree	work	no	0	3	3	2	3	3	3	3	3	2	3	4	2	2	3	2	2	2	1	3	3	2	3	1	3	3	2	2	3	2	3	2	2	2	4	4	3	4	3	3	3	4	3	3	3	3	3	3	4	3	3	2	3	3	2	2	2	2	2	17	19	32	24	27	19
+218	49	female	divorced	no	high school	work	no	0	2	3	3	2	3	3	2	3	4	4	3	3	3	3	4	1	2	2	4	3	4	4	4	4	2	2	2	2	3	2	3	2	2	2	2	2	3	3	3	3	4	2	4	3	4	3	4	4	3	3	2	3	2	3	3	1	1	3	16	22	34	24	27	28
+219	34	male	married first time	yes	some additional training	work	yes	20	3	5	4	5	2	5	4	4	4	4	4	4	2	5	3	2	4	2	5	4	2	4	1	3	4	4	2	5	2	4	4	2	1	5	4	4	4	3	3	3	4	3	1	2	2	2	4	2	4	4	4	4	4	4	4	4	3	4	24	26	26	39	43	20
+220	33	female	married first time	yes	high school	children	yes	70	4	3	5	5	1	1	3	3	3	2	3	1	1	3	2	2	4	2	2	2	2	2	2	3	2	2	2	3	2	2	2	4	4	4	5	6	6	6	4	3	3	3	3	3	3	3	4	3	3	3	4	3	4	2	2	1	2	2	19	16	32	26	24	25
+221	24	female	married first time	no	some additional training	work	no	0	5	5	5	5	2	4	4	4	3	3	4	4	4	4	1	1	3	1	4	4	1	2	1	1	3	3	1	5	1	4	4	1	1	7	7	7	7	7	1	1	3	2	2	2	3	2	2	2	4	4	4	4	4	4	4	3	4	4	26	26	20	39	36	10
+222	56	male	married first time	no	some secondary school	money/finances	no	0	3	3	4	4	2	4	3	4	4	4	3	4	3	3	2	1	4	1	3	3	2	3	2	2	3	3	1	4	1	4	3	2	2	6	6	6	6	6	2	2	2	2	2	2	2	2	3	1	4	4	4	4	4	3	3	3	3	4	20	25	20	36	33	16
+223	23	female	single	yes	undergraduate degree	work	no	0	4	3	4	4	4	4	3	3	3	3	3	3	3	3	4	1	3	1	3	2	2	3	3	4	1	2	1	2	1	2	3	3	4	5	5	4	6	6	4	2	4	2	1	4	3	2	5	3	4	3	4	3	3	3	3	4	3	4	23	21	30	34	24	24
+224	48	female	married first time	yes	some additional training	family	no	0	3	3	3	3	5	4	2	4	2	1	3	1	1	4	4	2	3	1	5	5	4	3	2	2	2	2	2	4	2	4	3	3	5	4	3	2	3	2	3	4	5	2	3	3	3	2	5	3	4	4	4	4	4	4	4	1	4	4	21	14	33	37	35	27
+225	48	male	married first time	yes	some additional training		no	0	4	4	4	2	2	4	2	3	3	3	3	4	4	4	1	1	4	1	3	4	1	4	1	1	3	3	1	4	1	3	4	1	1	5	5	5	5	4	2	2	2	2	3	1	2	2	4	3	4	4	3	4	4	4	3	4	4	4	20	22	23	38	36	10
+226	25	female	living with partner	no	high school	work	yes	140	4	4	4	4	4	5	3	4	3	4	4	3	4	4	2	1	3	1	3	3	2	5	1	2	4	4	1	5	1	4	4	2	2	6	6	6	4	7	2	2	1	2	2	2	2	2	2	2	4	4	4	3	4	4	4	4	1	1	25	25	19	33	39	15
+227	65	male	married first time	yes	some additional training	family	no	0	3	2	4	4	3	4	4	2	2	2	3	3	3	4	1	1	4	1	4	4	1	3	1	1	3	4	1	3	1	4	4	1	1	3	5	5	3	2	2	2	2	2	2	2	2	2	2	2	3	3	2	3	2	3	3	3	3	4	20	19	20	29	37	10
+228	32	male	married first time	yes	undergraduate degree	children	no	0	3	4	4	4	4	4	3	4	4	3	3	4	3	4	2	1	4	1	4	5	1	5	2	2	4	4	1	4	2	4	5	1	1	6	6	6	6	5	3	2	2	2	2	2	2	1	3	2	3	4	4	4	3	4	4	4	4	3	23	24	21	37	43	14
+229	42	female	married first time	yes	some secondary school	lack of time	no	0	3	3	3	3	2	4	3	1	4	4	1	4	4	4	1	2	4	1	4	3	2	4	1	2	3	3	2	4	1	4	4	2	1	7	7	7	7	7	1	5	2	1	1	2	2	1	2	2	4	4	4	4	1	4	4	4	4	1	18	21	19	34	37	15
+230	49	female	married first time	yes	some secondary school	children	no	0	3	5	5	5	5	5	3	3	4	4	4	4	3	4	2	1	4	2	4	4	1	4	1	1	3	4	1	4	1	4	4	1	1	6	6	6	6	6	3	3	3	2	2	3	2	2	3	2	4	4	4	4	4	4	4	4	4	4	28	25	25	40	39	12
+231	24	male	single	no	high school	work	no	0	5	2	4	4	3	4	3	4	3	3	2	3	2	4	3	1	2	2	3	3	2	2	1	2	2	3	1	4	1	2	2	2	1	6	7	5	4	3	4	3	2	2	3	2	3	4	3	3	4	4	4	4	4	3	3	2	3	3	22	20	29	34	27	16
+232	21	female	single	no	undergraduate degree	work	no	0	4	4	4	4	4	3	3	3	3	3	3	2	1	3	3	1	3	1	4	2	3	3	1	3	2	3	1	2	1	3	2	1	1	3	3	3	3	3	3	3	3	3	3	3	3	3	3	2	4	4	4	3	4	2	4	3	4	3	23	18	29	35	27	16
+233	22	male	steady relationship	no	undergraduate degree	work	no	0	4	5	4	5	5	5	4	4	4	4	4	4	4	5	5	1	4	1	2	5	1	5	2	3	2	5	1	5	2	4	3	2	1	6	6	6	6	2	4	2	4	1	1	3	2	1	1	2	4	4	4	4	4	4	4	3	4	4	28	28	21	39	40	19
+234	33	male	married first time	yes	high school	family	no	0	3	4	4	3	3	5	3	2	3	2	4	4	3	3	2	1	2	1	2	3	2	4	2	3	1	2	1	3	1	4	2	2	1	5	6	5	7	2	3	3	3	2	2	2	2	3	4	2	3	4	4	3	3	3	3	3	2	4	22	21	26	32	26	16
+235	50	male	remarried	yes	graduate degree	money/finances	no	0	4	4	4	5	5	5	4	3	4	4	4	3	4	5	4	2	3	1	4	3	3	4	4	3	4	4	2	3	1	4	5	3	1	7	6	6	7	6	2	3	3	2	2	3	3	2	3	2	4	4	4	4	4	4	4	4	1	2	27	26	25	35	39	24
+236	26	female	living with partner	no	undergraduate degree	work	no	0	5	5	4	4	4	5	4	4	4	4	4	2	2	4	4	3	2	2	4	5	4	4	2	3	1	4	2	3	3	2	2	3	2	5	5	6	6	3	2	3	5	2	2	5	3	3	5	4	4	4	4	4	4	4	4	3	2	2	27	24	34	35	31	28
+237	45	male	married first time	yes	some additional training	work	no	0	4	4	4	4	5	5	1	3	3	3	4	3	3	3	3	2	1	2	3	3	2	3	2	2	3	2	1	4	1	3	2	1	1	3	5	4	3	2	2	4	3	3	2	3	3	3	4	3	4	4	2	3	2	4	2	3	3	4	26	20	30	31	27	17
+238	40	male	married first time	no	high school	work	no	0	2	3	4	4	2	4	3	3	3	4	4	2	4	4	2	1	3	1	4	5	2	3	1	1	3	5	1	4	1	3	2	2	1	5	4	5	2	1	2	1	2	2	2	3	3	2	1	1	3	3	4	3	1	3	3	3	3	4	19	23	19	30	36	13
+239	61	female	married first time	no	some secondary school	life in general	yes		5	5	5	5	5	5	1	3	4	3	4	4	4	5	1	1	3	1	4	4	1	3	1	1	4	4	1	3	1	3	3	1	1	5	6	7	7	7	3	3	2	2	3	2	1	2	1	2	4	4	4	4	4	4	4	4	4	4	30	23	21	40	36	10
+240	22	male	single	no	undergraduate degree	work	no	0	4	4	4	3	2	3	2	4	3	3	4	4	4	5	1	2	5	1	3	5	1	4	1	2	3	5	3	5	2	4	4	4	2	6	5	5	5	1	1	2	4	2	2	3	3	2	3	2	4	4	4	3	4	4	4	3	3	4	20	24	24	37	43	19
+241	27	female	single	no	undergraduate degree	friendships	yes	50	3	3	4	4	2	4	3	4	4	4	4	4	3	2	4	2	4	1	2	3	2	2	3	3	2	3	2	2	1	2	3	1	2	2	3	3	2	1	3	2	3	3	3	2	2	3	4	2	4	4	4	1	4	3	4	2	3	3	20	26	27	32	25	21
+242	22	female	single	no	high school	lack of time	no	0	5	5	5	5	5	5	3	2	3	4	1	3	2	4	2	1	4	1	5	4	1	4	1	1	4	3	1	4	1	5	4	1	2	6	7	7	7	7	2	2	3	2	1	2	3	2	2	1	4	4	4	4	4	4	4	4	4	4	30	18	20	40	41	12
+243	49	female	remarried	yes	some additional training	money/finances	no	0	4	4	4	5	5	4	4	4	4	3	4	4	4	4	2	1	4	1	5	5	2	5	2	3	4	3	1	4	1	5	4	1	1	6	6	6	6	6	3	3	3	2	2	2	2	2	2	2	4	4	4	4	4	4	4	4	4	4	26	27	23	40	43	15
+244	36	male	married first time	yes	some additional training	work	no	0	5	4	5	5	5	5	4	4	4	4	4	4	3	5	2	1	4	1	4	4	2	5	2	2	4	4	1	4	1	4	5	3	1	6	6	7	7	7	2	2	3	2	2	2	2	2	3	2	4	4	4	4	4	4	4	4	4	4	29	27	22	40	43	16
+245	46	male	married first time	no	undergraduate degree	work	no	0	3	3	3	4	3	4	1	4	1	1	2	3	2	3	4	2	3	2	4	3	2	2	3	3	2	2	2	3	3	2	3	2	2	4	4	4	3	3	4	4	3	3	4	3	3	3	4	3	2	4	3	3	3	3	3	3	3	4	20	14	34	31	27	25
+246	27	female	steady relationship	no	graduate degree	work	yes	60	1	1	4	5	5	5	1	4	4	4	4	4	4	4	2	1	4	1	4	4	1	5	2	2	4	4	1	4	1	5	4	1	1	5	6	6	6	6	2	2	2	2	2	2	2	2	3	2	4	4	4	4	4	4	4	4	4	4	21	25	21	40	42	13
+247	41	female	remarried	yes	some additional training	work	yes	1	2	2	4	2	2	3	3	4	3	2	4	2	2	3	2	2	4	1	4	3	2	3	2	2	2	2	2	2	1	3	3	3	2	2	2	3	5	3	3	3	3	3	4	3	3	3	4	3	4	4	4	4	4	4	4	4	3	4	15	20	32	39	29	19
+248	21	female	single	no	some additional training	money/finances	yes	50	1	2	2	2	1	2	4	4	3	3	4	2	3	4	4	1	3	1	4	3	3	4	2	3	3	3	2	4	2	3	4	3	4	3	3	4	4	2	4	4	5	2	3	3	2	3	4	3	4	4	4	4	4	3	3	4	3	3	10	23	33	36	35	25
+249	36	male	married first time	yes	graduate degree	money/finances	no	0	4	5	5	5	2	4	4	3	4	4	4	4	3	4	2	1	3	1	3	5	1	5	3	3	4	4	1	4	1	4	4	4	3	6	6	6	6	5	2	2	3	2	2	2	2	2	3	2	4	4	4	4	4	4	4	4	3	4	25	26	22	39	40	20
+250	36	male	married first time	yes	graduate degree	lack of time	no	0	2	4	4	4	3	5	3	4	4	4	4	3	3	3	1	1	3	1	4	4	3	4	3	3	3	4	1	1	1	3	3	2	1	5	6	5	5	5	2	2	3	1	2	3	2	2	2	2	4	4	4	3	2	3	3	4	3	4	22	25	21	34	32	17
+251	40	male	married first time	yes	undergraduate degree	money/finances	no	0	4	5	5	4	2	5	2	4	4	3	4	4	4	5	1	3	4	1	4	3	1	4	1	1	4	5	2	4	1	4	4	3	1	6	6	6	6	7	2	2	3	2	1	2	2	2	2	2	4	4	4	4	4	4	4	4	4	4	25	25	20	40	41	15
+252	35	male	married first time	no	undergraduate degree	work	yes	5	4	4	4	4	4	4	3	4	2	2	3	2	2	4	4	1	2	1	4	4	2	4	4	3	2	3	1	3	1	3	3	1	1	5	5	5	4	6	3	4	4	3	2	4	3	3	3	3	4	4	4	1	4	4	4	3	2	4	24	18	32	34	32	19
+253	54	male	married first time	yes	graduate degree	children	no	0	3	4	3	5	5	3	4	3	2	2	3	4	3	4	1	1	2	1	4	4	1	3	1	2	4	4	1	3	1	3	3	1	1	4	4	4	4	3	3	3	3	2	2	2	2	2	3	2	3	3	4	3	4	3	3	4	3	4	23	21	24	34	34	11
+254	22	male	single	no	high school	work	no	0	3	3	5	3	3	5	4	3	4	4	4	4	2	4	2	1	3	1	4	5	2	4	1	2	3	4	1	3	1	4	4	2	1	5	3	3	2	2	4	3	3	1	3	3	2	2	5	1	4	4	3	3	1	1	2	1	1	1	22	25	27	21	38	14
+255	28	female	steady relationship	no	undergraduate degree	work	no	0	4	3	4	4	4	4	4	4	2	3	4	3	3	4	2	2	3	1	4	4	1	5	1	1	4	4	1	4	1	4	5	2	2	5	5	5	4	2	3	2	3	2	2	3	2	2	3	3	4	4	4	4	4	4	4	4	4	4	23	23	25	40	41	14
+256	25	male	living with partner	no	undergraduate degree	work	no	0	3	4	3	4	4	4	3	3	4	4	4	4	4	4	1	2	4	1	4	3	1	3	1	1	3	4	1	2	1	3	1	2	1	5	5	5	5	5	3	2	3	2	2	1	2	2	5	1	4	4	4	4	4	3	4	4	4	4	22	26	23	39	31	12
+257	37	male	married first time	yes	undergraduate degree	work	no	0	3	2	4	3	2	4	3	4	2	3	4	4	3	4	3	2	4	1	4	5	2	4	1	1	3	4	2	5	2	4	4	4	4	6	6	6	7	5	3	1	2	3	3	1	4	2	3	3	4	4	4	4	4	3	4	3	3	4	18	23	25	37	41	22
+258	63	female	married first time	no	some additional training	health/illness	no	0	3	3	3	3	2	4	2	3	2	2	3	2	3	4	3	1	4	1	3	2	4	2	2	3	3	4	1	3	1	3	3	4	1	4	4	5	6	6	3	4	4	3	3	4	3	3	2	4	3	3	4	3	2	2	2	1	1	2	18	17	33	23	31	21
+259	48	female	married first time	yes	some secondary school	health/illness	no	0	3	3	3	4	4	4	3	3	4	4	4	2	4	3	3	2	5	2	5	1	2	4	1	2	2	2	2	3	3	3	3	2	2	5	3	4	3	5	4	3	3	3	3	3	3	3	4	4	3	3	3	2	2	3	2	3	3	3	21	24	33	27	31	21
+260	21	male	single	no	high school	family	no	0	4	5	4	4	5	5	3	4	4	3	2	4	3	4	2	2	2	1	3	4	1	3	1	1	4	3	2	4	2	3	3	2	1	6	6	7	7	7	3	3	3	3	3	3	2	3	3	3	4	4	2	4	1	3	4	2	3	3	27	23	29	30	33	15
+261	56	male	married first time	yes	some additional training	work	yes	140	4	2	4	3	3	2	2	3	3	3	3	3	2	4	3	2	3	3	3	2	3	3	2	3	3	3	3	2	2	4	4	4	3	5	5	5	5	5	3	4	4	2	3	3	3	3	4	4	4	3	3	3	3	3	2	2	2	2	18	19	33	27	31	28
+262	36	male	married first time	yes	graduate degree	work	no	0	3	5	4	5	5	4	4	3	4	4	3	4	4	4	2	1	4	1	3	5	1	4	1	1	3	5	1	3	1	4	4	1	1	6	6	6	6	4	2	2	2	2	2	2	2	2	3	2	4	4	4	4	4	4	4	4	4	4	26	26	21	40	39	11
+263	37	female	married first time	yes	graduate degree	work	no	0	4	5	4	5	1	1	4	4	1	1	4	2	2	4	3	1	4	1	4	3	1	2	4	4	2	3	1	4	1	4	4	2	2	2	3	3	5	1	4	3	4	2	2	4	3	3	4	3	4	4	4	4	4	4	3	4	4	4	20	18	32	39	34	20
+264	37	male	married first time	yes	high school	work	no	0	4	3	1	4	4	4	2	4	4	4	4	4	4	5	1	1	3	1	5	4	1	4	1	2	3	2	2	4	1	5	4	1	1	6	6	5	5	2	3	2	3	2	3	3	2	2	2	2	4	4	3	3	4	3	2	1	3	2	20	26	24	29	39	12
+265	26	female	single	no	undergraduate degree	work	no	0	3	5	5	4	2	4	3	3	2	4	4	3	3	4	2	1	1	1	4	5	1	4	1	2	4	4	1	3	1	4	4	1	1	5	6	6	6	6	3	3	3	2	2	2	2	2	3	3	4	4	4	4	3	3	3	2	2	3	23	22	25	32	37	12
+266	41	female	married first time	yes	some secondary school	work	no	0	5	5	5	5	5	5	4	4	4	4	4	4	4	4	1	1	5	1	4	4	1	4	2	2	4	3	1	4	1	4	4	1	1	6	5	6	4	6	3	2	3	1	2	2	2	3	3	2	4	4	4	4	4	4	4	4	4	4	30	28	23	40	40	12
+267	49	female	married first time	yes	undergraduate degree	children	yes	10	3	5	4	5	4	3	3	3	2	3	3	3	3	4	2	2	3	1	2	4	2	4	1	2	4	4	2	4	1	4	4	1	1	6	6	6	6	6	3	3	3	3	2	4	3	2	3	2	4	4	4	4	4	4	4	4	2	4	24	20	28	38	37	15
+268	50	female	steady relationship	no	high school	work	yes		3	4	3	5	5	5	3	3	2	3	3	2	2	5	3	3	4	1	4	4	3	3	1	1	3	4	3	4	1	4	4	3	3	4	4	4	4	4	3	3	3	3	3	3	3	3	3	3	3	4	4	4	2	3	3	2	2	3	25	18	30	30	39	22
+269	35	male	married first time	yes	some additional training	work	no	0	4	2	4	3	4	4	4	2	3	3	4	4	2	4	1	2	4	1	4	3	2	4	1	1	4	5	1	3	2	4	4	3	1	5	5	5	6	3	3	4	3	2	2	3	3	2	3	2	4	4	4	4	4	4	3	4	4	4	21	22	27	39	39	15
+270	55	female	separated	no	undergraduate degree	spouse/partner	no	0	3	5	3	4	4	3	3	2	3	2	4	2	2	3	3	4	2	1	4	3	3	3	3	2	2	3	4	3	2	3	4	4	2	1	1	3	4	5	4	4	3	2	3	3	3	3	3	3	3	3	4	2	4	2	2	3	2	4	22	18	31	29	30	28
+271	30	male	single	no	graduate degree	work	no	0	3	3	3	3	3	3	2	3	2	2	3	4	4	5	1	1	3	1	4	3	2	3	1	1	3	3	1	5	1	4	4	1	1	3	3	4	4	4	2	3	2	2	3	2	2	3	2	2	4	4	3	3	4	3	3	2	4	4	18	20	23	34	37	11
+272	26	male	married first time	yes	undergraduate degree	work	no	0	2	5	5	5	5	4	4	4	4	4	4	4	2	3	1	1	3	1	5	5	3	4	1	2	4	4	1	5	3	5	4	4	2	4	5	4	4	2	3	3	3	2	2	3	2	2	3	3	4	4	4	4	4	4	3	2	4	4	26	26	26	37	42	19
+273	48	male	remarried	yes	high school	work	no	0	4	5	4	4	5	5	4	4	3	4	3	4	3	5	4	1	4	1	4	4	2	5	2	2	4	4	1	3	1	5	4	2	1	6	5	7	7	5	4	2	3	1	2	1	4	1	3	1	4	4	4	4	4	4	4	4	4	4	27	25	22	40	42	17
+274	51	male	married first time	yes	undergraduate degree	work	no	0	4	4	5	4	4	5	4	4	3	4	4	4	4	4	1	1	3	1	3	4	2	4	1	2	3	4	1	3	1	4	4	1	1	6	6	6	6	6	2	2	2	2	2	2	2	2	2	2	4	4	4	4	4	4	4	4	3	2	26	27	20	37	36	12
+275	22	female	single	no	high school	money/finances	no	0	1	1	1	1	1	2	3	2	2	1	4	1	3	4	2	1	1	4	4	2	1	3	4	4	4	4	1	4	3	4	4	2	2	2	4	3	3	1	3	4	3	3	4	3	3	3	4	3	4	4	2	2	3	2	1	1	1	1	7	16	33	21	34	24
+276	19	male	single	no	high school	work	no	0	3	3	5	4	2	3	3	3	4	4	3	4	4	4	3	2	2	2	3	4	3	3	1	2	4	3	2	4	2	4	3	2	1	5	6	6	5	3	2	2	2	2	3	2	2	3	3	1	4	4	4	4	4	4	4	4	4	4	20	25	22	40	34	20
+277	30	male	living with partner	no	some additional training	work	yes	40	3	3	4	4	3	4	3	4	3	3	4	3	4	4	2	2	3	1	3	3	1	3	2	2	2	2	2	3	1	2	3	1	2	5	6	3	4	4	3	2	2	2	2	2	3	3	3	2											21	24	24		28	16
+278	28	female	living with partner	yes	undergraduate degree	work	no	0	3	5	3	5	3	5	4	3	2	4	3	4	2	4	2	2	1	1	4	2	4	2	4	3	2	2	1	3	2	3	2	1	1	3	3	4	6	3	3	2	2	2	2	4	3	3	5	3	4	4	3	3	4	4	3	4	2	4	24	22	29	35	25	21
+279	52	male	steady relationship	yes	high school	work	no	0	4	5	5	5	5	5	3	4	4	4	4	4	3	4	2	1	4	2	4	4	1	3	2	2	5	5	2	4	2	4	4	2	2	4	7	4	3	2	3	3	3	2	2	3	2	3	3	3	4	4	4	4	1	4	3	3	4	4	29	26	27	35	41	18
+280	23	male	single	no	undergraduate degree	work	no	0	2	5	4	4	5	4	3	4	3	3	3	4	2	4	1	2	3	3	5	3	1	4	1	2	4	4	3	4	3	4	4	3	2	6	7	7	7	6	3	2	2	2	3	2	2	2	3	2	4	4	4	4	4	4	4	4	3	2	24	22	23	37	39	21
+281	25	female	married first time	no	some additional training	work	yes	80	3	2	4	2	2	4	4	4	4	2	3	4	4	4	2	1	3	1	5	5	2	3	1	2	4	5	1	4	1	3	5	1	1	6	6	7	7	4	2	1	3	2	1	3	2	2	2	4	4	4	4	4	4	4	3	2	3	4	17	25	22	36	41	13
+282	62	female	married first time	yes	some secondary school	spouse/partner	no	0	4	5	5	5	5	5	4	4	4	4	4	4	3	4	2	2	5	1	4	4	1	4	1	3	4	4	2	4	1	4	4	2	1	5	4	3	5	6	1	1	3	2	3	2	2	2	3	2	4	4	4	4	4	4	2	4	3	1	29	27	21	34	41	16
+283	35	female	married first time	yes	some additional training	life in general	no	0	2	4	4	4	5	4	4	4	3	4	4	4	3	4	1	1	4	1	4	4	1	4	2	2	1	3	1	2	1	4	4	1	1	5	4	3	3	6	3	3	3	1	2	4	2	2	3	2	4	4	4	4	4	3	3	3	4	4	23	26	25	37	34	12
+284	36	female	married first time	yes	primary school	children	no	0	4	5	5	5	5	4	2	4	4	3	3	2	4	5	3	1	5	1	4	4	1	4	2	3	4	4	1	4	1	4	4	1	1	7	7	7	7	7	3	2	2	2	2	5	2	1	3	1	4	4	4	4	1	4	4	4	4	4	28	22	23	37	42	15
+285	45	female	remarried	no	high school	work	no	0	2	5	4	5	5	5	4	3	4	4	3	4	4	5	2	1	4	1	4	5	2	4	1	2	2	3	1	4	1	4	4	1	1	5	5	5	5	2	3	2	3	2	2	1	2	1	3	1	4	4	4	4	4	4	4	4	4	4	26	26	20	40	39	13
+286	44	female	married first time	yes	graduate degree	children	no	0	2	5	4	5	5	5	4	3	4	4	3	3	3	4	2	1	2	1	3	4	2	3	1	2	4	3	1	4	1	5	4	2	2	5	6	6	7	5	2	1	3	2	2	3	2	2	1	2	3	4	4	3	4	3	3	4	3	4	26	24	20	35	36	15
+287	37	male	married first time	yes	undergraduate degree	work	no	0	4	4	4	4	4	4	4	3	4	4	4	3	4	4	2	3	2	1	4	2	1	3	2	3	3	2	3	3	1	3	3	3	1	4	4	4	4	2	3	3	4	3	2	3	4	4	3	3	3	3	4	3	4	3	3	3	4	3	24	26	32	33	29	20
+288	24	female	steady relationship	no	undergraduate degree	life in general	no	0	4	5	5	5	5	5	4	4	4	4	4	4	4	4	2	1	4	2	5	5	1	5	3	3	4	4	1	4	3	3	3	1	1	7	7	7	7	7	1	2	3	2	2	2	2	2	4	2	4	4	4	4	4	4	4	4	3	2	29	28	22	37	41	18
+289	56	female	widowed	yes	undergraduate degree	work	yes	90	3	5	4	5	5	5	2	3	4	4	4	4	3	5	2	1	5	1	3	5	1	3	1	2	5	4	1	3	1	5	3	2	3	4	4	4	5	6	3	1	3	2	2	4	2	2	3	3	3	3	4	3	4	2	3	3	4	4	27	24	25	33	41	15
+290	31	male	living with partner	no	graduate degree	work	yes	30	3	4	3	4	5	5	4	1	4	4	4	4	3	4	2	1	4	1	4	4	2	4	2	2	3	4	1	4	2	4	5	3	1	5	5	5	6	2	3	2	3	2	2	2	2	2	2	1	4	4	4	4	4	4	4	4	4	4	24	24	21	40	40	17
+291	44	female	single	no	some secondary school	work	yes	4	3	3	3	3	3	3	2	3	4	4	4	4	2	5	3	2	3	1	4	3	3	3	2	2	3	4	1	3	1	3	3	1	1	4	4	4	4	2	3	2	4	2	3	3	3	3	5	2	4	4	3	4	3	3	3	4	4	4	18	23	30	36	34	17
+292	51	male	remarried	yes	some secondary school	money/finances	no	0	3	4	4	4	3	4	3	3	3	4	4	4	3	3	1	1	3	1	4	4	2	3	1	2	3	4	1	3	1	3	3	1	1	5	4	5	5	5	2	3	2	2	2	2	2	2	2	3	3	4	4	3	3	3	3	4	4	4	22	24	22	35	33	12
+293	45	male	married first time	yes	some additional training	work	no	0	2	4	2	4	4	3	3	2	4	3	3	3	3	4	2	2	5	1	3	3	1	3	2	2	3	4	1	3	1	4	4	2	1	5	5	5	6	2	3	3	3	2	2	3	3	3	3	3	3	3	3	3	3	2	3	2	2	4	19	21	28	28	36	15
+294	50	male	remarried	no	graduate degree	work	no	0	4	5	4	4	5	5	4	3	4	4	4	3	4	4	1	2	3	1	4	4	1	4	1	2	4	4	1	3	1	3	4	2	1	5	6	6	6	4	2	2	3	2	2	2	1	2	3	1	4	4	4	4	4	4	3	4	4	4	27	26	20	39	37	13
+295	50	male	married first time	yes	some additional training	work	yes	280	3	4	3	3	3	3	3	3	3	3	3	3	3	4	3	2	3	1	4	3	1	3	1	2	2	3	1	2	1	3	3	2	1	3	1	5	4	3	3	3	3	2	3	3	3	2	3	3	4	3	3	4	3	4	3	3	3	4	19	21	28	34	30	15
+296	19	female	single	no	some additional training	work			4	3	3	4	4	3	4	4	3	3	4	3	3	4	2	2	4	1	5	4	2	4	2	2	4	4	2	5	2	3	5	2	1	4	4	5	6	6	2	3	3	2	2	2	3	2	3	2	3	4	3	3	4	3	3	3	3	3	21	24	24	32	42	18
+297	60	female	divorced	no	some secondary school		yes		3	2	3	4	3	3	2	3	1	1	4	1	3	4	3	2	2	2	3	3	2	2	2	2	3	4	2	4	3	4	4	3	3	4	4	4	6	5	5	4	4	2	3	3	2	3	4	3	4	4	4	4	1	4	4	4	4	4	18	15	33	37	33	24
+298	56	male	steady relationship	yes	graduate degree	work	no	0	5	5	5	2	3	4	3	2	3	2	3	4	3	5	1	1	2	1	4	4	3	4	2	2	4	4	2	3	1	3	4	4	5	3	3	4	2	1	4	3	3	3	3	3	3	3	3	3	3	3	3	2	2	3	2	2	2	3	24	20	31	25	37	22
+299	35	male	married first time	yes	some additional training	children	no	0	2	2	3	3	4	3	2	3	3	3	3	3	3	3	2	1	2	1	4	4	3	3	2	3	3	3	2	3	2	3	3	3	1	6	5	6	5	3	4	4	3	2	3	3	3	3	4	3	4	3	4	4	3	3	4	1	2	1	17	20	32	29	31	20
+300	33	male	single	no	some secondary school	work	yes	30	2	4	1	3	3	1	2	3	4	3	3	4	3	2	1	1	2	1	4	4	1	4	3	2	2	2	1	4	1	3	5	1	1	2	2	2	2	1	3	3	2	1	3	2	2	3	2	1	3	3	3	3	3	3	3	3	3	4	14	22	22	31	32	13
+301	32	male	married first time	no	some additional training	work	no	0	4	4	3	4	4	4	3	3	4	3	4	3	3	4	1	2	2	1	5	2	2	1	2	4	2	3	1	2	2	3	3	1	1	4	3	4	3	3	3	3	4	3	2	2	2	2	3	2	4	4	4	1	3	3	3	3	3	4	23	23	26	32	27	17
+302	41	male	married first time	yes	graduate degree	work	yes	3	4	5	4	4	4	4	2	3	3	2	3	3	3	3	1	2	4	1	4	4	2	2	1	1	1	3	2	1	1	2	3	4	2	3	4	4	4	3	2	3	4	2	2	3	2	3	3	2	4	4	4	3	4	3	3	3	4	4	25	19	26	36	27	17
+303	22	male	single	no	undergraduate degree	work	no	0	4	4	5	4	4	4	3	4	3	3	3	4	3	4	2	1	2	2	3	3	1	3	2	2	3	4	1	3	1	4	4	1	1	6	6	6	4	6	2	2	2	2	2	2	2	2	3	2	3	3	4	3	4	4	3	4	4	4	25	23	21	36	33	14
+304	46	female	married first time	yes	some secondary school	family	no	0	1	4	5	4	5	5	3	4	4	1	3	4	4	4	2	1	5	1	5	3	2	3	1	1	3	3	1	2	1	4	3	1	1	6	4	5	6	5	3	2	3	2	3	2	1	2	2	1	4	4	4	4	1	4	4	4	4	4	24	23	21	37	35	12
+305	28	male	living with partner	no	some additional training	work	no	0	4	2	4	3	5	5	3	3	3	3	4	3	2	4	2	1	3	1	4	3	1	3	1	3	2	3	1	3	1	3	3	1	1	5	5	5	5	4	2	2	3	2	3	3	2	2	3	2	4	4	4	4	4	3	2	3	2	4	23	21	24	34	31	13
+306	33	male	married first time	no	some additional training	money/finances	no	0	3	4	3	4	4	4	4	4	3	4	4	3	3	2	1	1	2	2	3	4	1	3	2	4	2	3	1	2	2	3	4	1	1	4	4	4	3	5	2	2	3	2	3	4	2	3	2	2	4	4	4	4	3	3	2	3	4	4	22	25	25	35	28	16
+307	75	female	married first time	no	some secondary school	family	no	0	1	3	5	3	5	5	4	4	1	1	4	3	2	5	3	1	3	1	1	5	3	2	1	2	1	3	1	1	2	3	4	1	1	6	5	5	3	2	1	1	4	3	4	4	2	2	3	1	4	4	4	4	4	4	4	4	4	4	22	19	25	40	28	16
+308	36	female	divorced	no	some additional training	work	yes	20	2	5	3	5	5	4	3	3	3	3	4	4	4	3	3	1	3	1	4	4	3	4	3	4	1	3	1	2	2	2	1	1	1	4	3	1	3	1	4	3	3	1	2	4	2	2	2	3	4	4	4	4	4	4	4	3	4	4	24	24	26	39	27	20
+309	36	male	steady relationship	no	some additional training	money/finances	yes	60	5	4	5	4	4	5	3	4	4	4	4	4	4	4	2	2	4	1	3	5	1	4	1	2	3	3	1	3	1	3	3	2	2	4	4	4	5	4	4	4	3	1	3	2	2	2	5	2	4	4	4	4	4	4	3	4	4	4	27	27	28	39	35	15
+310	33	male	single	no	some additional training	work	no	0	2	4	5	4	4	4	2	4	1	3	3	3	3	4	4	1	4	2	4	4	1	3	1	2	1	4	1	4	1	3	4	1	1	3	3	3	2	2	3	3	3	4	3	1	3	3	4	1	4	4	1	4	1	4	4	3	2	3	23	19	28	30	35	15
+311	44	female	divorced	no	graduate degree	work	no	0	4	4	4	4	4	4	3	3	3	3	3	3	3	4	1	1	4	1	4	4	1	3	2	2	3	4	1	3	1	4	4	1	1	2	4	4	3	3	2	2	2	2	2	2	3	2	2	2	4	4	3	4	3	4	4	3	2	3	24	21	21	34	37	12
+312	23	male	steady relationship	no	undergraduate degree	work	no	0	2	4	3	4	4	4	3	3	2	3	3	3	4	5	2	2	2	1	5	5	2	4	1	2	4	4	2	4	2	4	3	3	3	5	5	6	4	3	3	4	3	2	2	5	2	2	3	2	3	3	4	3	3	3	3	3	2	2	21	21	28	29	40	20
+313	44	female	married first time	yes	high school	lack of time	no	0	3	4	4	4	4	3	4	1	4	4	3	4	3	4	2	1	3	1	4	5	2	4	1	2	4	5	1	3	1	4	4	1	1	4	4	5	6	5	3	1	3	1	3	3	2	1	3	2	4	4	4	3	4	3	3	4	4	4	22	23	22	37	40	13
+314	40	female	married first time	yes	high school	friendships	no	0	3	3	1	3	4	5	3	3	3	3	3	2	2	5	4	4	3	1	4	2	2	3	2	2	2	3	3	2	1	2	2	4	3	2	2	2	5	1	3	3	3	3	3	3	3	3	3	3	4	4	3	2	1	2	2	1	2	3	19	19	30	24	28	26
+315	31	female	married first time	yes	undergraduate degree	life in general	no	0	4	4	4	4	4	4	3	4	4	4	4	4	3	5	3	2	4	1	5	3	3	4	2	3	5	3	2	4	2	4	3	2	2	6	6	6	7	7	3	2	4	2	2	3	2	2	4	2	4	4	4	4	4	4	4	3	3	4	24	26	26	38	40	22
+316	26	female	steady relationship	no	undergraduate degree	money/finances	yes		4	4	3	4	5	3	4	4	3	4	4	4	3	4	2	2	3	1	3	3	1	4	1	3	1	2	1	3	3	2	3	1	1	3	3	5	4	3	3	2	3	2	2	3	3	3	4	2	4	4	4	4	3	4	3	3	4	4	23	26	27	37	28	16
+317	21	female	single	no	undergraduate degree	work	no	0	2	3	3	3	3	2	4	3	3	4	3	3	3	3	4	1	2	1	3	4	2	2	1	2	1	2	2	3	1	3	3	4	2	4	5	5	4	4	4	3	4	3	4	2	3	4	1	1	3	3	4	3	4	3	3	3	4	4	16	23	29	34	26	20
+318	46	male	married first time	yes	graduate degree	work	no	0	4	5	4	5	5	5	4	3	4	4	4	4	3	4	2	1	4	1	4	3	1	3	1	2	2	4	1	2	1	4	4	1	1	5	5	5	5	5	2	3	2	2	2	3	2	3	2	2	4	4	4	4	4	4	4	4	1	4	28	26	23	37	34	12
+319	32	female	married first time	yes	high school	money/finances	no	0	3	4	2	4	4	4	3	4	3	3	4	3	4	3	2	1	4	2	4	3	2	4	1	1	2	2	1	4	1	3	3	2	1	6	6	5	5	5	2	3	3	1	2	3	2	2	2	2	3	3	4	3	4	4	4	1	4	4	21	24	22	34	32	14
+320	20	male	single	no	high school	work	no	0	4	4	4	3	4	5	2	3	3	3	4	2	2	3	2	4	4	2	4	1	2	1	1	1	3	2	2	2	3	3	3	4	2	5	5	5	4	3	1	3	4	4	2	3	4	3	3	3	3	3	3	2	3	3	2	1	1	4	24	19	30	25	26	23
+321	21	male	single	no	undergraduate degree	work	no	0	3	4	4	4	5	4	3	3	3	2	3	1	3	4	2	1	4	4	4	3	4	3	2	2	2	2	3	4	5	3	3	3	1	2	4	4	4	2	3	4	3	3	3	2	3	3	3	4	3	4	4	3	4	3	3	2	3	4	24	18	31	33	32	27
+322	31	male	living with partner	yes	high school	health/illness	no	0	4	3	4	4	3	5	2	4	4	4	3	4	3	4	1	1	3	1	3	4	1	2	1	2	4	4	1	2	1	4	3	2	2	5	5	3	3	1	2	2	2	2	2	4	2	2	3	1	4	4	4	4	3	4	3	3	4	4	23	24	22	37	33	13
+323	35	female	remarried	yes	some additional training	family	no	0	4	5	5	4	5	2	3	3	2	3	4	3	1	3	4	2	5	1	5	4	4	4	3	3	1	3	2	2	3	3	4	2	1	4	1	2	1	2	4	3	4	3	3	4	3	3	3	2	4	4	4	4	4	2	3	2	2	3	25	19	32	32	34	25
+324	26	male	living with partner	no	undergraduate degree	work	no	0	2	4	4	3	3	5	3	3	4	4	3	4	3	4	1	1	3	2	5	3	1	3	2	3	3	3	2	3	3	4	4	2	2	6	5	5	3	4	3	2	3	2	3	2	2	2	1	2	4	4	4	4	4	4	4	4	3	3	21	24	22	38	35	19
+325	23	female	single	no	undergraduate degree	work	no	0	3	4	4	4	3	3	2	3	3	2	4	2	2	3	3	2	3	2	3	3	3	2	2	2	3	3	1	3	2	3	2	2	1	4	5	4	3	6	3	3	3	3	3	4	3	3	3	3	3	3	3	3	3	3	3	2	3	3	21	18	31	29	28	20
+326	39	female	married first time	yes	some additional training	work	no	0	4	4	4	5	4	4	3	4	4	3	4	4	3	4	1	1	4	1	5	2	2	3	1	4	4	4	1	5	4	4	5	1	2	2	4	6	7	7	3	3	4	2	3	3	2	2	3	2	4	4	4	4	4	4	3	3	4	4	25	25	27	38	40	18
+327	46	male	remarried	yes	graduate degree	lack of time	no	0	2	3	2	4	3	2	2	3	3	3	3	3	2	3	2	2	2	1	4	4	2	3	2	3	2	3	2	3	1	4	3	2	2	4	4	5	5	4	3	3	4	2	3	3	3	3	4	3	4	4	4	4	4	3	3	4	3	4	16	19	31	37	31	19
+328	60	female	married first time	no	undergraduate degree	family	yes	140	4	4	3	5	5	4	2	3	4	3	4	4	3	4	4	1	2	2	4	4	4	3	2	3	2	3	1	4	2	3	3	3	3	6	6	6	6	6	5	3	4	2	3	2	2	3	2	1	3	3	4	3	2	3	3	1	2	3	25	23	27	27	32	25
+329	42	male	married first time	yes	graduate degree	work	no	0	4	5	3	4	4	4	4	2	3	4	4	1	4	5	3	2	4	1	4	4	2	4	3	2	4	4	2	4	2	4	3	2	2	5	3	5	5	3	4	3	3	2	2	3	2	2	2	2	4	3	4	4	4	3	3	3	3	3	24	22	25	34	40	21
+330	35	female	married first time	yes	some secondary school	children	no	0	4	5	4	4	5	4	4	4	4	4	4	4	4	4	2	2	4	2	4	5	2	4	1	4	3	3	2	3	2	3	4	1	1	6	6	6	6	3	2	2	3	2	2	2	3	2	2	2	4	4	4	3	2	4	4	4	2	4	26	28	22	35	37	19
+331	22	female	single	yes	high school	money/finances	no	0	5	2	3	3	2	2	3	3	2	3	4	3	2	4	3	1	3	4	3	2	3	3	2	1	4	3	1	4	4	3	2	1	1	3	3	3	1	2	3	3	3	3	4	3	4	3	3	3	4	4	2	3	3	2	2	2	2	2	17	20	32	26	31	21
+332	44	female	married first time	yes	high school	work	no	0	5	3	5	3	1	5	1	4	2	1	4	4	1	5	3	1	3	1	5	5	3	4	3	3	3	4	1	3	1	3	3	2	1	4	4	4	4	1	4	1	4	2	3	3	2	2	5	3	4	4	4	4	4	4	4	4	4	4	22	17	29	40	38	19
+333	46	male	separated	no	some additional training	family	no	0	2	3	4	2	4	2	3	3	4	4	2	4	4	4	2	1	4	1	3	4	2	3	1	1	2	3	1	3	1	3	4	2	1	2	2	5	6	2	2	4	1	2	3	3	3	2	2	3	4	4	4	3	4	4	4	4	4	2	17	24	25	37	33	13
+334	29	female	married first time	yes	high school	work	no	0	3	3	3	3	3	4	3	3	3	3	1	3	4	4	3	1	3	1	3	3	1	3	1	2	3	4	1	3	1	3	4	1	1	5	5	6	6	3	3	3	3	2	2	3	2	2	3	2	4	4	4	3	4	4	2	3	4	4	19	20	25	36	33	13
+335	55	male	divorced	no	undergraduate degree	work	no	0	4	4	4	4	4	4	3	3	3	3	3	4	4	4	2	1	3	1	4	4	1	4	2	2	4	4	1	4	3	4	4	1	1	4	4	4	5	2	2	2	2	2	2	2	2	2	3	2	3	4	4	4	4	4	3	4	4	4	24	23	21	38	39	15
+336	21	female	single	no	undergraduate degree	work	no	0	4	2	2	2	4	5	3	3	4	4	2	4	2	4	4	2	3	1	4	4	4	4	1	2	3	3	2	4	1	4	4	4	3	4	4	4	4	4	3	3	4	2	3	3	3	3	3	3	3	3	3	3	3	3	3	4	3	3	19	22	30	31	37	24
+337	41	female	remarried	yes	undergraduate degree	money/finances	yes	100	4	5	4	5	5	5	3	3	4	4	2	4	3	5	3	2	4	1	4	4	2	4	1	2	4	4	2	4	1	4	4	3	1	5	5	5	5	6	3	2	3	1	2	4	2	2	3	3	3	4	4	3	4	3	4	4	4	4	28	23	25	37	41	18
+338	67	male	married first time	no	high school	health/illness	no	0	4	4	4	4	5	5	4	4	4	4	4	3	4	4	2	2	4	5	4	4	2	3	1	2	3	4	2	2	5	2	4	4	1	5	6	4	5	3	4	4	4	2	3	3	3	2	4	2	3	4	3	3	2	2	2	3	1	3	26	27	31	26	34	26
+339	53	female	married first time	no	some additional training	spouse/partner	no	0	3	4	4	5	2	4	4	3	4	4	4	4	4	4	3	2	3	1	4	5	3	4	1	2	3	3	1	3	1	3	4	1	1	2	2	2	2	2	4	1	2	2	3	2	2	2	2	1	4	4	4	4	4	4	4	2	4	4	22	27	21	38	36	16
+340	56	female	married first time	no	some secondary school	health/illness	no	0	5	2	4	3	4	4	3	4	2	2	3	3	3	5	2	2	2	1	5	2	2	4	1	2	2	2	3	2	1	3	4	3	1	4	3	4	6	5	3	3	2	2	3	2	2	2	2	2	3	3	4	3	4	4	3	2	3	4	22	20	23	33	31	18
+341	18	female	single	no	high school	work	no	0	3	4	2	4	4	4	3	3	4	3	3	4	3	4	2	1	3	2	4	2	2	3	3	3	4	4	2	3	4	3	3	3	2	4	4	3	5	5	3	3	4	3	2	2	3	3	2	1	4	4	4	3	2	3	3	3	3	4	21	23	26	33	33	24
+342	44	female	single	no	graduate degree		yes	25	3	4	5	5	5	4	4	4	4	4	4	4	4	4	4	2	2	4	5	4	3	4	1	2	4	4	2	3	2	4	4	2	1	5	4	4	5	5	4	3	4	2	3	2	1	2	3	2	4	4	4	4	4	4	4	4	3	3	26	28	26	38	38	23
+343	51	male	remarried	yes	high school	work	no	0	4	5	4	5	5	4	4	3	3	4	4	4	4	4	2	1	4	1	4	3	1	3	2	2	3	3	1	4	1	4	4	2	1	5	5	5	5	5	3	2	1	2	2	1	5	1	2	2	4	3	4	3	4	3	3	4	4	4	27	26	21	36	36	14
+344	64	male	married first time	no	graduate degree	money/finances	no	0	4	5	4	4	5	3	4	3	4	3	4	4	3	4	1	2	4	2	3	4	1	3	2	1	1	3	2	3	1	3	3	1	1	4	5	4	4	2	2	3	3	2	3	2	2	3	3	2	4	4	4	3	4	3	3	4	2	4	25	25	25	35	31	14
+345	38	female	divorced	yes	undergraduate degree	work	no	0	2	4	4	4	3	4	3	3	3	3	3	3	3	5	2	2	3	1	4	4	2	4	1	2	4	4	2	4	1	4	4	2	2	5	5	5	6	5	3	3	3	2	2	3	3	2	3	2	3	4	4	3	4	3	3	3	4	4	21	21	26	35	40	17
+346	48	male	married first time	yes	some additional training	work	no	0	5	4	4	5	3	4	4	4	4	4	4	4	4	4	2	1	4	1	4	4	1	4	2	2	3	2	1	4	1	4	4	2	1	4	4	4	5	2	2	3	2	1	3	2	2	2	3	1	4	4	4	4	4	4	4	4	4	4	25	28	21	40	37	14
+347	27	male	living with partner	no	high school	money/finances	yes	150	4	5	5	4	3	5	3	4	2	3	4	4	4	3	2	2	3	1	5	2	5	2	1	3	3	2	2	3	1	4	5	2	2	5	5	6	6	7	3	2	3	2	3	2	2	2	3	2	4	4	4	4	4	3	4	4	3	4	26	24	24	38	32	21
+348	46	female	married first time	yes	undergraduate degree	work	no	0	3	4	1	3	3	3	2	2	2	2	4	1	2	3	2	1	5	2	2	4	2	3	1	3	3	3	1	4	4	3	3	1	1	5	3	5	5	4	1	2	3	3	3	4	3	4	3	4	2	4	3	2	1	2	2	1	1	2	17	15	30	20	33	18
+349	48	female	married first time	no	high school	lack of time	no	0	3	3	4	4	3	3	2	3	2	3	1	3	2	4	1	2	2	1	5	3	3	3	2	2	2	4	2	3	1	2	3	4	4	3	3	2	3	6	3	3	4	3	4	3	3	3	4	2	4	4	4	3	4	2	3	2	3	4	20	16	32	33	31	22
+350	55	female	married first time	no	some additional training	life in general	no	0	5	5	4	4	5	5	3	3	3	2	3	3	3	4	3	1	3	1	3	1	2	3	1	1	2	3	2	4	1	3	3	2	2	5	4	6	6	4	3	2	3	1	2	4	2	2	3	4	4	4	4	4	4	4	2	4	4	4	28	20	26	38	29	16
+351	34	male	married first time	yes	high school	work	no	0	4	4	3	5	5	5	2	4	4	1	4	2	3	3	5	1	5	1	3	4	5	4	3	4	2	2	1	3	3	3	3	1	1	1	1	3	3	1	3	3	3	4	3	4	2	3	4	3	4	4	4	4	4	3	4	3	1	2	26	20	32	33	32	25
+352	27	male	married first time	no	undergraduate degree	lack of time	no	0	3	2	2	2	3	3	3	2	3	3	3	2	2	3	2	1	2	3	4	3	5	2	2	2	2	2	1	4	1	4	3	3	3	2	6	3	4	1	2	2	3	2	3	3	4	2	4	2	2	3	3	3	3	2	3	1	2	2	15	18	27	24	29	23
+353	63	female	divorced	no	high school	family	no	0	3	2	4	3	3	3	2	3	1	1	3	3	2	4	3	2	4	2	5	5	2	4	1	1	3	3	1	4	2	4	3	1	1	1	3	3	4	3	3	3	2	3	4	2	2	3	3	1	3	3	3	3	3	3	3	3	3	2	18	15	26	29	39	16
+354	23	female	steady relationship	no	some additional training	work	no	0	3	4	4	3	4	4	3	3	2	3	4	3	1	3	4	2	3	1	4	4	5	3	2	4	3	3	2	3	2	3	3	2	2	2	4	4	4	3	4	3	4	2	3	3	3	2	4	3	4	4	3	3	4	3	4	1	2	3	22	19	31	31	32	26
+355	22	female	living with partner	no	some additional training	friendships	no	0	3	4	3	4	3	3	3	3	1	3	3	2	2	4	3	2	2	1	4	3	3	3	1	2	2	3	2	3	1	3	3	3	2	5	5	4	5	4	4	4	3	3	3	2	3	3	3	3	4	4	4	4	3	2	2	2	2	1	20	17	31	28	30	20
+356	48	female	married first time	yes	undergraduate degree	work	no	0	4	4	5	5	4	5	3	3	4	4	4	4	3	4	2	1	4	1	3	4	1	4	2	2	4	4	1	4	1	4	4	2	2	6	6	6	6	5	3	2	3	2	2	3	3	2	3	2	4	4	4	4	4	4	4	4	3	4	27	25	25	39	39	15
+357	22	male	single	no	undergraduate degree	life in general	no	0	4	5	4	5	4	5	3	3	1	4	3	2	2	4	2	3	4	1	4	3	2	3	1	3	3	4	2	3	1	4	4	3	2	3	6	3	3	2	3	4	4	3	3	2	2	3	4	2	3	4	4	4	4	2	2	2	2	3	27	18	30	30	36	20
+358	32	male	single	no	high school	work	yes	150	4	5	3	5	4	4	3	3	4	3	4	3	3	4	2	2	4	1	4	2	3	4	2	2	3	4	2	4	2	4	3	2	2	5	4	4	3	4	2	3	3	2	2	2	2	2	3	2	4	4	4	4	4	4	3	2	4	4	25	23	23	37	36	20
+359	41	female	steady relationship	no	graduate degree	work	yes	1	2	4	3	3	4	3	3	3	3	3	1	2	2	4	3	4	2	1	5	5	3	4	2	1	3	4	2	3	3	4	4	2	2	4	4	4	3	3	3	3	3	2	3	3	2	3	3	3	4	4	3	3	4	2	3	1	3	2	19	17	28	29	38	23
+360	38	male	married first time	yes	some additional training	money/finances	yes	120	3	4	3	5	5	4	4	3	3	3	4	3	3	3	4	2	3	1	3	3	2	3	1	2	2	3	2	3	1	3	3	2	2	4	4	5	5	4	3	2	3	2	2	3	2	2	3	3	4	4	4	3	4	3	3	2	3	2	24	23	25	32	29	19
+361	29	male	single	yes	some additional training	work	no	0	3	4	4	4	5	5	4	2	3	3	3	4	2	3	3	1	4	1	3	4	1	4	2	2	2	2	1	2	1	4	4	2	1	3	4	4	2	3	3	3	3	2	2	3	3	3	2	3	4	4	3	4	4	3	4	3	4	4	25	21	27	37	32	15
+362	62	female	married first time	no	some additional training		no	0	3	4	3	2	5	4	3	4	4	4	2	3	2	2	2	1	4	2	4	4	1	4	2	2	1	3	1	3	1	4	3	2	1	3	3	4	5	4	3	3	2	3	3	3	2	2	3	3	4	4	4	4	4	3	3	4	4	4	21	22	27	38	32	15
+363	41	female	divorced	yes	undergraduate degree	work	yes	5	5	5	4	4	4	4	4	4	4	4	4	4	4	3	5	2	3	1	5	4	4	4	3	3	4	4	2	2	1	3	3	2	2	5	6	6	6	4	5	1	5	1	3	2	1	2	5	5	4	4	4	4	4	4	3	4	4	4	26	28	30	39	35	25
+364	31	female	single	no	undergraduate degree	work	no	0	2	4	3	3	3	4	3	2	3	3	3	3	2	4	2	1	3	2	3	4	3	3	4	4	3	3	1	2	1	3	3	1	1	4	5	5	4	4	3	3	4	3	3	3	3	3	4	2	4	4	3	4	3	3	3	3	3	3	19	19	31	33	31	20
+365	41	male	married first time	no	undergraduate degree	work	no	0	2	4	4	3	3	4	2	4	4	3	3	4	4	4	2	1	4	1	4	5	1	4	3	3	4	3	1	4	1	4	3	1	1	5	3	6	6	6	3	1	2	2	2	3	3	2	3	1	4	4	4	1	2	4	3	4	4	4	20	24	22	34	39	15
+366	24	male	married first time	yes	undergraduate degree	spouse/partner	no	0	4	3	4	3	2	3	3	3	3	3	3	2	2	3	3	2	3	3	3	3	3	3	3	3	3	4	2	3	2	3	3	2	1	5	6	6	6	4	2	2	3	3	3	3	3	3	2	3	3	3	3	3	3	3	3	3	2	2	19	19	27	28	31	24
+367	48	male	married first time	yes	high school	work	no	0	3	4	4	4	4	4	2	4	4	4	4	3	4	4	4	2	4	1	4	4	2	4	1	2	3	4	1	4	1	4	4	1	1	6	6	7	7	7	3	2	3	2	3	2	2	2	2	1	4	4	4	4	4	4	4	4	3	4	23	25	22	39	39	16
+368	27	male	living with partner	no	some secondary school	work	no	0	4	4	4	4	4	4	3	4	3	2	4	3	3	3	1	1	3	1	4	4	1	3	1	2	4	3	1	5	2	3	4	2	1	3	3	4	2	2	2	3	3	2	3	2	2	2	2	2	4	4	4	4	4	4	4	4	2	4	24	22	23	38	36	13
+369	61	female	widowed	yes	high school	work	no	0	4	4	4	5	5	5	4	4	4	4	4	3	3	4	2	1	3	1	4	5	2	4	2	2	3	4	1	4	1	5	4	2	2	6	6	6	7	6	3	2	3	1	2	3	1	2	4	3	3	3	4	3	4	4	4	2	3	4	27	26	24	34	40	16
+370	55	female	single	yes	graduate degree	work	no	0	4	5	4	5	5	4	4	4	4	4	4	4	4	4	3	2	4	1	5	3	2	4	1	1	3	4	1	3	1	4	4	1	1	5	5	5	6	6	2	3	2	2	2	3	2	2	2	2	4	4	4	4	4	4	4	4	3	4	27	28	22	39	38	14
+371	37	female	living with partner	no	undergraduate degree	work	no	0	4	5	5	5	5	5	4	4	4	4	4	4	3	4	2	1	3	1	3	3	2	3	2	3	1	4	1	4	1	3	3	1	1	7	7	7	7	7	3	2	3	1	2	3	3	2	2	3	2	4	4	4	4	4	4	4	4	4	29	27	24	38	31	15
+372	22	male	living with partner	no	undergraduate degree	money/finances	no	0	2	5	3	4	4	3	4	3	3	3	4	3	2	4	3	1	4	1	3	3	2	3	1	2	2	4	1	3	1	3	3	2	1	5	6	5	5	4	3	3	3	2	2	2	2	2	2	2	4	4	4	4	4	4	3	3	3	3	21	22	23	36	32	15
+373	47	female	married first time	yes	some secondary school	children	no	0	4	4	4	4	4	4	3	3	2	3	3	3	3	4	3	3	2	2	4	1	2	3	1	3	1	4	3	4	2	3	4	3	3	5	5	6	6	5	3	3	3	3	3	3	3	2	3	3	4	4	3	3	3	4	3	4	4	4	24	20	29	36	30	25
+374	42	male	married first time	yes	undergraduate degree	family	no	0	5	4	5	5	5	5	4	4	4	4	4	4	3	4	3	1	4	1	4	5	2	3	1	2	3	4	1	4	1	4	3	1	1	5	5	5	5	3	3	2	3	1	2	3	2	2	3	3	4	4	4	4	4	4	1	4	4	4	29	27	24	37	38	14
+375	47	male	married first time	yes	graduate degree	work	no	0	3	2	4	4	4	4	3	3	4	2	4	4	3	3	2	1	3	1	4	3	2	3	2	2	4	5	1	2	1	3	4	2	1	4	4	4	5	4	2	2	3	2	2	2	2	2	3	2	4	4	4	4	1	4	4	3	4	4	21	23	22	36	34	15
+376	50	female	divorced	yes	some additional training	money/finances	yes	200	3	4	3	3	4	4	2	3	1	2	4	3	2	4	2	4	5	1	4	2	3	4	2	2	3	4	2	4	2	4	5	2	1	2	2	3	4	3	4	3	3	2	2	3	2	2	3	3	4	4	4	4	4	3	3	3	2	2	21	17	27	33	39	21
+377	19	male	single	no	high school	work	no	0	4	3	5	5	5	4	4	4	3	4	4	4	3	4	2	1	4	1	5	4	2	4	2	3	5	3	1	3	2	4	3	2	2	5	6	6	5	5	3	3	4	1	1	2	2	2	3	2	4	4	4	3	4	4	4	4	4	4	26	26	23	39	39	18
+378	37	male	married first time	yes	some additional training	work	no	0	3	5	4	5	5	5	4	4	4	4	4	4	3	3	3	2	1	1	4	3	2	3	1	2	2	3	2	3	1	3	4	2	1	5	4	5	6	2	3	2	3	2	3	3	2	3	3	2	4	4	4	4	4	4	4	2	4	4	27	27	26	38	29	17
+379	37	female	remarried	yes	high school	work	no	0	3	4	4	3	4	4	3	4	3	3	3	3	3	4	2	3	4	1	5	5	2	4	4	2	3	4	3	2	1	3	4	2	2	5	5	7	6	5	3	3	3	2	2	3	2	2	4	2	4	4	4	3	4	4	4	3	4	4	22	22	26	38	38	22
+380	35	female	divorced	yes	some additional training	friendships	no	0	4	5	4	5	5	4	3	4	3	3	4	4	2	4	3	2	3	1	1	3	2	5	1	3	2	4	2	4	2	4	4	2	1	5	5	5	5	3	2	3	2	2	2	3	2	2	3	2	4	4	4	3	4	4	3	3	4	4	27	23	23	37	34	19
+381	33	female	widowed	yes	some additional training	work	yes	200	1	2	2	3	4	4	3	3	3	3	4	3	2	4	2	1	3	2	3	4	1	3	1	1	3	3	1	4	2	3	3	2	1	2	3	5	6	2	2	2	2	2	2	3	3	3	3	2	3	3	4	4	4	2	2	1	4	2	16	21	24	29	33	14
+382	22	female	single	no	undergraduate degree	work	no	0	3	3	3	4	2	2	4	3	3	3	4	3	4	2	2	4	3	1	5	5	1	3	1	2	4	2	4	2	2	3	2	4	4	3	3	6	6	6	3	3	4	2	3	3	2	3	4	2	4	4	4	4	4	3	4	4	3	2	17	24	29	36	31	25
+383	20	female	single	no	some additional training	work	no	0	4	2	3	3	4	3	3	3	2	4	4	2	2	4	2	2	3	1	4	3	1	3	2	2	1	1	1	4	1	3	4	4	1	5	4	4	5	4	3	4	4	2	3	4	1	3	1	3	4	4	4	3	4	3	4	4	3	4	19	20	28	37	30	17
+384	18	female	steady relationship	no	high school	work	no	0	3	2	3	4	5	5	3	3	4	3	4	3	4	3	3	1	1	2	5	4	3	3	2	3	1	2	1	4	1	2	3	4	3	5	6	6	6	5	2	3	4	3	3	4	3	4	3	1	3	3	3	2	2	2	3	3	1	2	22	24	30	24	28	23
+385	31	female	married first time	yes	some additional training	children	no	0	5	5	5	5	5	5	3	4	4	4	4	4	4	4	2	1	3	1	4	4	1	4	1	2	4	3	1	2	2	3	3	2	1	5	6	7	6	6	3	2	3	2	2	3	2	2	3	3	4	4	4	4	4	4	4	4	4	4	30	27	25	40	34	14
+386	44	male	remarried	no	undergraduate degree	life in general	no	0	3	3	3	2	4	3	4	2	3	3	4	4	4	4	2	2	4	2	4	4	1	3	1	1	4	4	2	4	1	4	4	2	2	7	7	7	6	4	3	2	3	2	2	2	2	3	2	2	4	4	4	4	4	4	4	4	2	4	18	24	23	38	39	16
+387	40	male	married first time	yes	graduate degree	work	no	0	3	4	4	4	4	5	3	3	4	4	3	4	4	4	3	1	4	3	4	3	2	3	1	2	4	3	1	3	2	4	3	2	2	5	5	5	5	5	1	2	3	2	2	3	3	2	3	2	4	4	4	3	4	3	2	2	3	2	24	25	23	31	35	19
+388	45	female	married first time	yes	some secondary school	work	no	0	2	5	3	1	5	5	2	3	4	3	1	4	2	2	4	1	2	1	4	3	3	3	3	3	2	4	1	2	1	2	4	2	1	5	4	4	4	6	3	2	3	2	2	3	3	3	4	3	4	4	4	2	1	4	2	4	4	4	21	19	28	33	28	20
+389	36	female	married first time	yes	some additional training	children	no	0	4	4	4	5	4	5	3	4	3	3	4	2	3	2	2	1	2	1	3	5	4	4	1	4	2	3	1	2	1	3	3	2	1	4	4	4	4	4	2	3	2	3	3	4	2	2	3	3	3	3	4	3	4	3	3	2	2	4	26	22	27	31	29	18
+390	31	female	married first time	yes	high school	children	no	0	1	3	2	2	4	5	4	4	1	1	1	2	4	5	5	1	5	4	2	5	4	4	1	3	4	2	1	4	1	4	2	1	1	2	2	3	7	1	2	4	4	2	4	2	1	2	3	2	4	1	1	1	2	1	1	1	4	4	17	17	26	20	37	22
+391	32	male	single	no	graduate degree	work	yes	40	3	5	5	3	3	4	3	3	3	4	4	4	3	3	2	1	4	1	5	3	2	4	3	3	1	2	1	3	1	2	4	2	1	3	4	5	3	1	4	3	3	2	2	2	3	3	4	2	4	4	4	3	4	4	4	4	4	4	23	24	28	39	31	17
+392	50	female	married first time	yes	some additional training	work	no	0	3	3	4	3	3	4	4	3	3	1	4	3	2	4	2	1	3	1	1	5	1	3	2	3	1	4	2	4	3	4	3	3	1	7	5	6	7	5	3	2	3	2	3	3	2	3	2	1											20	20	24		32	19
+393	42	female	married first time	yes	some secondary school	family	no	0	2	4	3	4	5	5	4	4	3	3	3	4	4	4	2	2	3	1	3	3	2	3	3	2	3	3	1	4	1	3	3	1	1	5	5	5	6	5	3	2	3	3	2	3	2	2	4	3	4	4	3	3	3	3	3	3	3	4	23	25	27	33	32	16
+394	29	female	steady relationship	no	undergraduate degree	work	yes	3	3	4	3	4	5	4	4	4	3	3	4	3	2	4	4	1	3	1	4	3	3	4	1	2	4	4	1	4	1	4	4	2	1	5	5	4	5	5	3	2	3	1	2	3	2	2	3	2	4	4	4	3	4	4	4	4	2	2	23	23	23	35	38	17
+395	31	male	living with partner	no	graduate degree	work	no	0	3	4	3	4	2	3	3	3	3	3	3	3	4	3	1	2	3	1	4	4	1	4	1	2	3	3	2	4	2	4	3	4	2	5	5	5	6	5	2	2	3	2	3	2	2	3	2	2	3	4	4	4	4	4	4	4	4	4	19	22	23	39	35	18
+396	27	female	living with partner	no	undergraduate degree	work	no	0	4	4	4	4	4	4	3	3	3	4	4	4	4	4	1	2	3	1	4	3	3	3	1	2	2	2	1	5	2	3	3	2	1	5	6	6	6	6	2	2	3	2	2	3	2	3	3	2	4	4	4	4	4	3	3	3	3	4	24	25	24	36	32	16
+397	31	male	single	no	high school	work	no	0	3	3	3	4	4	4	2	3	3	4	3	4	3	4	3	1	5	1	3	4	1	3	2	3	1	3	1	4	1	3	3	1	1	3	3	3	3	2	3	3	2	2	2	3	2	2	3	2	4	4	3	4	3	4	4	3	4	4	21	22	24	37	33	15
+398	78	female	widowed	no	high school	life in general	no	0	4	5	4	5	5	4	2	3	3	1	4	1	3	4	2	2	5	1	2	4	1	1	1	1	2	3	2	4	1	4	4	3	1	4	6	4	5	7	3	3	3	2	2	1	2	2	3	3	4	4	4	3	1	4	4	4	4	4	27	17	24	36	33	15
+399	27	female	living with partner	no	undergraduate degree	work	no	0	4	3	4	3	4	3	2	3	3	3	4	3	4	5	2	1	2	3	4	4	2	3	1	3	3	3	1	4	2	4	4	2	1	5	5	6	6	6	3	3	4	3	2	2	3	3	3	2	4	3	3	3	4	3	3	3	3	2	21	22	28	31	36	18
+400	28	female	married first time	no	some secondary school	work	no	0	2	4	3	4	3	1	3	4	4	4	1	3	2	4	2	2	4	1	2	4	3	4	2	2	2	3	1	5	1	3	2	2	1	5	6	5	4	4	2	3	4	3	2	3	4	1	3	3	3	3	3	3	2	4	2	3	3	3	17	21	28	29	33	17
+401	42	male	married first time	yes	high school	work	no	0	4	4	4	5	5	5	3	4	2	3	4	3	2	4	2	1	4	2	3	3	1	3	2	2	4	3	1	2	1	4	3	2	1	5	5	6	7	6	3	2	2	2	2	3	3	2	4	2	4	4	4	4	4	4	4	3	3	3	27	21	25	37	33	15
+402	42	female	separated	no	graduate degree	money/finances	yes	7	4	5	1	1	2	5	2	4	2	1	1	1	1	3	3	1	4	1	5	5	2	5	3	1	2	1	1	2	1	3	3	1	1	5	5	1	4	5	3	5	3	1	2	2	1	2	3	3	4	4	4	1	4	1	2	1	1	1	18	12	25	23	33	15
+403	34	female	married first time	yes	high school	family	no	0	4	3	4	4	4	4	3	4	3	4	4	3	3	4	3	1	4	1	2	4	2	4	2	1	3	3	1	4	1	4	4	2	1	6	6	6	6	6	2	2	3	2	2	3	2	2	3	2	4	4	4	4	4	4	4	4	4	4	23	24	23	40	36	15
+404	21	female	steady relationship	no	undergraduate degree	friendships	no	0	5	4	4	4	5	5	4	4	2	4	4	1	1	5	2	2	4	1	4	4	1	3	2	3	2	2	2	3	1	3	4	5	4	7	7	7	7	7	3	5	4	2	1	1	3	3	5	3	4	4	4	4	4	4	4	3	1	2	27	20	30	34	34	23
+405	33	female	single	no	some additional training	work	no	0	3	4	3	3	5	4	4	4	2	4	4	4	3	3	1	1	3	1	4	5	2	3	1	2	2	3	1	5	4	3	3	1	1	4	5	5	2	2	3	3	3	2	2	2	2	2	3	2	3	4	4	4	4	3	3	4	4	2	22	25	24	35	34	15
+406	28	female	living with partner	no	some additional training	work	no	0	4	3	4	5	5	4	3	4	3	3	4	4	4	5	2	1	3	1	5	4	2	4	1	4	3	3	1	3	2	3	3	1	1	5	5	5	6	4	2	2	3	2	2	3	3	2	2	2	4	4	4	4	4	3	3	4	4	4	25	25	23	38	36	16
+407	23	female	steady relationship	no	undergraduate degree	work	no	0	3	3	4	4	2	4	3	3	4	4	3	4	4	5	3	2	3	1	4	5	2	3	2	2	3	4	1	4	2	3	4	2	1	5	4	6	5	4	3	3	3	2	2	3	3	2	3	2	4	4	4	4	4	3	3	3	3	4	20	25	26	36	38	18
+408	21	female	single	no	undergraduate degree	money/finances	no	0	3	3	3	3	4	4	4	4	4	4	4	3	3	3	2	1	3	1	3	4	1	3	2	2	3	3	2	3	2	3	3	3	2	2	2	5	5	5	2	2	4	2	3	2	2	2	3	3	4	4	4	3	4	4	3	3	4	4	20	26	25	37	31	18
+409	38	female	married first time	yes	some additional training	family	no	0	3	4	3	4	4	3	3	3	3	3	4	4	4	4	3	2	4	1	3	4	3	4	1	3	2	2	2	3	2	3	3	2	1	4	4	4	5	3	3	2	3	2	3	2	3	3	3	1	3	3	3	3	3	3	3	4	3	4	21	24	25	32	32	20
+410	21	female	single	no	undergraduate degree	work	no	0	3	4	3	3	3	3	3	3	2	2	3	2	2	4	3	2	3	1	4	4	3	2	2	2	4	4	2	4	2	4	4	2	2	3	5	5	5	5	3	3	3	2	2	3	2	2	3	3	3	3	3	3	3	3	3	2	2	1	19	17	26	26	37	21
+411	22	male	single	no	high school	life in general	no	0	4	4	4	4	4	4	3	3	4	3	4	3	3	3	2	1	4	2	4	3	2	3	2	2	4	4	2	3	3	3	3	3	3	4	5	5	5	1	3	3	4	2	2	3	2	2	3	2	4	4	3	3	3	3	3	2	2	2	24	23	26	29	34	22
+412	28	male	living with partner	no	some additional training		no	0	5	5	3	2	3	4	2	4	2	4	4	4	3	3	3	2	4	2	5	4	3	4	1	2	2	3	2	4	2	4	4	2	1	6	6	5	5	3	4	2	3	2	2	1	4	2	3	2	4	4	4	4	4	2	3	3	4	2	22	23	25	34	37	20
+413	45	female	married first time	yes	graduate degree	work	no	0	2	3	4	4	4	4	4	4	2	4	4	4	3	4	4	2	2	1	5	3	3	4	2	3	3	3	1	3	2	4	5	3	1	5	5	5	3	1	3	3	4	2	2	2	3	2	5	2	4	3	4	4	3	2	2	3	2	3	21	25	28	30	36	22
+414	23	male	single	no	graduate degree	work	no	0	3	3	4	2	2	4	3	4	4	4	3	4	3	4	2	1	3	1	4	5	1	3	3	3	3	3	1	4	3	4	4	1	1	6	7	6	6	7	4	2	4	2	3	2	2	2	3	2	4	4	4	4	4	4	4	4	4	4	18	25	26	40	37	17
+415	23	female	steady relationship	no	graduate degree	health/illness	no	0	2	4	2	4	3	2	3	3	3	3	3	3	3	3	4	2	3	1	3	2	2	3	2	4	3	3	2	4	1	3	3	3	1	4	4	4	4	4	3	3	4	3	3	2	4	2	2	2	4	4	4	3	2	3	3	2	2	4	17	21	28	31	30	22
+416	25	female	single	no	some additional training	work	no	0	3	3	3	3	4	4	4	3	3	2	3	3	3	4	3	2	2	1	2	3	2	1	1	3	3	4	2	4	2	4	3	2	1	2	3	3	2	1	3	3	4	3	2	2	3	3	3	2	3	3	3	3	2	1	1	1	1	3	20	21	28	21	30	19
+417	35	female	single	no	graduate degree	work	no	0	4	4	5	4	5	5	3	4	3	4	4	4	4	4	4	2	2	1	5	3	3	3	2	3	2	3	2	3	1	3	3	4	1	5	6	5	6	5	5	5	4	1	3	2	1	3	4	1	4	4	4	4	4	3	4	4	1	1	27	26	29	33	31	23
+418	21	male	single	no	high school	work	no	0	4	3	4	3	3	3	3	4	3	3	4	3	3	4	1	1	4	1	3	3	2	4	2	2	4	3	1	4	2	4	4	3	2	5	4	5	4	5	2	3	2	2	3	2	3	3	3	2	3	3	3	4	3	3	3	3	2	3	20	23	25	30	37	17
+419	40	female	remarried	no	undergraduate degree	work	no	0	3	2	3	2	4	4	3	3	4	3	3	1	3	3	1	2	4	1	4	5	2	3	2	2	2	3	1	4	1	3	3	2	2	5	6	6	6	4	3	2	3	3	2	3	2	2	2	3	3	4	4	3	4	3	3	1	2	3	18	20	25	30	34	16
+420	35	female	married first time	yes	some additional training		yes	100	5	5	4	5	5	5	2	3	3	3	4	2	3	3	3	1	3	1	2	4	1	3	2	2	4	4	1	4	2	4	4	2	1	6	6	6	6	6	3	3	2	2	3	3	3	3	2	1	4	4	4	4	4	4	4	1	4	4	29	20	25	37	35	16
+421	26	male	single	no	undergraduate degree	work	no	0	3	3	2	2	2	2	3	3	3	4	4	3	4	3	2	2	3	2	4	5	2	4	3	2	3	2	2	4	1	4	3	3	3	5	4	6	5	7	2	5	3	1	3	5	1	3	2	3	4	4	3	3	4	3	3	1	1	3	14	24	28	29	35	22
+422	48	male	divorced	no	undergraduate degree	work	yes	140	3	2	3	4	4	2	3	3	4	4	4	3	3	4	4	2	3	1	4	4	3	4	1	1	3	4	2	3	1	4	4	2	2	4	3	5	3	4	3	2	4	1	3	3	2	2	3	3	4	4	4	3	4	3	4	2	3	4	18	24	26	35	37	19
+423	54	male	married first time	yes	graduate degree	work	no	0	3	4	3	4	4	4	3	3	3	3	3	3	2	4	3	1	2	1	4	4	2	3	3	4	4	3	1	2	1	4	3	2	2	5	5	5	6	3	3	2	4	2	2	4	3	3	3	3	4	4	4	4	4	3	3	4	4	4	22	20	29	38	33	20
+424	36	female	married first time	yes	undergraduate degree		no	0	4	3	5	3	4	5	1	3	4	1	4	4	3	4	4	1	4	1	5	4	3	4	2	2	2	4	1	1	1	3	2	3	4	4	4	5	6	4	4	3	4	2	3	2	2	3	2	2	4	4	4	3	4	4	4	4	4	4	24	20	27	39	33	22
+425	48	female	divorced	no	some additional training	children			3	4	4	1	4	5	3	4	1	2	4	2	4	2	2	1	3	1	4	2	4	3	4	4	4	3	1	4	1	3	3	2	1	5	5	5	3	1	3	3	3	2	2	3	4	2	4	3	4	4	4	4	4	3	3	2	2	4	21	20	29	34	31	21
+426	35	female	single	no	some additional training	work	yes	100	3	3	3	3	3	3	3	3	3	3	3	3	2	4	3	2	3	1	4	3	3	3	2	2	2	4	2	3	1	3	4	3	3	4	4	4	2	2	3	2	4	3	3	3	3	3	3	2	4	4	3	4	1	3	3	2	2	3	18	20	29	29	33	22
+427	67	female	married first time	no	some secondary school	spouse/partner	no	0	3	4	4	4	5	3	3	4	2	2	2	2	2	3	4	1	3	1	3	5	3	2	1	2	3	5	2	2	1	4	5	1	1	4	3	4	5	4	3	3	3	2	3	3	2	3	1	2	4	4	4	4	4	4	3	4	3	4	23	17	25	38	35	17
+428	47	female	remarried	yes	some additional training	work	no	0	3	5	4	3	5	3	3	3	3	3	3	2	2	4	2	1	4	1	3	3	1	3	2	3	2	4	2	3	4	4	3	2	1	6	6	4	7	4	3	3	3	3	2	3	3	2	3	3	3	3	4	3	4	3	3	3	2	3	23	19	28	31	33	19
+429	21	female	single	no	undergraduate degree	work	no	0	3	3	4	4	4	4	3	3	3	3	3	3	3	4	3	2	3	2	4	4	2	3	1	2	3	3	2	4	1	3	4	2	2	5	6	5	5	5	3	2	3	2	3	2	2	3	3	2	3	4	4	3	4	3	3	4	4	4	22	21	25	36	35	19
+430	24	male	steady relationship	no	undergraduate degree	money/finances	no	0	3	3	5	3	2	5	3	4	2	4	3	2	2	4	2	3	4	1	4	4	2	4	1	2	2	3	3	3	1	4	3	2	1	5	5	5	5	5	2	3	3	2	2	2	3	3	3	2	2	4	3	4	3	4	3	2	2	4	21	20	25	31	35	18
+431	32	male	married first time	yes	high school	money/finances	no	0	2	5	3	3	3	4	2	2	3	3	3	4	4	5	2	2	5	1	3	4	3	3	2	3	3	3	2	2	1	3	4	1	1	4	5	7	7	3	3	3	2	2	3	2	2	2	3	3	4	4	4	3	4	4	4	4	3	4	20	21	25	38	35	18
+432	50	male	single	yes	high school	children	no	0	3	2	5	2	2	4	3	3	4	4	4	4	3	4	2	1	4	1	4	4	3	2	1	2	1	1	1	2	1	3	3	1	1	4	6	6	7	4											4	4	4	4	4	4	4	4	4	4	18	25		40	28	14
+433	34	female	living with partner	no	some additional training	life in general	yes		3	3	4	3	5	4	4	4	4	4	4	4	4	4	3	2	3	1	5	5	3	4	1	1	5	5	3	5	1	5	5	1	1	5	5	5	5	5											1	1	1	1	3	2	2	3	1	1	22	28		16	46	17
+434	48	female	married first time	yes	some additional training	work	no	0	3	5	5	5	5	5	2	4	2	1	4	2	4	5	2	1	4	1	5	3	1	4	1	1	5	4	1	4	1	5	4	2	1	5	4	6	5	5	2	4	4	2	2	3	4	2	2	3	4	4	4	4	4	3	3	3	4	4	28	19	28	37	43	12
+435	74	female	married first time	no	some secondary school		no	0	3	5	5	3	2	5	4	4	2	2	4	2	4	4	2	1	5	1	2	4	2	3	1	1	2	4	1	1	1	2	3	1	1	3	4	6	6	7											4	4	4	4	4	3	4	4	4	4	23	22		39	30	12
