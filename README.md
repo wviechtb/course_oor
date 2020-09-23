@@ -86,12 +86,11 @@ The course is aimed at researchers, (Master and PhD level) students, data analys
 
 | Time        | Topic                |
 | :---------- | :------------------- |
-| 17:00-19:30 | Statistics with Continuous Outcomes |
-| 19:30-20:00 | Break |
-| 20:00-21:00 | Statistics with Categorical Outcomes |
-| 21:00-22:00 | Working with R Packages |
+| 17:00-20:00 | Statistics with Continuous Outcomes |
+| 20:00-20:30 | Break |
+| 20:30-22:00 | Statistics with Continuous Outcomes |
 
-Further course dates / streams will happen as indicated here: [Live Streams](http://www.wvbauer.com/doku.php/live_streams) (where I will cover topics such as programming structures, writing documents with R Markdown, and various miscellaneous topics). In essence, at that point the course will be open-ended, running as long as there is interest and we don't run out of topics (which is rather unlikely).
+Further course dates / streams will happen as indicated here: [Live Streams](http://www.wvbauer.com/doku.php/live_streams) (where I will cover all topics that we did not get to, including statistics with categorical outcomes, some tips on working with R packages, programming structures, writing documents with R Markdown, and various miscellaneous topics). In essence, at that point the course will be open-ended, running as long as there is interest and we don't run out of topics (which is rather unlikely).
 
 ## Course Format
 
