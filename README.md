@@ -102,7 +102,7 @@ After an introductory lecture, the format of the course will be quite simple: I 
 
 You will need a computer with the current version of R installed. You can download R from the [Comprehensive R Archive Network](https://cran.r-project.org/) (CRAN). Follow the appropriate "Download R" link depending on your operating system (OS) and follow the instructions for downloading and installing R. If you already have R installed, please check that it is the current version (you can check what the 'latest release' of R is by going to [CRAN](https://cran.r-project.org/) and then compare this with the version shown when you start R). If not, please update.
 
-Although not strictly necessary, it will be useful to also install an integrated development environment (IDE) for R. A popular choice these days is RStudio. So, unless you already have a different setup, download the appropriate installer of RStudio for your OS from [here](https://rstudio.com/products/rstudio/download/#download) and install in the usual manner.
+Although not strictly necessary, it will also be useful to install an integrated development environment (IDE) for R. A popular choice these days is RStudio. So, unless you already have a different setup, download the appropriate installer of RStudio for your OS from [here](https://rstudio.com/products/rstudio/download/#download) and install in the usual manner.
 
 You do not need to have a Twitch account to watch the stream, but if you would like to post comments or questions via the chat (see below), then you do need to be signed in. To create an account, go to [Twitch](https://www.twitch.tv/), click on "Sign Up", and follow the instructions. Make sure you also verify your email address as part of the registration procedure (otherwise you cannot use the chat).
 
@@ -134,7 +134,9 @@ Some other notes and frequently asked questions that may come up:
 
 * I cannot provide 'course certificates' or some other form of certification that you have participated in the course.
 
-* The stream will not be recorded. The whole point is that this is an interactive live stream, which sets it apart from online courses that use pre-recorded videos or any of the thousands of YouTube videos that teach R. If I wanted to create the latter, I would script the entire video (which is not compatible with the dynamics of an interactive live stream) and would have to do a lot of post-processing.
+* The stream will not be recorded. The whole point is that this is an interactive live stream, which sets it apart from online courses that use pre-recorded videos or any of the thousands of YouTube videos that teach R. If I wanted to create the latter, I would script the entire video (which is not compatible with the dynamics of an interactive live stream) and do a lot of post-processing. If you are looking for such courses, you could look into online courses, such as those that are offered at [Coursera](https://www.coursera.org/browse/data-science/data-analysis), [edX](https://www.edx.org/course/subject/data-science), and similar platforms.
+
+* The stream will not be recorded. The whole point is that this is an interactive live stream, which sets it apart from online courses that use pre-recorded videos or any of the thousands of YouTube videos that teach R. If I wanted to create the latter, I would script the entire video (which is not compatible with the dynamics of an interactive live stream) and do a lot of post-processing.
 
 * If you have to miss parts of the course (e.g., due to other obligations), you can still obtain the materials and work through them on your own pace. The same is of course also possible if you have to miss the entire course.
 
