@@ -5,7 +5,7 @@
 <table>
 <tr>
    <td>Course Dates</td>
-   <td>16-18 September, 2020 + further dates (see course schedule)</td>
+   <td>16-18 September, 2020 + 2 Extra Days</td>
 </tr>
 <tr>
    <td>Course Times</td>
@@ -44,16 +44,6 @@ In this course, we will cover:
 * how/where to obtain help when you get stuck
 * basic programming structures (e.g., loops, if-else statements)
 * writing documents with R Markdown
-* and depending on time and interest various miscellaneous topics:
-  * how R 'works' (functions, classes, methods, oh my!)
-  * psychometrics (reliability and factor analysis)
-  * merging and reshaping datasets
-  * working with 'long format' datasets
-  * multilevel / mixed-effects models
-  * survival analysis and Cox models
-  * non-parametric methods
-  * string manipulations
-  * ...
 
 **Note:** When discussing statistical methods/models, emphasis will be on the general syntax as used in R and less on the statistical details of the various procedures (i.e., this is not a 'stats' course, it is a 'how to do stats with R' course). Hence, some familiarity with basic statistical concepts and methods is helpful when following the course.
 
@@ -90,7 +80,20 @@ The course is aimed at researchers, (Master and PhD level) students, data analys
 | 20:00-20:30 | Break |
 | 20:30-22:00 | Statistics with Continuous Outcomes |
 
-Further course dates / streams will happen as indicated here: [Live Streams](http://www.wvbauer.com/doku.php/live_streams) (where I will cover all topics that we did not get to, including statistics with categorical outcomes, some tips on working with R packages, programming structures, writing documents with R Markdown, and various miscellaneous topics). In essence, at that point the course will be open-ended, running as long as there is interest and we don't run out of topics (which is rather unlikely).
+#### Extra Day 1
+| Time        | Topic                |
+| :---------- | :------------------- |
+| 17:00-18:00 | Recap of Previous Days  |
+| 18:00-19:30 | Statistics with Categorical Outcomes |
+| 19:30-20:30 | Break |
+| 20:00-21:00 | Working with R Packages |
+
+#### Extra Day 2
+| Time        | Topic                |
+| :---------- | :------------------- |
+| 17:00-19:00 | Programming Structures |
+| 19:00-19:30 | Break |
+| 19:30-21:00 | R Markdown |
 
 ## Course Format
 
