@@ -1,0 +1,143 @@
+---
+title: A simple rmarkdown example
+subtitle: Open Online Introduction to R Course
+author: |
+  | Wolfgang Viechtbauer
+  | Maastricht University
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  # bookdown::html_document2:
+  html_document:
+    toc: true
+    number_sections: false
+    toc_depth: 2
+    toc_float:
+      collapsed: false
+    theme: default # lots of nice themes can be used: https://bootswatch.com/
+    highlight: haddock # default, tango, pygments, kate, monochrome, espresso, zenburn, haddock
+    df_print: default
+  # pdf_document:
+  # # bookdown::pdf_book:
+  #   toc: true
+  #   number_sections: false
+  #   toc_depth: 2
+  # word_document
+fig_caption: yes
+bibliography: references.bib
+---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+# code to install/load packages (at the very beginning of the document)
+
+if (!suppressWarnings(require(pander))) install.packages("pander")
+library(pander)
+
+if (!suppressWarnings(require(knitr))) install.packages("knitr")
+library(knitr)
+
+if (!suppressWarnings(require(texreg))) install.packages("texreg")
+library(texreg)
+```
+
+# Introduction
+
+This is an example of a R markdown document. With some basic formating codes you can make text *italic* and **bold**.
+
+## Subheading
+
+You can also easily make lists:
+
+* item 1
+* item 2
+* item 3
+
+Or numbered lists:
+
+1. item 1
+2. item 2
+3. item 3
+
+### Subsubheading
+
+This is a "subsubheading". [^1]
+
+# Equations
+
+If you know some basic latex syntax, you can easily add equations to your document. Equations can appear as part of the regular text (e.g., if $x = 2$, then $x + 4 = 6$). Or you can have equations appear in their own line: $$\frac{1}{2} + \frac{3}{4} = \frac{5}{4}.$$ When you compile the document, the equations should be nicely rendered.
+
+Here is a more interesting example. The probability density function of a normal distribution is given by $$f(x) = \frac{1}{\sqrt{2\pi} \sigma} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2},$$ where $\mu$ denotes the mean of the distribution and $\sigma$ its standard deviation.
+
+# Links
+
+Links can be created by simply pasting the URL into the document: https://rmarkdown.rstudio.com/. Or, you can make a string of text become a link. For example: To learn more, go to the [R markdown](https://rmarkdown.rstudio.com/) website.
+
+# Embedding R Code
+
+Where it gets really cool is when you start embedding R code in your document. For example:
+
+```{r}
+set.seed(1234)
+x <- runif(100, min=0, max=30)
+y <- 10 + .5*x + .3*x^2 + rnorm(100, mean=0, sd=25)
+res1 <- lm(y ~ x)
+res2 <- lm(y ~ x + I(x^2))
+summary(res1)
+```
+
+Of course, in a manuscript or presentation, you may not want to show the code itself, just the output. That is of course possible by using `echo=FALSE` (possibly combined with `message=FALSE` and/or `warning=FALSE` as needed when starting a "code chunk").
+
+## Dynamically Generated Plots
+
+Using regular R code, you can also create graphs, which then get automatically embedded in the document.
+
+```{r models, fig.width=7, fig.height=5.5, fig.align='center', fig.cap='R Skills as a Function of Time in the Course'}
+par(mar=c(5,4,2,2))
+plot(x, y, pch=19, xlab="Time in R Course", ylab="Your R Skills")
+abline(res1, lty="dotted")
+lines(predict(res2, newdata=data.frame(x=seq(0,30,1))))
+legend("topleft", inset=.02, legend=c("Linear Model", "Quadratic Model"), lty=c("solid", "dotted"))
+```
+
+You can also include the results from analyses in your text. For example, for the quadratic model, we find $R^2 =$ `r round(summary(res2)$r.squared, 2)`. I think we should send this article to *Science* or *Nature*! When using `bookdown::html_document2` as the output format, figures are automatically numbered and you can refer to them from the text. For example, see Figure \@ref(fig:models) (note that this won't work when using `html_document` as the output format).
+
+## Tables
+
+You can also create tables from model objects (the [pander](https://cran.r-project.org/package=pander) package is very useful for that).
+
+```{r, echo=FALSE, results='asis'}
+pander(res2, caption="Results from Quadratic Model")
+```
+
+The `kable()` function from the [knitr](https://cran.r-project.org/package=knitr) package can do something similar.
+
+```{r, echo=FALSE, results='asis'}
+kable(round(coef(summary(res2)), 3), caption="Results from Quadratic Model")
+```
+
+The [gt](https://gt.rstudio.com/), [xtable](https://cran.r-project.org/package=xtable), [stargazer](https://cran.r-project.org/package=stargazer), and [flextable](https://cran.r-project.org/package=flextable) packages can also create pretty tables. I recently stumbled across the [texreg](https://cran.r-project.org/package=texreg) package, which can create nicely formatted tables based on one or multiple regression models.
+
+```{r, echo=FALSE, results='asis'}
+knitreg(list(res1, res2), caption="Comparisom of the Linear and Quadratic Models")
+```
+
+These are just some of the basics. I hope you can see the potential here!
+
+# References
+
+You can also include references. You need a bibliography file for this (see the `references.bib` file). For example, the first paper about the R language was written by @ihaka1996. Blah blah blah. We used R for the analyses [@r2020].
+
+# More Info
+
+To learn more about R Markdown, you may want to check out these websites:
+
+* [rmarkdown](https://rmarkdown.rstudio.com/)
+* [markdown](https://daringfireball.net/projects/markdown/) (a nice [tutorial](https://commonmark.org/help/tutorial/))
+* [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+* [bookdown: Authoring Books and Technical Documents with R Markdown](https://bookdown.org/yihui/bookdown/)
+* [Advanced R Markdown](https://rpubs.com/bpbond/630335) by Ben Bond-Lamberty
+
+***
+
+[^1]: A footnote! The numbering is done automatically when the document is rendered, so you could also use `[^chicken]` to insert a new footnote.
+
+# References
