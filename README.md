@@ -5,11 +5,13 @@
 <table>
 <tr>
    <td>Course Dates</td>
-   <td>16-18 September, 2020 + 2 Extra Days</td>
+   <td>to be announced</td>
+   <!-- <td>16-18 September, 2020 + 2 Extra Days</td> -->
 </tr>
 <tr>
    <td>Course Times</td>
-   <td>17:00 - 22:00 CEST (<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20200916T17&p1=1307">check local time</a>)</td>
+   <td>to be announced</td>
+   <!-- <td>17:00 - 22:00 CEST (<a href="https://www.timeanddate.com/worldclock/fixedtime.html?iso=20200916T17&p1=1307">check local time</a>)</td> -->
 </tr>
 <tr>
    <td>Course Location</td>
@@ -99,7 +101,7 @@ The course is aimed at researchers, (Master and PhD level) students, data analys
 
 The course will be taught online as a live stream via the streaming platform Twitch. Once the stream goes live (around 16:45 on each course day), simply go to [this link](https://www.twitch.tv/wviechtb) to start watching.
 
-After an introductory lecture, the format of the course will be quite simple: I will provide you with R code that we will then go through step-by-step. Along the way, I'll explain how things work and answer questions as necessary. The code will be posted on the [course website](http://www.wvbauer.com/doku.php/course_oor#r_code) (and on [GitHub](https://github.com/wviechtb/course_oor/tree/master/code) and [GitLab](https://gitlab.com/wviechtb/course_oor/-/tree/master/code)). I provide the code at several locations to create some redundancy in case one of the links becomes inaccessible.
+After an introductory lecture, the format of the course will be quite simple: I will provide you with R code that we will then go through step-by-step. Along the way, I'll explain how things work and answer questions as necessary. The code will be posted on the [course website](https://www.wvbauer.com/doku.php/course_oor#r_code) (and on [GitHub](https://github.com/wviechtb/course_oor/tree/master/code) and [GitLab](https://gitlab.com/wviechtb/course_oor/-/tree/master/code)). I provide the code at several locations to create some redundancy in case one of the links becomes inaccessible.
 
 ## How to Prepare for the Course
 
@@ -153,7 +155,7 @@ The following are relevant links for the course itself:
 
 * [Stream at Twitch](https://www.twitch.tv/wviechtb) (where to go to watch the stream once it goes live)
 * [Chat Only](https://www.twitch.tv/popout/wviechtb/chat) (in case you have another computer showing the stream, but want to ask questions)
-* [Course Website](http://www.wvbauer.com/doku.php/course_oor) (the 'official' course website, but this repo contains the same materials)
+* [Course Website](https://www.wvbauer.com/doku.php/course_oor) (the 'official' course website, but this repo contains the same materials)
 * [Pre-Course Questionnaire](https://forms.gle/VgrFRyzP252VicBa9) (a short questionnaire to obtain a bit more information about your background)
 
 The following are relevant links in general:
@@ -166,4 +168,4 @@ The following are relevant links in general:
 
 ## License
 
-The contents of this repo are licensed under the following license: [CC Attribution-Noncommercial-Share Alike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+The contents of this repo are licensed under the following license: [CC Attribution-Noncommercial-Share Alike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/).
