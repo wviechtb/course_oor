@@ -145,7 +145,7 @@ Some other notes and frequently asked questions that may come up:
 
 * If you have to miss parts of the course (e.g., due to other obligations), you can still obtain the materials and work through them on your own pace. The same is of course also possible if you have to miss the entire course.
 
-* If the stream lags/stutters, try reloading the stream (just refresh the page) or reduce the stream resolution (click on the little gear icon at the bottom right of the stream window, select 'Quality', and try 720p or 420p; you could also try disabling 'Low Latency' under 'Advanced'). Note that the option to reduce the stream resolution might not be available (which is not something I have control over, although there are ways to make this option available once the stream is running for a bit).
+* If the stream lags/stutters, try reloading the stream (just refresh the page) or reduce the stream resolution (click on the little gear icon at the bottom right of the stream window, select 'Quality', and try 720p or 420p; you could also try disabling 'Low Latency' under 'Advanced'). Note that the option to reduce the stream resolution might not be available (which is not something I have control over).
 
 * For people affiliated with Maastricht University: You might want to consider following the [Introduction to R Course](https://www.maastrichtuniversity.nl/education/course/introduction-r) I teach for the university (high attendance / interest in this course shows the university the importance of keeping the course in its curriculum and you also get the benefits from 'in person' interactions).
 
