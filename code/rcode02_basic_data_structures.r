@@ -4,13 +4,18 @@
 
 rm(list=ls())
 
-# or even better: restart the R session (Menu 'Session' - Restart R)
+# or even better: at the beginning of each new script, and more generally,
+# whenever you switch to a different project/analysis, restart the R session
+# (Menu 'Session' - Restart R)
 
 # we start with some basic data structures
 
 # scalars
 
 x <- 2.5
+
+# you can read this as: 'assign the value 2.5 to an object called x'
+
 x
 
 # can also use = but better use <-
@@ -18,7 +23,7 @@ x
 x = 5
 x
 
-# note: 'x' is overwritten
+# note: 'x' is overwritten (when 'x' is an existing object name)
 
 # character strings need to be in quotes and can have spaces
 
@@ -61,8 +66,8 @@ x
 x <- c("Bob", "Sue", "John", 2, 5)
 x
 
-# sidenote: this is called 'type conversion' and R uses a complex set of rules
-# to do so in various circumstances (for better or for worse ...)
+# sidenote: this is called 'type coercion' and R uses a set of rules to do so
+# (for better or for worse ...)
 
 # logicals (TRUE/FALSE are special keywords)
 
@@ -86,6 +91,11 @@ x <= 3
 x == 3
 x != 3
 
+# note the == for comparing each element in x with the number 3; if you would
+# use x = 3, then you would assign 3 to x, which is not what we want
+
+# != means 'not equal to'
+
 # and/or (the parentheses are not necessary here, but make the code clearer)
 
 (x > 3) & (x < 6)
@@ -93,9 +103,16 @@ x != 3
 
 # missing values
 
+# say x is equal to 2 and 4 for the first and third person, but unknown for
+# the second person; how can we specify this?
+
 x <- c(2,,4)
 
+# nope!
+
 x <- c(2, ,4)
+
+# nope!
 
 x <- c(2, NA, 4)
 x
@@ -114,7 +131,11 @@ x
 
 # check if something is a command: simply type the name and run this
 
+chicken
 mean
+
+# if it says "Error: object '...' not found", then you know that it is not a
+# command (or some existing object)
 
 # better avoid naming objects after commands -> confusing!
 
@@ -123,7 +144,9 @@ mean
 
 mean(mean)
 
-# remove 'mean' vector
+# ahhhhhh!
+
+# remove the 'mean' vector
 
 rm(mean)
 
@@ -131,6 +154,11 @@ rm(mean)
 
 age <- c(25, 21, 30)
 age
+
+age <- c("Bob"=25, "Sue"=21, "John"=30)
+age
+
+# can also simplify this
 
 age <- c(Bob=25, Sue=21, John=30)
 age
@@ -194,13 +222,15 @@ sqrt(2) * sqrt(2) - 2
 
 print(sqrt(2) * sqrt(2), digits=18)
 
-# whut?!?
+# wtf?!?
 
 # this is actually a FAQ: https://cran.r-project.org/doc/FAQ/R-FAQ.html#Why-doesn_0027t-R-think-these-numbers-are-equal_003f
 
 ############################################################################
 
 # vectorized operations
+
+# this means that a command does something to every element of an object
 
 x <- c(2,4,3,5,7)
 x
@@ -216,6 +246,7 @@ mean(x)
 # an example where we use vectorized and non-vectorized functions
 
 x
+length(x)
 x - mean(x)
 (x - mean(x))^2
 sum((x - mean(x))^2)

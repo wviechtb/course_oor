@@ -25,13 +25,18 @@ tmp <- read.table("data_survey.dat", header=TRUE,
 
 # note: tab-delimited data can be easily exported from other software
 
-# note: it is possible to read in Stata, SPSS, SAS, Excel, etc. files
-# directly, but will not get into this for now; see the R Data Import/Export
-# manual: https://cran.r-project.org/doc/manuals/R-data.html
+# a few general notes:
+# - one can use other separators (e.g., "," as in csv files), but tabs are
+#   often a good and robust choice
+# - non-standard symbols/characters can make data import difficult; it is best
+#   to avoid non-ASCII characters (i.e., stick to a-z, A-Z, 0-9, . and _)
+# - remember the variable name restrictions mentioned earlier; it is best to
+#   stick to them, although R will try to fix variables names upon import
+# - the # symbol is used to denote comments in R; this also applies when
+#   importing plain-text data files, which can create problems; can try adding
+#   comment.char = "" as another argument above
 
-# in RStudio, you can also use Menu 'File' - Import Dataset
-# - if you use this, make sure you copy-paste the code to your script
-# - also you may want to adjust the name of the object this creates
+############################################################################
 
 # inspecting large datasets by just printing them isn't very useful
 
@@ -54,6 +59,65 @@ View(dat)
 
 # in RStudio, can also click on 'dat' in the 'Environment' pane (top right)
 
+# note: in this spreadsheet view, RStudio shows 50 variables at a time; can
+# click on the << < > >> buttons to see the other variables
+
+############################################################################
+
+# it is also possible to read in SPSS, Excel, etc. files directly
+
+# we will need some add-on packages for this
+
+# install (if necessary) and load the 'readxl' package
+
+if (!suppressWarnings(require(readxl))) install.packages("readxl")
+
+library(readxl)
+
+# now we can read in an Excel file
+
+dat2 <- read_excel("data_survey.xlsx")
+
+# note: read_excel() creates a 'tibble', which is essentially like data
+# frames, but we can make it a regular data frame with as.data.frame()
+
+dat2 <- as.data.frame(dat2)
+
+# install (if necessary) and load the 'haven' package
+
+if (!suppressWarnings(require(haven))) install.packages("haven")
+
+library(haven)
+
+# now we can read in an SPSS file
+
+dat3 <- read_sav("data_survey.sav")
+
+# note: read_sav() also creates a 'tibble'; it also imports some additional
+# information from SPSS, which may or may not be useful; we can remove all of
+# this extra stuff and make a regular data frame as follows
+
+dat3 <- zap_widths(zap_formats(zap_labels(as_factor(dat3))))
+dat3 <- as.data.frame(dat3)
+
+# the 'foreign' package (doesn't need to be installed since it comes with R,
+# so just load it with library(foreign)) also functions for importing SPSS and
+# Stata datasets: read.spss() and read.dta()
+
+# see also the R Data Import/Export manual:
+# https://cran.r-project.org/doc/manuals/R-data.html
+# which provides further information of data import/export
+
+# in RStudio, you can also use menu 'File' - Import Dataset
+# - if you use this, make sure you copy-paste the code to your script
+# - also you may want to adjust the name of the object this creates
+
+# clean up
+
+rm(dat2, dat3)
+
+############################################################################
+
 # other ways to inspect the data
 
 str(dat)
@@ -69,6 +133,7 @@ summary(dat)
 # get more information on a quantitative variables
 
 mean(dat$age)
+var(dat$age)
 sd(dat$age)
 median(dat$age)
 quantile(dat$age, probs=c(0.05,0.95))
@@ -81,7 +146,7 @@ summary(dat$age)
 fivenum(dat$age)
 table(dat$age)
 
-# what if there are missings?
+# what if there are missing values?
 
 mean(dat$smokenum)
 mean(dat$smokenum, na.rm=TRUE)
@@ -98,7 +163,7 @@ help("mean")
 help(mean)
 ?mean
 
-# in RStudio, can put cursor on command and hit F1
+# in RStudio, can put the cursor on a command and hit F1
 
 # the structure of help files:
 #
@@ -148,8 +213,8 @@ mean(na.rm=TRUE, dat$smokenum)
 
 mean(na.rm=TRUE, dat$smokenum, 0.05)
 
-# recommendation: don't rely on positional matching too much, as this can be
-# confusing (I usually don't name the very first argument, but otherwise
+# recommendation: don't rely on positional matching too much, as this can get
+# quite confusing (I usually don't name the very first argument, but otherwise
 # explicitly name the other arguments)
 
 # note: don't have to fully write out argument names (as long as this is
@@ -172,7 +237,7 @@ table(dat$age > 30)
 sum(dat$age > 30)
 mean(dat$age > 30)
 mean(dat$age > 30) * 100
-round(mean(dat$age > 30) * 100, digits=2)
+round(mean(dat$age > 30) * 100, digits=1)
 
 # note: TRUE is treated as 1, FALSE is treated as 0
 
@@ -251,6 +316,15 @@ head(dat)
 
 dat$lotr <- NULL
 
+# if you know the column positions of the variables
+
+dat$lotr <- rowSums(dat[10:15])
+head(dat)
+
+# but what if we do not know the column positions?
+
+dat$lotr <- NULL
+
 # a nice trick if the item names have a common substring
 
 names(dat)
@@ -260,6 +334,20 @@ dat[grep("lotr", names(dat))]
 
 dat$lotr <- rowSums(dat[grep("lotr", names(dat))])
 head(dat)
+
+# let's break this down one more time very slowly:
+
+# - names(dat) gives us the variable names in the dataset called 'dat'
+# - grep() is a function to search for a pattern in a string vector; so we
+#   search for the pattern "lotr" in the variables names of 'dat'
+# - this way we can get the positions of the lotr variables in 'dat'
+# - dat[] can be used to select one or multiple variables from 'dat'
+# - so we put the variable positions of the lotr variables between []
+# - so dat[grep("lotr", names(dat))] is a data frame with just these variables
+# - we then use rowSums() to sum up the row values within this data frame
+# - the resulting values are assigned to the new variable 'lotr' within 'dat'
+# - ...
+# - profit!
 
 # do the same for the other scales
 
@@ -284,20 +372,24 @@ dat$posaff <- with(dat, panas1 + panas4 + panas6 + panas7 + panas9  +
 dat$negaff <- with(dat, panas2 + panas3 + panas5 + panas8 + panas10 +
                         panas11 + panas14 + panas16 + panas19 + panas20)
 
-# saving as a tab-delimited plain-text data file
+############################################################################
+
+# exporting data
+
+# saving a data frame as a tab-delimited plain-text data file
 # - row.names=FALSE : do not add row names (it's not a variable and can lead
-#                     to problems when reading in the data in other software)
-# - quote=FALSE     : do not put "" around strings
-# - sep="\t"        : tab is the separator
+#                     to problems when importing the data into other software)
+# - quote=FALSE     : do not put "" around strings (optional)
+# - sep="\t"        : use tab as the separator
 # - na=""           : use a blank value for missing (NA) values
 
 write.table(dat, file="data_survey_edit.dat", row.names=FALSE,
             quote=FALSE, sep="\t", na="")
 
-# when saving this way, it should be fairly unproblematic to read in the data
-# in other software; note: never overwrite the original data file!
+# when saving this way, it should be fairly unproblematic to import the data
+# into other software; note: never overwrite the original data file!
 
-# one can also save data (and any other object) in R's own file format
+# one can also save the data (and any other objects) in R's own file format
 
 save(dat, file="data_survey_edit.rdata")
 
@@ -306,7 +398,7 @@ save(dat, file="data_survey_edit.rdata")
 # - saving/loading large data files should be quicker
 # - all properties of the data/objects are exactly preserved
 # disadvantage:
-# - cannot read in data in other software
+# - cannot import .rdata files into other software
 
 ############################################################################
 

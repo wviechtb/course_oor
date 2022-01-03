@@ -46,8 +46,9 @@ boxplot(dat$pss ~ dat$marital)
 
 boxplot(pss ~ marital, data=dat)
 
-boxplot(pss ~ marital, data=dat, col="lightgray",
-        xlab="Marital Status", ylab="PSS", pch=19, boxwex=0.6)
+boxplot(pss ~ marital, data=dat, xlab="Marital Status", ylab="PSS", pch=19)
+
+boxplot(pss ~ marital, data=dat, xlab="Marital Status", ylab="PSS", pch=19, boxwex=0.6)
 
 # 'boxwex' can be used to adjust the width of the boxes
 
@@ -55,7 +56,7 @@ boxplot(pss ~ marital, data=dat, col="lightgray",
 
 par(mar=c(5,9,4,2))
 
-boxplot(pss ~ marital, data=dat, col="lightgray",
+boxplot(pss ~ marital, data=dat,
         xlab="PSS", ylab="", pch=19, horizontal=TRUE, las=1,
         main="Perceived Stress by Marital Status", boxwex=0.6)
 
@@ -84,8 +85,7 @@ boxplot(pss ~ marital, data=dat, col=rainbow(8,alpha=0.2),
         main="Perceived Stress by Marital Status", boxwex=0.6, range=0)
 
 stripchart(pss ~ marital, data=dat, las=1, method="jitter", jitter=0.2,
-           pch=19, cex=0.5, xlab="Perceived Stress Scale", add=TRUE,
-           col=rainbow(8))
+           pch=19, cex=0.5, add=TRUE, col=rainbow(8))
 
 dev.off()
 
@@ -195,7 +195,7 @@ plot(res.m, xlab="Perceived Stress Scale Value", main="Kernel Density Estimates 
 polygon(res.m, col=rgb(0,0,1,.2))
 lines(res.f)
 polygon(res.f, col=rgb(1,0,0,.2))
-legend("topright", legend=c("Males", "Females"), fill=c(rgb(0,0,1,.2), rgb(1,0,0,.2)))
+legend("topright", inset=.02, legend=c("Males", "Females"), fill=c(rgb(0,0,1,.2), rgb(1,0,0,.2)))
 
 # try with a grouping variable that has more than 2 levels (error!)
 
@@ -230,13 +230,16 @@ if (!suppressWarnings(require(multcomp))) install.packages("multcomp")
 library(multcomp)
 
 # turn 'marital' into a factor variable
+
 dat$fmarital <- factor(dat$marital)
 
 # fit model
+
 res <- aov(pss ~ fmarital, data=dat)
 summary(res)
 
 # all pairwise comparisons using Bonferrroni correction
+
 summary(glht(res, linfct = mcp(fmarital = "Tukey")), test = adjusted("bonferroni"))
 
 ############################################################################
@@ -286,10 +289,10 @@ summary(res)
 # within-subject factors) with the aov() function, but we won't cover this
 #
 # some examples can be found here:
-# https://stats.idre.ucla.edu/r/seminars/repeated-measures-analysis-with-r/
+# https://stats.idre.ucla.edu/r/seminars/repeated-measures-analysis-with-r
 #
 # see also the ezANOVA() function from the 'ez' package that might be easier
-# to use for fitting complex ANOVA models
+# to use for complex ANOVA models (https://cran.r-project.org/package=ez)
 
 ############################################################################
 
@@ -303,6 +306,8 @@ cor(dat$posaff, dat$negaff)
 # correlation matrix for multiple variables
 
 cor(dat$posaff, dat$negaff, dat$pss)
+
+# the above does not work
 
 cor(dat[c("posaff", "negaff", "pss")])
 
@@ -568,7 +573,7 @@ plot(log(negaff) ~ age, data=dat, pch=19)
 
 newdat <- data.frame(age = 10:90)
 pred <- predict(res, newdata=newdat)
-lines(newdat$age, pred, lwd=3)
+lines(newdat$age, pred, lwd=3, col="red")
 
 # back-transform the outcome and predicted values
 
@@ -610,7 +615,7 @@ predict(res, newdata=newdat)
 # we specified the model
 
 pred <- predict(res, newdata=newdat)
-lines(newdat$negaff, pred, col="red", lwd=3)
+lines(newdat$negaff, pred, col="green", lwd=3)
 
 ############################################################################
 
@@ -642,9 +647,9 @@ summary(res)
 
 dat$marital
 
-# character variables are turned into factors when they are used as predictor
-# variables; and factors are 'dummy coded' when used as predictors; the first
-# level of a factor is (by default) the one that comes first alphanumerically
+# character variables are turned into 'factors' when used as predictors; and
+# factors are 'dummy coded' when used as predictors; the first level of a
+# factor is (by default) the one that comes first alphanumerically
 
 # we can manually turn a variable into a factor
 
@@ -708,7 +713,7 @@ lines(newdat$negaff, pred, lwd=3, col="red")
 # add a legend
 
 legend("topleft", legend=c("female","male"), col=c("red","blue"),
-       pch=c(19,19), lty=c("solid", "solid"), inset=.02)
+       pch=c(19,19), lty=c("solid","solid"), inset=.02)
 
 ############################################################################
 
@@ -750,7 +755,7 @@ lines(res$x, res$y, col="orange", lwd=3)
 
 legend("bottomright", inset=.02, col=c("red","blue","green","orange"),
        legend=c("2nd Degree Polynomial","Smoother (span = 0.75)","Smoother (span = 0.40)","Super Smoother"),
-       lty="solid", lwd=3)
+       lty="solid", lwd=3, cex=0.8)
 
 ############################################################################
 

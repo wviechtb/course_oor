@@ -6,7 +6,6 @@
 
 # data: growth of orange trees
 
-data(Orange)
 Orange
 
 help(Orange)
@@ -14,8 +13,6 @@ help(Orange)
 # copy to 'dat' (less typing)
 
 dat <- Orange
-
-rm(Orange)
 
 # mean circumference per tree
 
@@ -125,6 +122,7 @@ for (i in 1:8) {
    res$y <- res$y / max(res$y) * 0.8
    lines(res$x, res$y + i)
    polygon(res$x, res$y + i, col=cols[i])
+   text(52, i+.15, paste("n =", length(dat$pss[dat$marital == umarital[i]])), pos=2, cex=0.8)
 
 }
 
@@ -163,7 +161,6 @@ if (x > 5) {
 
 # using if() to set options in scripts
 
-data(Orange)
 dat <- Orange
 
 plot.type <- "bw" # options: "bw", "grayscale", "color"
@@ -227,6 +224,7 @@ sig.pvals <- ifelse(pvals <= .05, 1, 0)
 mean(sig.pvals)
 
 # use the 'equation approach' to determine the power of the t-test in this scenario
+
 power.t.test(n=20, delta=0.5, sd=1)
 
 ############################################################################
@@ -251,8 +249,5 @@ while (i <= iters) {
 
 sig.pvals <- ifelse(pvals <= .05, 1, 0)
 mean(sig.pvals)
-
-# plot density of a chi-square distributed variable with df=1
-curve(dchisq(x, df=1), lwd=3)
 
 ############################################################################

@@ -10,7 +10,7 @@
 # - top right:    Environment, Command History, Connections
 # - bottom right: File Browser, Plots, Packages, Help, Viewer
 
-# first check that it says "R version 4.0.2 (2020-06-22)" in the Console; if
+# first check that it says "R version 4.1.2 (2021-11-01)" in the Console; if
 # not, you do not have the current version of R installed (maybe you should
 # update, especially if the version you have installed is quite old)
 
@@ -33,6 +33,9 @@ print(x)
 
 # note: object 'x' is listed under 'Environment' in RStudio
 
+# the 'Environment' lists all objects in your 'workspace'; these can be simple
+# things like 'x', datasets, the results from some statistical analysis, etc.
+
 # try out tab completion (works in the Console and Editor):
 # - type 'box' - should get a list with possible matches
 # - type 'p' - now 'boxplot' should be the first option
@@ -41,12 +44,17 @@ print(x)
 
 boxplot(x)
 
+# in the Console, the up/down arrows scroll through your command history; use
+# Escape to stop showing commands from your command history
+
+############################################################################
+
 # running commands from a script file
 
 # you can run a command from the script by putting the cursor in the same line
 # as the command and then using the keyboard shortcut:
 # - Windows: Ctrl+Enter
-# - MacOS:   Command+Enter
+# - macOS:   Command+Enter
 #
 # try this out with lines 23 and 24 above
 #
@@ -66,13 +74,15 @@ boxplot(x)
 # Script') but the more appropriate fix is to change the file extension (to .r
 # or .R); under the 'File' menu, you can use 'Rename' to do so
 
+############################################################################
+
 # nesting of commands
 
-mx <- mean(x)
-mx
-sqrt(mx)
+vx <- var(x)
+vx
+sqrt(vx)
 
-sqrt(mean(x))
+sqrt(var(x))
 
 # list objects in environment (see also 'Environment' in RStudio)
 
@@ -80,11 +90,13 @@ ls()
 
 # remove objects
 
-rm(x, mx)
+rm(x, vx)
 
 # now what are the objects in the environment?
 
 ls()
+
+# character(0) stands for an empty 'character vector' (more on this later)
 
 # close R/RStudio (remember to choose 'no' when asked to save the workspace)
 
@@ -125,10 +137,6 @@ unlink(".RData")
 # - uncheck 'Restore .RData into workspace at startup'
 # - set 'Save workspace to .RData on exit' to 'Never'
 
-# if you don't like that RStudio adds open and closing brackets when
-# completing a command: Tools - Global Options - Code - and then uncheck
-# 'Insert matching parens/quotes'
-
 # depending on your computer / OS, double-clicking on an .r (.R) file can
 # automatically load an R script in RStudio (might have to configure your OS
 # first to always use RStudio for opening .r (.R) files)
@@ -137,7 +145,7 @@ unlink(".RData")
 
 # working directory
 
-# the 'working directory' is the directory/folder where R/RStudio will look
+# the 'working directory' is the directory (i.e., folder) where R will look
 # for files (e.g., datasets you want to load) or where it will save files to
 # (e.g., graphs you want to save so that they can be imported into a paper or
 # presentation; we will learn how to do this later on)

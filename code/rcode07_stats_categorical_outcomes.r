@@ -84,6 +84,7 @@ summary(res)
 # it may be safer to do the coding manually
 
 dat$smoke1 <- ifelse(dat$smoke == "yes", 1, 0)
+dat$smoke1
 
 res <- glm(smoke1 ~ sex, data=dat, family=binomial)
 summary(res)

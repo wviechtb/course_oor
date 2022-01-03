@@ -58,19 +58,20 @@ dat <- read.table(header=TRUE, colClasses=c("character", "integer", "Date"), tex
 3.3.2 9961 2017-01-28
 3.4.3 11991 2017-12-15
 3.6.3 15537 2020-04-01
-4.0.2 16261 2020-09-15")
+4.0.2 16261 2020-09-15
+4.1.2 18544 2021-12-06")
 
 par(mar=c(6,5.5,4,2))
 par(mgp=c(4,1,0))
 plot(dat$date, dat$count, pch=19, cex=1.2, xlab="", ylab="Number of CRAN Packages", xaxt="n", yaxt="n")
 axis(side=1, at=dat$date, label=dat$date, las=2, cex.axis=.7)
-axis(side=2, at=seq(0,16000,1000), las=2)
+axis(side=2, at=seq(0,19000,1000), las=2)
 axis(side=3, at=dat$date, label=dat$vers, las=2, cex.axis=.7)
 grid(nx=10, ny=10)
 
 res <- loess(count ~ as.numeric(date), data=dat)
 pred <- predict(res)
-lines(dat$date, pred, lwd=2, col="gray70")
+lines(dat$date, pred, lwd=3, col="gray70")
 
 points(dat$date, dat$count, pch=19, cex=1.2)
 
@@ -79,7 +80,7 @@ points(dat$date, dat$count, pch=19, cex=1.2)
 # all packages available on CRAN:
 # https://cran.r-project.org/web/packages/available_packages_by_name.html
 
-# CRAN task views: https://cran.r-project.org/web/views/
+# CRAN task views: https://cran.r-project.org/web/views
 
 # install the 'lme4' package (from CRAN)
 
@@ -116,8 +117,6 @@ help.search("factor analysis")
 
 RSiteSearch("structural equation")
 
-# may need to remove the + from the search field and click Search! again
-
 ############################################################################
 
 # install (if necessary) and load the 'sos' package
@@ -130,13 +129,10 @@ library(sos)
 
 findFn("structural equation")
 
-# get nothing if there are too many hits :(
-
-findFn("factor analysis")
-
 ############################################################################
 
 # install (if necessary) and load the 'packagefinder' package
+# https://www.zuckarelli.de/packagefinder/tutorial.html
 
 if (!suppressWarnings(require(packagefinder))) install.packages("packagefinder")
 
@@ -156,19 +152,37 @@ CRANsearcher()
 
 ############################################################################
 
+# install (if necessary) and load the 'pkgsearch' package
+# https://r-hub.github.io/pkgsearch/
+
+if (!suppressWarnings(require(pkgsearch))) install.packages("pkgsearch")
+
+library(pkgsearch)
+
+pkg_search("structural equation")
+
+# there is also a nicer interface; need to install some packages first
+
+if (!suppressWarnings(require(shinyWidgets))) install.packages("shinyWidgets")
+if (!suppressWarnings(require(whoami))) install.packages("whoami")
+
+pkg_search_addin("structural equation")
+
+############################################################################
+
 # also (potentially) useful:
-# - https://rdrr.io/
-# - https://www.r-pkg.org/
-# - https://www.rdocumentation.org/
-# - https://rseek.org/
-# - https://crantastic.org/ (no longer available?)
+# - https://rdrr.io
+# - https://www.r-pkg.org
+# - https://www.rdocumentation.org
+# - https://rseek.org
+# - https://crantastic.org (no longer available?)
 
 ############################################################################
 
 # example: https://cran.r-project.org/package=lme4
 
 # potential indicators of "good" packages:
-# - written by a known expert in the field
+# - written by known experts in the field
 # - package has been around for some time
 # - package has been updated
 # - listed under one or multiple task views
@@ -178,7 +192,7 @@ CRANsearcher()
 # - has been cited in papers
 # - ...
 
-# Journal of Statistical Software: https://www.jstatsoft.org/
+# Journal of Statistical Software: https://www.jstatsoft.org
 
 # citing R and packages
 
@@ -188,20 +202,118 @@ citation("lme4")
 ############################################################################
 
 # where to get help:
-# - Google! (or DuckDuckGo or your favoriate search engine)
+# - Google! (or DuckDuckGo or your favorite search engine)
 # - https://www.r-project.org/help.html
 # - mailing lists: https://www.r-project.org/mail.html
 # - read posting guide first: https://www.r-project.org/posting-guide.html
 #   - do your homework before posting
 #   - provide reproducible (and simple) code that illustrates the problem
-# - StackExchange: https://stackexchange.com/
-#   - https://stackoverflow.com/
-#   - https://stats.stackexchange.com/
+# - StackExchange: https://stackexchange.com
+#   - https://stackoverflow.com
+#   - https://stats.stackexchange.com
+# - https://community.rstudio.com (for questions related to RStudio and
+#   packages that have been written by RStudio staff, esp. tidyverse stuff)
+
+############################################################################
+
+# a reproducible example is a small self-contained example of the problem you
+# are running into that someone can copy-paste directly into R to recreate the
+# problem; then it is *much* easier for someone to come up with a solution
+
+# such an example will typically contain data; do not send an attachment or a
+# screenshot of your data (or something like that); it would take extra effort
+# (writing some R code to import the data, manually typing some data into R)
+# to recreate the dataset in R
+
+# you need to provide the data in a way so that the dataset can be directly
+# recreated in R; this is where the dput() function comes into play
+
+# say the 'dat' object from above is my dataset I have in R; then you can
+# create R code that will recreate the dataset with:
+
+dput(dat)
+
+# so you can take that output and paste it into your email/post like this
+
+dat <- structure(...)
+
+# now anybody can recreate the exact same dataset with this code; so your
+# email/post might then look like this
+
+###### From <you> to the mailing list / forum / message board
+
+# Hi all,
+#
+# I am creating a scatterplot of a date variable on the x-axis versus a count
+# variable on the y-axis. Here are my data and the plot so far.
+
+dat <- structure(list(vers = c("1.3", "1.4", "1.5", "1.7", "1.8", "1.9",
+"2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "2.10",
+"2.13", "2.15", "3.0.2", "3.1", "3.2", "3.2.2", "3.2.3", "3.3.1", "3.3.2",
+"3.4.3", "3.6.3", "4.0.2", "4.1.2" ), count = c(110L, 129L, 161L, 219L, 273L,
+357L, 406L, 548L, 647L, 739L, 911L, 1000L, 1300L, 1495L, 1614L, 1907L, 2008L,
+3000L, 3976L, 5000L, 5745L, 6706L, 7547L, 7969L, 9004L, 9961L, 11991L, 15537L,
+16261L, 18544L), date = structure(c(11494, 11673, 11850, 12197, 12372, 12574,
+12703, 12952, 13133, 13299, 13494, 13615, 13833, 13956, 14172, 14351, 14543,
+15106, 15604, 16017, 16304, 16593, 16776, 16861, 17035, 17194, 17515, 18353,
+18520, 18967), class = "Date")), class = "data.frame", row.names = c(NA,-30L))
+
+plot(dat$date, dat$count, xlab="", ylab="Number of CRAN Packages")
+
+# I am trying to change the x-axis limits so that they go from 2000 to 2025. I
+# tried using xlim=c(2000,2025) but this is obviously not correct.
+
+plot(dat$date, dat$count, xlab="", ylab="Number of CRAN Packages", xlim=c(2000,2025))
+
+# Any help/suggestions would be greatly appreciated.
+
+###### From <somebody> replying
+
+# Hi <you>,
+#
+# Wow, this is such a well-formulated question with a clear reproducible
+# example that I will gladly take a bit of time out of my busy schedule to
+# help you with this.
+#
+# The solution is to also use a proper date vector for the x-axis limits. You
+# can create such a vector with as.Date(). Try this:
+
+plot(dat$date, dat$count, xlab="", ylab="Number of CRAN Packages",
+     xlim=as.Date(c("2000-01-01","2025-01-01")))
+
+# Hope this helps!
+
+###### ... end of story.
+
+# in case the dataset is very large, just post a small part of it that is
+# sufficient to create a reproducible example; for example:
+
+dput(dat[1:10,])
 
 ############################################################################
 
 # not all packages are on CRAN
 
-# for example Bioconductor: https://www.bioconductor.org/
+# for example Bioconductor: https://www.bioconductor.org
+
+############################################################################
+
+# a note about 'masking': different packages may contain functions that have
+# the same name; for example:
+
+library(psych)
+library(lavaan)
+
+# - note that it says that function 'cor2cov' has been masked
+# - what has happened is that both packages have a function called 'cor2cov'
+# - so when you now use the cor2cov function, the one from the lavaan package
+#   will be used (i.e., always the one from the package loaded last)
+# - but what if you want to use the 'cor2cov' function from the psych package?
+# - then you can use psych::cor2cov() to explicitly tell R to use the cor2cov
+#   function from the psych package
+# - the more packages you load, the more likely it is that two packages will
+#   contain functions with the same name and hence that masking will occur
+# - to avoid the headaches that this can create, only load packages at the
+#   beginning of your script that you really need
 
 ############################################################################

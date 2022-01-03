@@ -6,7 +6,7 @@ author: |
   | Maastricht University
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
-  # bookdown::html_document2:
+  #bookdown::html_document2:
   html_document:
     toc: true
     number_sections: false
@@ -17,7 +17,7 @@ output:
     highlight: haddock # default, tango, pygments, kate, monochrome, espresso, zenburn, haddock
     df_print: default
   # pdf_document:
-  # # bookdown::pdf_book:
+  # bookdown::pdf_book:
   #   toc: true
   #   number_sections: false
   #   toc_depth: 2
@@ -37,6 +37,13 @@ library(knitr)
 
 if (!suppressWarnings(require(texreg))) install.packages("texreg")
 library(texreg)
+
+# for bookdown output formats:
+# install.packages("bookdown")
+
+# for pdf output:
+# install.packages("tinytex")
+# tinytex::install_tinytex()
 ```
 
 # Introduction
@@ -59,11 +66,11 @@ Or numbered lists:
 
 ### Subsubheading
 
-This is a "subsubheading". [^1]
+Lots of text here followed by a footnote. [^1]
 
 # Equations
 
-If you know some basic latex syntax, you can easily add equations to your document. Equations can appear as part of the regular text (e.g., if $x = 2$, then $x + 4 = 6$). Or you can have equations appear in their own line: $$\frac{1}{2} + \frac{3}{4} = \frac{5}{4}.$$ When you compile the document, the equations should be nicely rendered.
+If you know some basic LaTeX syntax, you can easily add equations to your document. Equations can appear as part of the regular text (e.g., if $x = 2$, then $x + 4 = 6$). Or you can have equations appear in their own line: $$\frac{1}{2} + \frac{3}{4} = \frac{5}{4}.$$ When you compile the document, the equations should be nicely rendered.
 
 Here is a more interesting example. The probability density function of a normal distribution is given by $$f(x) = \frac{1}{\sqrt{2\pi} \sigma} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2},$$ where $\mu$ denotes the mean of the distribution and $\sigma$ its standard deviation.
 
@@ -114,15 +121,15 @@ The `kable()` function from the [knitr](https://cran.r-project.org/package=knitr
 kable(round(coef(summary(res2)), 3), caption="Results from Quadratic Model")
 ```
 
-The [gt](https://gt.rstudio.com/), [xtable](https://cran.r-project.org/package=xtable), [stargazer](https://cran.r-project.org/package=stargazer), and [flextable](https://cran.r-project.org/package=flextable) packages can also create pretty tables. I recently stumbled across the [texreg](https://cran.r-project.org/package=texreg) package, which can create nicely formatted tables based on one or multiple regression models.
+The [gt](https://gt.rstudio.com/), [xtable](https://cran.r-project.org/package=xtable), [apaTables](https://cran.r-project.org/package=apaTables), [stargazer](https://cran.r-project.org/package=stargazer), and [flextable](https://cran.r-project.org/package=flextable) packages can also create pretty tables. I recently stumbled across the [texreg](https://cran.r-project.org/package=texreg) package, which can create nicely formatted tables based on one or multiple regression models.
 
 ```{r, echo=FALSE, results='asis'}
-knitreg(list(res1, res2), caption="Comparisom of the Linear and Quadratic Models")
+knitreg(list(res1, res2), caption="Comparison of the Linear and Quadratic Models")
 ```
 
 These are just some of the basics. I hope you can see the potential here!
 
-# References
+# Citing Articles
 
 You can also include references. You need a bibliography file for this (see the `references.bib` file). For example, the first paper about the R language was written by @ihaka1996. Blah blah blah. We used R for the analyses [@r2020].
 

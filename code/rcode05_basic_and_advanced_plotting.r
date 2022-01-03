@@ -2,7 +2,11 @@
 
 # restart the R session (Menu 'Session' - Restart R)
 
-# read in data
+# read in data (note: from now on, we will be working with the edited dataset
+# where we reversed coded some items and then computed some sum scores for the
+# various scales in the dataset; we did this in rcode04.r, but if you skipped
+# this part and do not have data_survey_edit.rdata, then you can download this
+# edited dataset from the course materials page)
 
 load("data_survey_edit.rdata")
 
@@ -18,11 +22,11 @@ table(dat$marital)
 
 barplot(table(dat$marital))
 
-# note: might get the following error message when trying to create a plot:
+# note: if you get the following error message when trying to create a plot:
 #
 # Error in plot.new() : figure margins too large
 #
-# this indicates that the size of the 'plotting device' is too small to
+# then this indicates that the size of the 'plotting device' is too small to
 # accommodate the plot you are trying to create; this can happen more easily
 # in RStudio because the pane for plots at the bottom right is a bit small; if
 # this happen, you just have to make the size of the plotting pane larger
@@ -70,20 +74,28 @@ dev.off()
 
 hist(dat$age)
 
-# add an x-axis label, change the color of the bars, add a title
+# add an x-axis label and add a proper title
 
-hist(dat$age, xlab="Age", col="gray", main="Histogram of Age")
+hist(dat$age, xlab="Age", main="Histogram of Age")
 
 # can adjust the x-axis and y-axis limits
 
-hist(dat$age, xlab="Age", col="gray", main="Histogram of Age",
-     xlim=c(0,100), ylim=c(0,100))
+hist(dat$age, xlab="Age", main="Histogram of Age", xlim=c(0,100), ylim=c(0,100))
 
 # adjust the number of cells/bins
 
-hist(dat$age, xlab="Age", col="gray", main="Histogram of Age")
-hist(dat$age, xlab="Age", col="gray", main="Histogram of Age", breaks=5)
-hist(dat$age, xlab="Age", col="gray", main="Histogram of Age", breaks=30)
+hist(dat$age, xlab="Age", main="Histogram of Age")
+hist(dat$age, xlab="Age", main="Histogram of Age", breaks=5)
+hist(dat$age, xlab="Age", main="Histogram of Age", breaks=30)
+hist(dat$age, xlab="Age", main="Histogram of Age", breaks=seq(0,100,by=10))
+
+# change the color of the bins
+
+hist(dat$age, xlab="Age", main="Histogram of Age", col="skyblue")
+
+# also change the color of the borders
+
+hist(dat$age, xlab="Age", main="Histogram of Age", col="skyblue", border="white")
 
 ############################################################################
 
@@ -91,7 +103,7 @@ hist(dat$age, xlab="Age", col="gray", main="Histogram of Age", breaks=30)
 
 colors()
 
-# colors can also be specified as R (red), G (green), B (Blue) hex values
+# colors can also be specified as R (red), G (green), B (blue) hex values
 # (https://en.wikipedia.org/wiki/Hexadecimal) or in terms of RGB intensities,
 # but note that (by default) the intensities need to be given on a 0-1 scale
 
@@ -102,7 +114,7 @@ colors()
 rgb(135/255, 206/255, 235/255)
 
 # https://www.google.com/search?q=color+picker
-# https://duckduckgo.com/?q=color+picker&ia=answer
+# https://duckduckgo.com/?q=color+picker
 
 # how did I know the hex/RGB values for 'skyblue'?
 
@@ -123,6 +135,28 @@ boxplot(dat$age)
 
 boxplot(dat$age, ylab="Age", main="Boxplot of Age")
 
+#     -+-     <- maximum
+#      |
+#      |
+#   +--+--+   <- 3rd quartile
+#   |     |
+#   |     |
+#   +-----+   <- 2nd quartile (median)
+#   |     |
+#   +--+--+   <- 1st quartile
+#      |
+#     -+-     <- minimum
+
+# the lines extending from the box are called the 'whiskers'
+#
+# individual points (potential outliers) are shown if they are more than 1.5
+# times the IQR above the third or below the first quartile; then the whiskers
+# extent to the most extreme points that are not outliers
+
+# if you always want the whiskers to extent to the minimum/maximum
+
+boxplot(dat$age, ylab="Age", main="Boxplot of Age", range=0)
+
 ############################################################################
 
 # kernel density estimate of a distribution
@@ -137,8 +171,7 @@ plot(density(dat$age, adjust=1.5), main="Distribution of Age")
 
 # superimpose density on top of histogram
 
-hist(dat$age, xlab="Age", col="gray", main="Histogram of Age",
-     xlim=c(0,100), freq=FALSE)
+hist(dat$age, xlab="Age", main="Histogram of Age", xlim=c(0,100), freq=FALSE)
 lines(density(dat$age, adjust=1.5), lwd=3)
 
 ############################################################################
@@ -150,7 +183,7 @@ plot(dat$pss, dat$posaff)
 
 # note: if you get an error ("need finite 'xlim' values" or "'x' and 'y'
 # lengths differ") then your dataset probably does not include the 'pss'
-# and/or the 'posaff' variable we created earlier (in rode04)
+# and/or the 'posaff' variable we created earlier (in rode04.r)
 
 # adjust some settings
 
@@ -177,8 +210,8 @@ plot(dat$pss, dat$posaff, xlab="Stress", ylab="Positive Affect",
 
 # add a legend
 
-legend("topright", legend=c("smoker","non-smoker"), col=c("red","blue"),
-       pch=c(19,19), inset=.02, cex=0.8)
+legend("topright", inset=.02, pch=c(19,19), cex=0.8,
+       col=c("red","blue"), legend=c("smoker","non-smoker"))
 
 # if x and y values are measured coarsely, may get overlapping points, which
 # can make it more difficult to see any trends/patterns; one solution is to
@@ -222,7 +255,7 @@ plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
 # note: the jittering is random, so each time you rerun the command above, the
 # plot will look (slightly) different; to make the look of the plot fully
 # reproducible, we can set the 'seed' of the random number generator before
-# creating the plot (the seed number is completely arbitrary)
+# creating the plot (the seed number is arbitrary)
 
 set.seed(1234)
 plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
@@ -285,46 +318,114 @@ rm(x, y)
 
 ############################################################################
 
-# not recommended: using the 'Export' button under 'Plots' in RStudio (or if
-# using R directly, right-clicking on an image and using save/copy); this
-# isn't fully reproducible, since the plot will look different depending on
-# the size of the plotting pane / window; always use *code* to save plots
+# not recommended: right-clicking on an image and using save/copy; this isn't
+# a fully reproducible workflow, since the plot will look different depending
+# on the size of the plotting pane / window; always use *code* to save plots
 
 # saving a plot (in various formats) (saved to current working directory)
 
+# with pdf(), we open a pdf plotting device; then we create the plot, then
+# with dev.off() we close the plotting device (don't forget this last step!)
+
 pdf("plot_stress_vs_posaff.pdf")
 plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
-     xlab="Stress", ylab="Positive Affect", pch=19)
+     pch=19, xlab="Stress", ylab="Positive Affect")
 dev.off()
+
+# same procedure with other plotting devices
 
 postscript("plot_stress_vs_posaff.eps")
 plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
-     xlab="Stress", ylab="Positive Affect", pch=19)
+     pch=19, xlab="Stress", ylab="Positive Affect")
 dev.off()
 
 png("plot_stress_vs_posaff.png")
 plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
-     xlab="Stress", ylab="Positive Affect", pch=19)
+     pch=19, xlab="Stress", ylab="Positive Affect")
 dev.off()
+
+# now you have full control over the width, height, pointsize, resolution,
+# etc., and so every time you run this code, you will get the exact same plot
 
 png("plot_stress_vs_posaff.png", width=1000, height=800, pointsize=20)
 plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
-     xlab="Stress", ylab="Positive Affect", pch=19)
+     pch=19, xlab="Stress", ylab="Positive Affect")
 dev.off()
 
 tiff("plot_stress_vs_posaff.tiff", width=1000, height=800, pointsize=20)
 plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
-     xlab="Stress", ylab="Positive Affect", pch=19)
+     pch=19, xlab="Stress", ylab="Positive Affect")
 dev.off()
 
 jpeg("plot_stress_vs_posaff.jpg", width=1000, height=800, pointsize=20)
 plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
-     xlab="Stress", ylab="Positive Affect", pch=19)
+     pch=19, xlab="Stress", ylab="Positive Affect")
 dev.off()
 
-# to get more info on the 'graphical devices' available
+# to get more info on the main 'graphical devices' available
 
 help(device)
+
+# let's consider the figure requirements for a PLOS ONE article:
+# https://journals.plos.org/plosone/s/figures
+#
+# - either tiff or eps (tiffs are easier to work with)
+# - dimensions: width and height around 1000-2250 pixels (height up to 2625)
+# - resolution: either 300 or 600 dpi
+# - for tiffs, use 'lzw' compression
+# - text within figures: Arial, Times, or Symbol font
+# - no superfluous white space around figure
+# - no alpha channels (i.e., no transparency)
+
+tiff("plot_stress_vs_posaff.tiff", width=2000, height=1600, res=300,
+     compression="lzw")
+
+par(mar=c(4.2,4.2,1,1))
+
+set.seed(1234)
+
+plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
+     pch=19, cex=0.8, xlim=c(10,50), ylim=c(10,50),
+     xlab="Stress", ylab="Positive Affect")
+
+dev.off()
+
+# fonts are a tricky issue in general and there can be differences across 
+# operating systems (the following commands are specific to different OSs)
+#
+# Windows typically uses Arial as the default font
+
+windowsFonts()
+
+# the same should go for macOS
+
+quartzFonts()
+
+# under Linux, the default font should be Helvetica
+
+X11Fonts()
+
+# Arial and Helvetica look very similar, so the difference will only be
+# noticeable to font-nerds who really care about such things ...
+
+# under Windows, you can try the following: 
+
+# windowsFonts(sans = windowsFont("Comic Sans MS"))
+# tiff(...)
+# <code to create the figure>
+# dev.off()
+
+# under macOS, you can try the following:
+
+# quartzFonts(sans = quartzFont(rep("Comic Sans MS", 4)))
+# tiff(...)
+# <code to create the figure>
+# dev.off()
+
+# under Linux, using family="" should switch the font, so you use:
+# tiff(..., family="Arial")
+# <code to create the figure>
+# dev.off()
 
 ############################################################################
 
@@ -340,6 +441,11 @@ library(MASS)
 res <- kde2d(dat$pss, dat$posaff)
 
 # error: 'missing or infinite values in the data are not allowed'
+
+# the kde2d() function is a bit picky and does not allow any missing values in
+# either the x or the y variable; we can get around this by first creating a
+# temporary dataset that just includes the two variables of interest and then
+# using na.omit() which omits any rows with missing values
 
 tmp <- dat[c("pss","posaff")]
 tmp <- na.omit(tmp)
@@ -396,7 +502,7 @@ persp(res, xlab="Stress", ylab="Positive Affect", zlab="Density",
       col="gray80", border="gray50", ticktype="detailed",
       theta=135, phi=25, shade=0.7, ltheta=60)
 
-# let's get really fancy
+# let's get fancy
 
 nrz <- nrow(res$z)
 ncz <- ncol(res$z)
@@ -427,10 +533,10 @@ rm(tmp, res, nrz, ncz, nbcol, color, zfacet, facetcol)
 smoothScatter(dat$pss, dat$posaff, xlab="Stress", ylab="PA")
 
 smoothScatter(dat$pss, dat$posaff, xlab="Stress", ylab="PA",
-              colramp=viridis, col="white")
+              colramp=hcl.colors, col="white")
 
 smoothScatter(dat$pss, dat$posaff, xlab="Stress", ylab="PA",
-              colramp=viridis, col="white", nbin=200)
+              colramp=hcl.colors, col="white", nbin=200)
 
 ############################################################################
 
@@ -444,12 +550,15 @@ library(rgl)
 
 plot3d(dat$pss, dat$posaff, dat$negaff, xlab="Stress", ylab="PA", zlab="NA")
 
+# if this doesn't work, can try running the following and then again plot3d()
+
+options(rgl.printRglwidget = TRUE)
+
 ############################################################################
 
 # also check out:
-# - https://www.r-graph-gallery.com/
-# - https://www.data-to-viz.com/
-# - https://rgraphgallery.blogspot.de/
+# - https://www.r-graph-gallery.com
+# - https://www.data-to-viz.com
 
 ############################################################################
 
@@ -460,8 +569,7 @@ plot3d(dat$pss, dat$posaff, dat$negaff, xlab="Stress", ylab="PA", zlab="NA")
 par(mfrow=c(2,2))
 
 par(mar=c(5,5,5,2))
-hist(dat$age, xlab="Age", col="gray", main="(a) Histogram of Age",
-     xlim=c(0,100), ylim=c(0,100))
+hist(dat$age, xlab="Age", main="(a) Histogram of Age", xlim=c(0,100), ylim=c(0,100))
 
 par(mar=c(9,4,5,2))
 barplot(table(dat$marital), las=2, main="(b) Marital Status")
@@ -474,8 +582,8 @@ plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
 
 par(mar=c(5,5,5,2))
 smoothScatter(dat$pss, dat$posaff, xlab="Stress", ylab="PA",
-              colramp=viridis, col=NA,
-              main="(d) Density Estimate of Stress versus PA")
+              colramp=hcl.colors, col=NA,
+              main="(d) Density of Stress versus PA")
 
 # close plot
 
@@ -488,16 +596,15 @@ matrix(c(1,1,2,3), nrow=2, ncol=2, byrow=TRUE)
 layout(matrix(c(1,1,2,3), nrow=2, ncol=2, byrow=TRUE))
 layout.show(3)
 
-hist(dat$age, xlab="Age", col="gray", main="(a) Histogram of Age",
-     xlim=c(0,100), ylim=c(0,100))
+hist(dat$age, xlab="Age", main="(a) Histogram of Age", xlim=c(0,100), ylim=c(0,100))
 
 par(mar=c(9,4,5,1))
 barplot(table(dat$marital), las=2, main="(b) Marital Status")
 
 par(mar=c(5,5,5,2))
 smoothScatter(dat$pss, dat$posaff, xlab="Stress", ylab="PA",
-              colramp=viridis, col=NA,
-              main="(c) Density Estimate of Stress versus PA")
+              colramp=hcl.colors, col=NA,
+              main="(c) Density of Stress versus PA")
 
 # close plot
 
@@ -515,30 +622,32 @@ dev.off()
 dat.m <- dat[dat$sex == "male",]
 dat.f <- dat[dat$sex == "female",]
 
-#png("stress_pa_association.png")
+#png("stress_pa_association.png", width=2000, height=1900, res=300)
 
-plot(dat.m$pss, dat.m$posaff, pch=19, col="blue", xlab="Stress",
-     ylab="Positive Affect", xlim=c(10,50), ylim=c(8,50))
+# set up an empty plot but with labeled axes and axis limits set
 
-# add points for the females
+plot(NA, xlab="Stress", ylab="Positive Affect", xlim=c(10,50), ylim=c(8,50))
 
-points(dat.f$pss, dat.f$posaff, pch=19, col="red")
+# add horizontal and vertical dotted reference lines
+
+abline(h=30, lty="dotted")
+abline(v=30, lty="dotted")
+
+# add points for the males and females
+
+set.seed(1234)
+points(jitter(dat.m$pss, amount=0.5), jitter(dat.m$posaff, amount=0.5), pch=19, col="#1fc3aa", cex=0.6)
+points(jitter(dat.f$pss, amount=0.5), jitter(dat.f$posaff, amount=0.5), pch=19, col="#8624f5", cex=0.6)
 
 # add a title
 
 title("Stress versus Positive Affect")
 
-# add horizontal and vertical dotted references lines
-
-abline(h=30, lty="dotted")
-abline(v=30, lty="dotted")
-
 # add legend
 
-legend("topright", legend=c("female","male"), col=c("red","blue"),
-       pch=c(19,19), inset=.02)
+legend("topright", inset=.02, pch=c(19,19), legend=c("male","female"), col=c("#1fc3aa","#8624f5"))
 
-# add a (curved) line
+# add an arbitrary (curved) line (just for illustration purposes)
 
 xs <- 10:50
 ys <- 65 - 1.8*xs + 0.016 * xs^2
@@ -551,5 +660,26 @@ text(10,  8, "Flat Affect?!?",  pos=4, font=2)
 text(50,  8, "Academics ...",   pos=2, font=2)
 
 #dev.off()
+
+############################################################################
+
+# how to control what is shown on the x- and/or y-axis
+
+plot(NA, xlab="Stress", ylab="Positive Affect", 
+     xlim=c(10,50), ylim=c(8,50), xaxt="n")
+
+# xaxt="n" means: do not add the axis tick marks and numbers
+# then we add the axis 'manually' (side=1 means: at the bottom)
+
+axis(side=1, at=c(10,30,50))
+
+# you can also change what text is shown at the tick marks
+
+plot(NA, xlab="Stress", ylab="Positive Affect", 
+     xlim=c(10,50), ylim=c(8,50), xaxt="n")
+
+axis(side=1, at=c(10,30,50), label=c("Low","Medium","High"))
+
+# use yaxt="n" and axis(side=2, ...) to do the same for the y-axis
 
 ############################################################################
