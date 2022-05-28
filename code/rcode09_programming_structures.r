@@ -1,6 +1,18 @@
 ############################################################################
 
+# Course:  Introduction to R
+# Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
+# License: CC BY-NC-SA 4.0
+#
+# last updated: 2022-05-27
+
+############################################################################
+
 # restart the R session (Menu 'Session' - Restart R)
+
+# read in the code from rcode_helper.r
+
+source("rcode_helper.r")
 
 ############################################################################
 
@@ -43,6 +55,7 @@ for (i in 1:5) {
 for (i in 1:5) {
    res <- mean(dat$circumference[dat$Tree==i])
 }
+
 res # only last value
 
 # set up a vector where we can store the results
@@ -95,7 +108,9 @@ points(dat$age, dat$circumference, pch=19)
 
 ############################################################################
 
-# another example
+# another example can be found in rcode_helper.r; the ridgeline() function
+# uses a for-loop to estimate the density (using the density() function) for
+# each group and then adds the density to the plot
 
 rm(list=ls())
 
@@ -107,26 +122,10 @@ summary(res)
 
 # visualize densities of the 8 groups
 
-umarital <- unique(dat$marital)
-cols <- rainbow(8, alpha=0.2)
-
 par(mar=c(5,9,4,2))
-plot(NA, xlim=c(0, 50), ylim=c(0.8, 8.8), xlab="Perceived Stress Scale Value", ylab="",
-     main="Kernel Density Estimates of Stress by Marital Status", yaxt="n", bty="n")
-axis(side=2, at=1:8, labels=umarital, las=1, tick=FALSE)
 
-for (i in 1:8) {
-
-   abline(h = i, col="lightgray")
-   res <- density(dat$pss[dat$marital == umarital[i]], na.rm = TRUE)
-   res$y <- res$y / max(res$y) * 0.8
-   lines(res$x, res$y + i)
-   polygon(res$x, res$y + i, col=cols[i])
-   text(52, i+.15, paste("n =", length(dat$pss[dat$marital == umarital[i]])), pos=2, cex=0.8)
-
-}
-
-# this is sometimes called a 'ridgeline plot'
+ridgeline(dat$pss, dat$marital, xlim=c(10,50), xlab="PSS",
+          main="Perceived Stress by Marital Status")
 
 dev.off()
 
@@ -134,11 +133,8 @@ dev.off()
 
 # digression: can also create such plots with ggplot2 + ggridges
 
-if (!suppressWarnings(require(ggplot2))) install.packages("ggplot2")
-if (!suppressWarnings(require(ggridges))) install.packages("ggridges")
-
-library(ggplot2)
-library(ggridges)
+loadpkg(ggplot2)
+loadpkg(ggridges)
 
 ggplot(dat, aes(x = pss, y = marital, fill = marital)) +
    geom_density_ridges() +
@@ -184,6 +180,17 @@ for (i in 1:5) {
 }
 
 points(dat$age, dat$circumference, pch=19)
+
+############################################################################
+
+# note: if-else statements are really different than ifelse(); ifelse() is a
+# vectorized function that takes a logical vector as input and turns this
+# vector into a different vector
+
+ifelse(dat$smoke == "yes", "red", "blue")
+
+# if() only takes a single logical as input and then runs an entire block of
+# code (if TRUE) and otherwise the else part (if FALSE) if there is one
 
 ############################################################################
 
@@ -249,5 +256,9 @@ while (i <= iters) {
 
 sig.pvals <- ifelse(pvals <= .05, 1, 0)
 mean(sig.pvals)
+
+# plot density of a chi-square distributed variable with df=1
+
+curve(dchisq(x, df=1), lwd=3)
 
 ############################################################################

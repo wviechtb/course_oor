@@ -1,12 +1,24 @@
 ############################################################################
 
+# Course:  Introduction to R
+# Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
+# License: CC BY-NC-SA 4.0
+#
+# last updated: 2022-05-27
+
+############################################################################
+
 # restart the R session (Menu 'Session' - Restart R)
+
+# read in the code from rcode_helper.r
+
+source("rcode_helper.r")
 
 # read in data (note: from now on, we will be working with the edited dataset
 # where we reversed coded some items and then computed some sum scores for the
 # various scales in the dataset; we did this in rcode04.r, but if you skipped
-# this part and do not have data_survey_edit.rdata, then you can download this
-# edited dataset from the course materials page)
+# this part and do not have the 'data_survey_edit.rdata' file, then you can
+# download this edited dataset from the course materials page)
 
 load("data_survey_edit.rdata")
 
@@ -26,7 +38,7 @@ barplot(table(dat$marital))
 #
 # Error in plot.new() : figure margins too large
 #
-# then this indicates that the size of the 'plotting device' is too small to
+# this indicates that the size of the 'plotting device' is too small to
 # accommodate the plot you are trying to create; this can happen more easily
 # in RStudio because the pane for plots at the bottom right is a bit small; if
 # this happen, you just have to make the size of the plotting pane larger
@@ -213,9 +225,9 @@ plot(dat$pss, dat$posaff, xlab="Stress", ylab="Positive Affect",
 legend("topright", inset=.02, pch=c(19,19), cex=0.8,
        col=c("red","blue"), legend=c("smoker","non-smoker"))
 
-# if x and y values are measured coarsely, may get overlapping points, which
-# can make it more difficult to see any trends/patterns; one solution is to
-# indicate the number of overlapping points at a location via the point sizes
+# if the x and y values are measured coarsely, we may get overlapping points,
+# which can make it more difficult to see any trends/patterns; one solution is
+# to indicate the number of overlapping points at a location via the point sizes
 
 # binning of x-y values
 
@@ -263,32 +275,6 @@ plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
 
 ############################################################################
 
-# a small digression on installing packages
-#
-# the usual command for installing add-on packages is:
-#
-# install.packages("package_name")
-#
-# but if you put this in your script, then running the entire script will
-# reinstall the package even if it is already installed, which is annoying;
-# we can do the following to only install the package if it isn't already
-# installed
-
-# install (if not already installed) the 'hexbin' package
-
-if (!suppressWarnings(require(hexbin))) install.packages("hexbin")
-
-# load the 'hexbin' package
-
-library(hexbin)
-
-# another way to deal with overlapping points: binning into hexagon cells
-
-res <- hexbin(dat$pss, dat$posaff)
-plot(res, xlab="Stress", ylab="Positive Affect")
-
-############################################################################
-
 # another possibility: using transparency ('alpha blending')
 
 plot(dat$pss, dat$posaff, xlab="Stress", ylab="PA", pch=19)
@@ -318,13 +304,14 @@ rm(x, y)
 
 ############################################################################
 
-# not recommended: right-clicking on an image and using save/copy; this isn't
-# a fully reproducible workflow, since the plot will look different depending
-# on the size of the plotting pane / window; always use *code* to save plots
+# not recommended: using the 'Export' button under 'Plots' in RStudio (or if
+# using R directly, right-clicking on an image and using save/copy); this
+# isn't fully reproducible, since the plot will look different depending on
+# the size of the plotting pane / window; always use *code* to save plots
 
 # saving a plot (in various formats) (saved to current working directory)
 
-# with pdf(), we open a pdf plotting device; then we create the plot, then
+# with pdf(), we open the pdf plotting device; then we create the plot, then
 # with dev.off() we close the plotting device (don't forget this last step!)
 
 pdf("plot_stress_vs_posaff.pdf")
@@ -333,11 +320,6 @@ plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
 dev.off()
 
 # same procedure with other plotting devices
-
-postscript("plot_stress_vs_posaff.eps")
-plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
-     pch=19, xlab="Stress", ylab="Positive Affect")
-dev.off()
 
 png("plot_stress_vs_posaff.png")
 plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
@@ -377,8 +359,7 @@ help(device)
 # - no superfluous white space around figure
 # - no alpha channels (i.e., no transparency)
 
-tiff("plot_stress_vs_posaff.tiff", width=2000, height=1600, res=300,
-     compression="lzw")
+tiff("plot_stress_vs_posaff.tiff", width=2000, height=1600, res=300, compression="lzw")
 
 par(mar=c(4.2,4.2,1,1))
 
@@ -450,7 +431,7 @@ res <- kde2d(dat$pss, dat$posaff)
 tmp <- dat[c("pss","posaff")]
 tmp <- na.omit(tmp)
 
-res <- kde2d(tmp$pss, tmp$posaff, n=100)
+res <- kde2d(tmp$pss, tmp$posaff)
 res
 
 # contour plots
@@ -476,24 +457,6 @@ filled.contour(res, color=hcl.colors, xlab="Stress", ylab="PA")
 
 # check if filled.contour() has a 'color' argument; what is going on here?
 
-# install (if necessary) the 'viridis' package and load it
-
-if (!suppressWarnings(require(viridis))) install.packages("viridis")
-
-library(viridis)
-
-# now we have even more color palettes
-
-filled.contour(res, color=viridis, xlab="Stress", ylab="PA")
-filled.contour(res, color=magma,   xlab="Stress", ylab="PA")
-filled.contour(res, color=inferno, xlab="Stress", ylab="PA")
-filled.contour(res, color=plasma,  xlab="Stress", ylab="PA")
-filled.contour(res, color=cividis, xlab="Stress", ylab="PA")
-
-# show help for viridis color palettes
-
-help(viridis)
-
 # a 3d perspective plot
 
 persp(res, xlab="Stress", ylab="Positive Affect", zlab="Density")
@@ -516,9 +479,7 @@ persp(res, xlab="Stress", ylab="Positive Affect", zlab="Density",
 
 # something really fancy
 
-if (!suppressWarnings(require(plotly))) install.packages("plotly")
-
-library(plotly)
+loadpkg(plotly)
 
 add_surface(plot_ly(x = res$x, y = res$y, z = res$z))
 
@@ -544,11 +505,9 @@ smoothScatter(dat$pss, dat$posaff, xlab="Stress", ylab="PA",
 
 # install (if necessary) the 'rgl' package and load it
 
-if (!suppressWarnings(require(rgl))) install.packages("rgl")
+loadpkg(rgl)
 
-library(rgl)
-
-plot3d(dat$pss, dat$posaff, dat$negaff, xlab="Stress", ylab="PA", zlab="NA")
+plot3d(dat$pss, dat$posaff, dat$negaff, size=5, xlab="Stress", ylab="PA", zlab="NA")
 
 # if this doesn't work, can try running the following and then again plot3d()
 
@@ -571,8 +530,8 @@ par(mfrow=c(2,2))
 par(mar=c(5,5,5,2))
 hist(dat$age, xlab="Age", main="(a) Histogram of Age", xlim=c(0,100), ylim=c(0,100))
 
-par(mar=c(9,4,5,2))
-barplot(table(dat$marital), las=2, main="(b) Marital Status")
+par(mar=c(4,9,4,2))
+barplot(table(dat$marital), horiz=TRUE, las=1, xlab="Frequency", main="(b) Marital Status")
 
 par(mar=c(5,5,5,2))
 set.seed(1234)
@@ -598,8 +557,8 @@ layout.show(3)
 
 hist(dat$age, xlab="Age", main="(a) Histogram of Age", xlim=c(0,100), ylim=c(0,100))
 
-par(mar=c(9,4,5,1))
-barplot(table(dat$marital), las=2, main="(b) Marital Status")
+par(mar=c(4,9,4,2))
+barplot(table(dat$marital), horiz=TRUE, las=1, xlab="Frequency", main="(b) Marital Status")
 
 par(mar=c(5,5,5,2))
 smoothScatter(dat$pss, dat$posaff, xlab="Stress", ylab="PA",
@@ -681,5 +640,64 @@ plot(NA, xlab="Stress", ylab="Positive Affect",
 axis(side=1, at=c(10,30,50), label=c("Low","Medium","High"))
 
 # use yaxt="n" and axis(side=2, ...) to do the same for the y-axis
+
+# change the type of box that is drawn around a plot
+
+plot(NA, xlab="Stress", ylab="Positive Affect",
+     xlim=c(10,50), ylim=c(8,50), bty="l")
+
+plot(NA, xlab="Stress", ylab="Positive Affect",
+     xlim=c(10,50), ylim=c(8,50), bty="n")
+
+############################################################################
+
+# some notes:
+#
+# las: to adjust the orientation of the axis labels (las=1 to make them
+#      horizontal, las=2 to make them perpendicular)
+# pch: plotting symbol (pch=19 for filled circles; see help(points) for options)
+# cex: to adjust the point/text size in plots (the default is 1)
+# col: to adjust the color of what is plotted
+#
+# xlab: to set the x-axis label
+# ylab: to set the y-axis label
+# main: to set the plot title
+# xlim: to set the x-axis limits
+# ylim: to set the y-axis limits
+#
+# par(mar=c(bottom,left,top,right)) to adjust the size of the plot margins;
+# the default values are par(mar=c(5.1,4.1,4.1,2.1)), so just change the
+# appropriate number to increase/decrease the size of the corresponding margin
+#
+# par(mfrow=c(2,2)) to split the plotting device into a two rows and two columns
+#
+# barplot()       for a barplot
+# hist()          for a histogram
+# boxplot()       for a boxplot
+# plot(density()) for a plot of a kernel density estimate
+# plot(x,y)       for a scatterplot of variable x versus y
+#
+# legend()        to add a legend to a plot
+# title()         to add a title to a plot
+# abline()        to add horizontal/vertical lines to a plot
+# points()        to add points to a plot
+# lines()         to add lines to a plot
+# text()          to add text to a plot
+
+############################################################################
+
+# note: above, we are using 'base R graphics' to create plots; there are other
+# plotting systems available for R; an alternative popular choice these days
+# is provided by the 'ggplot2' package
+
+loadpkg(ggplot2)
+
+# illustration of a basic scatterplot with ggplot2
+ggplot(dat, aes(x=pss, y=posaff, color=sex)) +
+    geom_point()
+
+# see:  https://ggplot2-book.org
+#       https://ggplot2.tidyverse.org
+# also: https://r-graphics.org
 
 ############################################################################

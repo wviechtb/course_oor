@@ -29,14 +29,11 @@ bibliography: references.bib
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 # code to install/load packages (at the very beginning of the document)
 
-if (!suppressWarnings(require(pander))) install.packages("pander")
-library(pander)
+if (suppressWarnings(!require(pander))) {install.packages("pander"); library(pander)}
 
-if (!suppressWarnings(require(knitr))) install.packages("knitr")
-library(knitr)
+if (suppressWarnings(!require(knitr))) {install.packages("knitr"); library(knitr)}
 
-if (!suppressWarnings(require(texreg))) install.packages("texreg")
-library(texreg)
+if (suppressWarnings(!require(texreg))) {install.packages("texreg"); library(texreg)}
 
 # for bookdown output formats:
 # install.packages("bookdown")

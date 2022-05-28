@@ -1,14 +1,24 @@
 ############################################################################
 
+# Course:  Introduction to R
+# Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
+# License: CC BY-NC-SA 4.0
+#
+# last updated: 2022-05-27
+
+############################################################################
+
 # restart the R session (Menu 'Session' - Restart R)
 
-# most datasets are just a bunch of vectors (of the same length) combined into
-# a 'data frame'; let's create such an object manually
+############################################################################
 
-id  <- 1:3
+# most datasets are just a bunch of vectors (of the same length) combined into
+# what is called a 'data frame'; let's create such an object manually
+
+id  <- c("Bob", "Sue", "John")
 age <- c(25, 21, 30)
-sex <- c("Male", "Male", "Female")
-grp <- c("T", "C", "T")
+sex <- c("Male", "Female", "Male")
+grp <- c("Trt", "Trt", "Ctrl")
 
 dat <- data.frame(id, age, sex, grp)
 dat
@@ -39,6 +49,8 @@ age <- c(35, 31, 45)
 
 age
 dat
+
+# if you change the 'age' object, then the 'age' variable in 'dat' is unchanged
 
 # R is not Excel ...
 
@@ -125,7 +137,7 @@ dat.m
 dat.f
 
 # note: in R, we can have an unlimited number of objects (including data
-# frames) available at the same time (see Environment pane); this can get
+# frames) available at the same time (see the Environment pane); this can get
 # confusing quickly, so try to keep your workspace tidy (i.e., remove objects
 # you no longer need)
 
@@ -135,7 +147,7 @@ rm(dat.m, dat.f)
 
 subset(dat, sex == "Male")
 subset(dat, age >= 25)
-subset(dat, grp == "T")
+subset(dat, grp == "Trt")
 
 # note: the subset() command is clever enough to look for the variables used
 # for the subsetting inside of the dataset itself!
@@ -210,9 +222,6 @@ dat$y==999
 dat$y[dat$y==999] <- NA
 dat
 
-dat$age[dat$age > 24] <- 24
-dat
-
 # note: the variable that is being changed does not have to be the same
 # variable that is used to select cases
 
@@ -222,7 +231,7 @@ dat
 dat$y[3] <- 8
 dat
 
-dat$y[dat$id == 2] <- 5
+dat$y[dat$id == "Sue"] <- 5
 dat
 
 # this is a very straightforward way to make corrections to a dataset

@@ -113,7 +113,7 @@ You do not need to have a Twitch account to watch the stream, but if you would l
 
 You might also want to think a bit ahead of time how you will arrange your desktop while following the course. You will want to have both your browser (for following the live stream) and R/RStudio open at the same time and ideally put them side-by-side (otherwise, you will have to switch back and forth between these windows, which will become tedious rather quickly). So, unless you have a large monitor, two computers/monitors (i.e., one for the stream, one for R/RStudio) would be ideal.
 
-~~Just as an idea, you could also consider following the course together with other people as a group and set up a computer/projector to show the stream, while everybody can work on their own computer/laptop to follow along~~ (scratch that; this is not a good idea at the moment).
+Just as an idea, you could also consider following the course together with other people as a group and set up a computer/projector to show the stream, while everybody can work on their own computer/laptop to follow along.
 
 ## Chat (Purpose and Rules)
 
@@ -129,7 +129,7 @@ Any type of harassment or hateful conduct, inappropriate commenting, or disrupti
 
 Some other notes and frequently asked questions that may come up:
 
-* During the course, we will make use of a number of add-on packages for R. Ideally, you should install these packages before the course (then you don't have to bother with installing packages during the course). You should be able to do so by running the code provided [here](https://gist.githubusercontent.com/wviechtb/eb125cb6f7c706982f72e5872312fbba/raw/1fec0fea6216d162319822f31d7d74bfcad52e07/install_packages.r) in R (just open up R and copy-paste the `install.packages()` lines one by one).
+* During the course, we will make use of a number of add-on packages for R. Ideally, you should install these packages before the course (then you don't have to bother with installing packages during the course). You should be able to do so by running the code provided [here](https://gist.githubusercontent.com/wviechtb/eb125cb6f7c706982f72e5872312fbba/raw/44d2aa95bba2c81d13de7178c4c6cf184d8c559a/install_packages.r) in R (just open up R and copy-paste the `install.packages()` lines one by one).
 
 * In the 'in person' courses that I teach, I often end up troubleshooting some general computer problems for one or multiple course participants. I will not be able to do this in this course. I also cannot provide statistical support or answer questions you have about your own data analysis needs.
 
@@ -156,7 +156,7 @@ The following are relevant links for the course itself:
 * [Stream at Twitch](https://www.twitch.tv/wviechtb) (where to go to watch the stream once it goes live)
 * [Chat Only](https://www.twitch.tv/popout/wviechtb/chat) (in case you have another computer showing the stream, but want to ask questions)
 * [Course Website](https://www.wvbauer.com/doku.php/course_oor) (the 'official' course website, but this repo contains the same materials)
-* [Pre-Course Questionnaire](https://forms.gle/VgrFRyzP252VicBa9) (a short questionnaire to obtain a bit more information about your background)
+<!-- * [Pre-Course Questionnaire](https://forms.gle/VgrFRyzP252VicBa9) (a short questionnaire to obtain a bit more information about your background) -->
 
 The following are relevant links in general:
 

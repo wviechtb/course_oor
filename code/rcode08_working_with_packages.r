@@ -1,5 +1,13 @@
 ############################################################################
 
+# Course:  Introduction to R
+# Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
+# License: CC BY-NC-SA 4.0
+#
+# last updated: 2022-05-27
+
+############################################################################
+
 # restart the R session (Menu 'Session' - Restart R)
 
 # show installed packages
@@ -13,6 +21,10 @@ installed.packages()
 # only show where installed, version, and the 'priority'
 
 installed.packages()[,c("LibPath", "Version", "Priority")]
+
+# the 'base' and 'recommended' packages (see 'Priority' column) are installed
+# with R automatically; it is also possible to install an updated version of
+# recommended packages (if there is an update)
 
 # in RStudio, there is also the 'Packages' pane (bottom-right)
 
@@ -59,7 +71,9 @@ dat <- read.table(header=TRUE, colClasses=c("character", "integer", "Date"), tex
 3.4.3 11991 2017-12-15
 3.6.3 15537 2020-04-01
 4.0.2 16261 2020-09-15
-4.1.2 18544 2021-12-06")
+4.1.2 18544 2021-12-06
+4.1.3 18977 2022-03-14
+4.2.0 18579 2022-05-27")
 
 par(mar=c(6,5.5,4,2))
 par(mgp=c(4,1,0))
@@ -90,6 +104,20 @@ install.packages("lme4")
 
 library(lme4)
 
+# if you put install.packages("pkg") into your script, this will reinstall the
+# package everytime you rerun the script; to avoid this, you could put a # in
+# front of the install.packages("pkg") so that it turns into a comment
+
+# in rcode_helper.r, there is also a little helper function called loadpkg()
+# that first checks if a package is already installed, if not it installs it,
+# and then loads the package
+
+# read in the code from rcode_helper.r
+
+source("rcode_helper.r")
+
+loadpkg(lme4)
+
 # terminology:
 # - package = book
 # - library = place where you store books
@@ -99,7 +127,7 @@ library(lme4)
 # while to complete in case you already have many packages installed and many
 # of them can be updated
 
-# updating packages
+# updating packages (will get prompt for each package that can be updated)
 
 update.packages()
 
@@ -121,9 +149,7 @@ RSiteSearch("structural equation")
 
 # install (if necessary) and load the 'sos' package
 
-if (!suppressWarnings(require(sos))) install.packages("sos")
-
-library(sos)
+loadpkg(sos)
 
 # search all packages on CRAN for a term
 
@@ -134,9 +160,7 @@ findFn("structural equation")
 # install (if necessary) and load the 'packagefinder' package
 # https://www.zuckarelli.de/packagefinder/tutorial.html
 
-if (!suppressWarnings(require(packagefinder))) install.packages("packagefinder")
-
-library(packagefinder)
+loadpkg(packagefinder)
 
 findPackage("structural equation", limit.results = 100)
 
@@ -144,9 +168,7 @@ findPackage("structural equation", limit.results = 100)
 
 # install (if necessary) and load the 'CRANsearcher' package
 
-if (!suppressWarnings(require(CRANsearcher))) install.packages("CRANsearcher")
-
-library(CRANsearcher)
+loadpkg(CRANsearcher)
 
 CRANsearcher()
 
@@ -155,16 +177,14 @@ CRANsearcher()
 # install (if necessary) and load the 'pkgsearch' package
 # https://r-hub.github.io/pkgsearch/
 
-if (!suppressWarnings(require(pkgsearch))) install.packages("pkgsearch")
-
-library(pkgsearch)
+loadpkg(pkgsearch)
 
 pkg_search("structural equation")
 
 # there is also a nicer interface; need to install some packages first
 
-if (!suppressWarnings(require(shinyWidgets))) install.packages("shinyWidgets")
-if (!suppressWarnings(require(whoami))) install.packages("whoami")
+loadpkg(shinyWidgets)
+loadpkg(whoami)
 
 pkg_search_addin("structural equation")
 
@@ -175,7 +195,6 @@ pkg_search_addin("structural equation")
 # - https://www.r-pkg.org
 # - https://www.rdocumentation.org
 # - https://rseek.org
-# - https://crantastic.org (no longer available?)
 
 ############################################################################
 
@@ -190,7 +209,17 @@ pkg_search_addin("structural equation")
 # - paper/book about package has been published
 # - help files are comprehensive and free of errors
 # - has been cited in papers
+# - number of downloads
 # - ...
+
+loadpkg(cranlogs)
+
+# examine number of daily downloads for a package
+tmp <- cran_downloads(packages="lme4", from="2010-01-01", to="last-day")
+head(tmp)
+plot(tmp$date, tmp$count, type="l", xlab="Date", ylab="Downloads")
+
+# or use this: https://ipub.com/dev-corner/apps/r-package-downloads/
 
 # Journal of Statistical Software: https://www.jstatsoft.org
 
@@ -250,13 +279,14 @@ dat <- structure(...)
 dat <- structure(list(vers = c("1.3", "1.4", "1.5", "1.7", "1.8", "1.9",
 "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "2.10",
 "2.13", "2.15", "3.0.2", "3.1", "3.2", "3.2.2", "3.2.3", "3.3.1", "3.3.2",
-"3.4.3", "3.6.3", "4.0.2", "4.1.2" ), count = c(110L, 129L, 161L, 219L, 273L,
-357L, 406L, 548L, 647L, 739L, 911L, 1000L, 1300L, 1495L, 1614L, 1907L, 2008L,
-3000L, 3976L, 5000L, 5745L, 6706L, 7547L, 7969L, 9004L, 9961L, 11991L, 15537L,
-16261L, 18544L), date = structure(c(11494, 11673, 11850, 12197, 12372, 12574,
-12703, 12952, 13133, 13299, 13494, 13615, 13833, 13956, 14172, 14351, 14543,
-15106, 15604, 16017, 16304, 16593, 16776, 16861, 17035, 17194, 17515, 18353,
-18520, 18967), class = "Date")), class = "data.frame", row.names = c(NA,-30L))
+"3.4.3", "3.6.3", "4.0.2", "4.1.2", "4.1.3", "4.2.0"), count = c(110L, 129L,
+161L, 219L, 273L, 357L, 406L, 548L, 647L, 739L, 911L, 1000L, 1300L, 1495L,
+1614L, 1907L, 2008L, 3000L, 3976L, 5000L, 5745L, 6706L, 7547L, 7969L, 9004L,
+9961L, 11991L, 15537L, 16261L, 18544L, 18977L, 18579L), date =
+structure(c(11494, 11673, 11850, 12197, 12372, 12574, 12703, 12952, 13133,
+13299, 13494, 13615, 13833, 13956, 14172, 14351, 14543, 15106, 15604, 16017,
+16304, 16593, 16776, 16861, 17035, 17194, 17515, 18353, 18520, 18967, 19065,
+19139), class = "Date")), class = "data.frame", row.names = c(NA, -32L))
 
 plot(dat$date, dat$count, xlab="", ylab="Number of CRAN Packages")
 

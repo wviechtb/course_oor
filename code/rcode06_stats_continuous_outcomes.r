@@ -1,10 +1,32 @@
 ############################################################################
 
+# Course:  Introduction to R
+# Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
+# License: CC BY-NC-SA 4.0
+#
+# last updated: 2022-05-27
+
+############################################################################
+
 # restart the R session (Menu 'Session' - Restart R)
+
+# read in the code from rcode_helper.r
+
+source("rcode_helper.r")
 
 # read in data
 
 load("data_survey_edit.rdata")
+
+############################################################################
+
+# note: when covering statistical methods in this course, the goal is to teach
+# you how to carry out certain types of statistical analyses with R and not to
+# teach the methods themselves (e.g., I will show you how to run regression
+# analyses with R under the assumption that you are familiar with regression
+# models); but I will try to discuss the methods and output in such a way that
+# even those not familiar with certain techniques can still follow along; as
+# always, if something is unclear, just let me know!
 
 ############################################################################
 
@@ -96,9 +118,7 @@ dev.off()
 
 # install (if necessary) the 'vioplot' package and load it
 
-if (!suppressWarnings(require(vioplot))) install.packages("vioplot")
-
-library(vioplot)
+loadpkg(vioplot)
 
 # violin plots
 
@@ -119,38 +139,11 @@ dev.off()
 
 ############################################################################
 
-# bean plots
-
-# install (if necessary) the 'beanplot' package and load it
-
-if (!suppressWarnings(require(beanplot))) install.packages("beanplot")
-
-library(beanplot)
-
-# beanplot
-
-beanplot(pss ~ marital, data=dat, col="lightgray")
-
-par(mar=c(5,9,4,2))
-
-beanplot(pss ~ marital, data=dat, col=as.list(rainbow(8,alpha=0.2)),
-         what=c(1,1,1,0), horizontal=TRUE, las=1)
-
-stripchart(pss ~ marital, data=dat, las=1, method="stack", offset=0.05,
-           pch=19, cex=0.5, xlab="Perceived Stress Scale", add=TRUE,
-           col=rainbow(8))
-
-dev.off()
-
-############################################################################
-
 # beeswarm plots
 
 # install (if necessary) the 'beeswarm' package and load it
 
-if (!suppressWarnings(require(beeswarm))) install.packages("beeswarm")
-
-library(beeswarm)
+loadpkg(beeswarm)
 
 # beeswarm
 
@@ -172,6 +165,16 @@ beeswarm(pss ~ marital, data=dat, horizontal=TRUE, add=TRUE,
          pch=19, col=rainbow(8), cex=0.5)
 
 dev.off()
+
+############################################################################
+
+# ridgeline plots (note: ridgeline() comes from rcode_helper.r)
+# https://www.data-to-viz.com/graph/ridgeline.html
+
+par(mar=c(5,9,4,2))
+
+ridgeline(dat$pss, dat$marital, xlim=c(10,50), xlab="PSS",
+          main="Perceived Stress by Marital Status")
 
 ############################################################################
 
@@ -210,11 +213,17 @@ res <- aov(pss ~ marital, data=dat)
 res
 summary(res)
 
+# the F-test is a test of the null hypothesis that the true PSS means of the 8
+# different marital status groups are identical (which we reject here, p < .01)
+
 # difference between means for all pairs of levels
 # https://en.wikipedia.org/wiki/Tukey's_range_test
 
 sav <- TukeyHSD(res)
 sav
+
+# provides tests of the difference between each pair of levels of the grouping
+# variable (adjusted for multiple testing)
 
 # CIs for the difference in mean levels
 
@@ -223,11 +232,9 @@ plot(sav, las=1)
 
 ############################################################################
 
-# digression: testing all pairwise differences using Bonferroni correction
+# digression: testing all pairwise differences using the Bonferroni correction
 
-if (!suppressWarnings(require(multcomp))) install.packages("multcomp")
-
-library(multcomp)
+loadpkg(multcomp)
 
 # turn 'marital' into a factor variable
 
@@ -238,7 +245,7 @@ dat$fmarital <- factor(dat$marital)
 res <- aov(pss ~ fmarital, data=dat)
 summary(res)
 
-# all pairwise comparisons using Bonferrroni correction
+# all pairwise comparisons using the Bonferrroni correction
 
 summary(glht(res, linfct = mcp(fmarital = "Tukey")), test = adjusted("bonferroni"))
 
@@ -275,12 +282,32 @@ summary(res)
 
 TukeyHSD(res)
 
+############################################################################
+
 # note: R (by default) computes Type I Sum of Squares (sequential tests), so
 # the order how you specify the factors matters (while many other statistical
 # software packages compute Type III Sum of Squares)
 
 res <- aov(pss ~ marital + sex, data=dat)
 summary(res)
+
+# for example, the test of 'martial' above is *not* adjusted for 'sex', but
+# the test of 'sex' is adjusted for 'marital'
+
+# we can get Type III tests (marginal tests) with the 'car' package
+
+# install (if necessary) and load the 'car' package
+
+loadpkg(car)
+
+# marginal tests
+
+Anova(res, type=3)
+
+# to compare
+
+summary(aov(pss ~ sex + marital, data=dat))
+summary(aov(pss ~ marital + sex, data=dat))
 
 ############################################################################
 
@@ -307,7 +334,7 @@ cor(dat$posaff, dat$negaff)
 
 cor(dat$posaff, dat$negaff, dat$pss)
 
-# the above does not work
+# the above does not work (see help(cor) to check what the inputs to cor() can be)
 
 cor(dat[c("posaff", "negaff", "pss")])
 
@@ -315,22 +342,9 @@ cor(dat[,c("posaff", "negaff", "pss")], use = "complete.obs")
 
 round(cor(dat[,c("posaff", "negaff", "pss")], use = "complete.obs"), digits = 2)
 
-# scatterplot for two variables
-
-plot(dat$posaff, dat$negaff)
-
 # correlation testing
 
 cor.test(dat$posaff, dat$negaff)
-
-# scatterplot matrix
-
-pairs(dat[c("posaff", "negaff", "pss", "rses")])
-
-pairs(dat[c("posaff", "negaff", "pss", "rses")], pch=19, cex=.1)
-
-pairs(dat[c("posaff", "negaff", "pss", "rses")], pch=19, cex=.1,
-      col=ifelse(dat$sex == "male", "blue", "red"))
 
 # Spearman correlation
 # https://en.wikipedia.org/wiki/Spearman's_rank_correlation_coefficient
@@ -354,7 +368,6 @@ plot(pss ~ age, data=dat, pch=19)
 
 res <- lm(pss ~ age, data=dat)
 res
-
 summary(res)
 
 # add regression line to the plot above (lwd is for the line width)
@@ -367,14 +380,18 @@ fitted(res)
 residuals(res)
 rstandard(res)
 
-# fitted values versus residuals plot
+# fitted values versus standarized residuals plot
 
-plot(fitted(res), residuals(res), pch=19,
+plot(fitted(res), rstandard(res), pch=19,
      xlab="Fitted Values", ylab="Residuals")
 
 abline(h=0)
 
-# normal Q-Q plot of standardized residuals
+# histogram of the standardized residuals
+
+hist(rstandard(res))
+
+# normal Q-Q plot of the standardized residuals
 # https://en.wikipedia.org/wiki/Q–Q_plot
 
 qqnorm(rstandard(res), pch=19)
@@ -401,11 +418,7 @@ summary(tmp)
 
 # install (if necessary) and load the 'car' package
 
-if (!suppressWarnings(require(car))) install.packages("car")
-
-library(car)
-
-# a nicer Q-Q plot
+loadpkg(car)
 
 qqPlot(res, pch=19, cex=0.5, reps=5000)
 
@@ -416,33 +429,14 @@ points(pss ~ age, data=dat, subset=c(10,19), col="red", pch=19, cex=2)
 # just to illustrate an extreme case
 
 tmp <- dat
-tmp$age[1] <- 80
-tmp$pss[1] <- 45
+tmp$age[235] <- 80
+tmp$pss[235] <- 45
 
 plot(pss ~ age, data=tmp, pch=19)
 res <- lm(pss ~ age, data=tmp)
 abline(res, lwd=3)
 
 plot(cooks.distance(res), pch=19, type="o", ylab="Cook's Distance")
-
-############################################################################
-
-# digression: Type III tests with the 'car' package
-
-res <- aov(pss ~ sex + marital, data=dat)
-
-# sequential tests
-
-summary(res)
-
-# get the marginal tests (Anova() function comes from the 'car' package)
-
-Anova(res, type=3)
-
-# to compare
-
-summary(aov(pss ~ sex + marital, data=dat))
-summary(aov(pss ~ marital + sex, data=dat))
 
 ############################################################################
 
@@ -655,7 +649,17 @@ dat$marital
 
 factor(dat$marital)
 
-# and we can 'relevel' a factor to choose the reference level
+# the first level is the 'reference' level (in this case 'divorced'); the
+# intercept corresponds to the mean PSS value of this reference group
+
+mean(dat$pss[dat$marital == "divorced"])
+
+# the coefficients for the other groups are the *difference* between the means
+# of these groups and the mean of the reference group
+
+mean(dat$pss[dat$marital == "separated"]) - mean(dat$pss[dat$marital == "divorced"])
+
+# we can 'relevel' a factor to choose the reference level
 
 relevel(factor(dat$marital), ref="single")
 

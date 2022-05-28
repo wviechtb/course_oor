@@ -1,25 +1,42 @@
 ############################################################################
 
+# Course:  Introduction to R
+# Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
+# License: CC BY-NC-SA 4.0
+#
+# last updated: 2022-05-27
+
+############################################################################
+
 # restart the R session (Menu 'Session' - Restart R)
 
-# make sure the working directory is set to the directory/folder where the
+# make sure the working directory is set to the directory/folder where this
 # script and the data are stored; if not, first set it (see rcode01)
+
+# make sure 'rcode_helper.r' is also in the same directory as this script
+
+# read in the code from rcode_helper.r
+
+source("rcode_helper.r")
+
+# this provides a little helper function called loadpkg() that installs a
+# package if it is not already installed and then loads it (we will talk about
+# installing/loading packages later on in more detail)
+
+############################################################################
 
 # reading in a rectangular tab-delimited plain-text data file
 # - header=TRUE   : first row of the file gives the variable names
-# - sep="\t"      : tab is the separator
-# - as.is=TRUE    : don't convert strings to factors (the default now)
+# - sep="\t"      : tabs are used as the separator between variables
 # - na.strings="" : blank values are interpreted as NA
 
-dat <- read.table("data_survey.dat", header=TRUE,
-                  sep="\t", as.is=TRUE, na.strings="")
+dat <- read.table("data_survey.dat", header=TRUE, sep="\t", na.strings="")
 
-# note: as long as you don't get an error message, data were read in
+# note: as long as you don't get an error message, the data were read in
 
 # illustrate an error (note that object 'tmp' is not created)
 
-tmp <- read.table("data_survey.dat", header=TRUE,
-                  sep=" ", as.is=TRUE, na.strings="")
+tmp <- read.table("data_survey.dat", header=TRUE, sep=" ", na.strings="")
 
 # see data_survey.pdf for variable info / coding manual
 
@@ -42,8 +59,8 @@ tmp <- read.table("data_survey.dat", header=TRUE,
 
 dat
 
-# there is also a (default) maximum to the amount of values that are printed
-# (in RStudio, this is set to 1000; in R itself, this is set 99999); we can
+# there is a (default) maximum to the amount of values that are printed (in
+# RStudio, this is set to 1000; in R itself, this is set 99999); we can
 # manually change this with the options() function
 
 options(max.print = 99999)
@@ -59,8 +76,9 @@ View(dat)
 
 # in RStudio, can also click on 'dat' in the 'Environment' pane (top right)
 
-# note: in this spreadsheet view, RStudio shows 50 variables at a time; can
-# click on the << < > >> buttons to see the other variables
+# note: in this spreadsheet view, RStudio shows 50 variables at a time; if
+# there are more than 50 variables in the dataset, can click on the << < > >>
+# buttons to see the other variables
 
 ############################################################################
 
@@ -70,28 +88,30 @@ View(dat)
 
 # install (if necessary) and load the 'readxl' package
 
-if (!suppressWarnings(require(readxl))) install.packages("readxl")
-
-library(readxl)
+loadpkg(readxl)
 
 # now we can read in an Excel file
 
 dat2 <- read_excel("data_survey.xlsx")
 
-# note: read_excel() creates a 'tibble', which is essentially like data
-# frames, but we can make it a regular data frame with as.data.frame()
+head(dat2)
+
+# note: read_excel() creates a 'tibble', which is essentially like a data
+# frame, but we can make it a regular data frame with as.data.frame()
 
 dat2 <- as.data.frame(dat2)
 
+head(dat2)
+
 # install (if necessary) and load the 'haven' package
 
-if (!suppressWarnings(require(haven))) install.packages("haven")
-
-library(haven)
+loadpkg(haven)
 
 # now we can read in an SPSS file
 
 dat3 <- read_sav("data_survey.sav")
+
+head(dat3)
 
 # note: read_sav() also creates a 'tibble'; it also imports some additional
 # information from SPSS, which may or may not be useful; we can remove all of
@@ -100,9 +120,11 @@ dat3 <- read_sav("data_survey.sav")
 dat3 <- zap_widths(zap_formats(zap_labels(as_factor(dat3))))
 dat3 <- as.data.frame(dat3)
 
+head(dat3)
+
 # the 'foreign' package (doesn't need to be installed since it comes with R,
-# so just load it with library(foreign)) also functions for importing SPSS and
-# Stata datasets: read.spss() and read.dta()
+# so just load it with library(foreign)) also has functions for importing SPSS
+# and Stata datasets: read.spss() and read.dta()
 
 # see also the R Data Import/Export manual:
 # https://cran.r-project.org/doc/manuals/R-data.html
@@ -110,7 +132,7 @@ dat3 <- as.data.frame(dat3)
 
 # in RStudio, you can also use menu 'File' - Import Dataset
 # - if you use this, make sure you copy-paste the code to your script
-# - also you may want to adjust the name of the object this creates
+# - you may want to adjust the name of the object this creates
 
 # clean up
 
@@ -215,7 +237,7 @@ mean(na.rm=TRUE, dat$smokenum, 0.05)
 
 # recommendation: don't rely on positional matching too much, as this can get
 # quite confusing (I usually don't name the very first argument, but otherwise
-# explicitly name the other arguments)
+# try to explicitly name the other arguments)
 
 # note: don't have to fully write out argument names (as long as this is
 # unambiguous); so the following also works fine
@@ -225,7 +247,20 @@ mean(dat$smokenum, na=TRUE)
 # recommendation: don't rely on abbreviated argument names too much (and this
 # isn't really necessary with the tab completion functionality of RStudio)
 
-# get mean of multiple variables
+# get the means of multiple variables
+
+mean(dat$age, dat$smokenum)
+
+# this doesn't work, since we are setting argument 'trim' to dat$smokenum
+
+# might try this
+
+mean(dat[c("age", "smokenum")])
+
+# this doesn't work, since argument 'x' must be a vector; the mean() function
+# cannot take a data frame as input
+
+# there is a specialized function for getting the means of multiple variables
 
 colMeans(dat[c("age", "smokenum")])
 colMeans(dat[c("age", "smokenum")], na.rm=TRUE)
@@ -239,7 +274,8 @@ mean(dat$age > 30)
 mean(dat$age > 30) * 100
 round(mean(dat$age > 30) * 100, digits=1)
 
-# note: TRUE is treated as 1, FALSE is treated as 0
+# note: TRUE is treated as 1, FALSE is treated as 0; so, mean(dat$age > 30)
+# returns the proportion of subjects that are older than 30 years
 
 # number of missing values in a variable
 
@@ -250,7 +286,8 @@ table(is.na(dat$smokenum))
 
 table(dat$smokenum)
 
-# can show the number of missing values (if there are any or show always)
+# can show the number of missing values (if there are any missing values or
+# always show the number of missing values even if this is 0)
 
 table(dat$smokenum, useNA="ifany")
 table(dat$smokenum, useNA="always")
@@ -412,8 +449,7 @@ ls()
 
 # load data using read.table()
 
-dat <- read.table("data_survey_edit.dat", header=TRUE,
-                  sep="\t", as.is=TRUE, na.strings="")
+dat <- read.table("data_survey_edit.dat", header=TRUE, sep="\t", na.strings="")
 
 ls()
 

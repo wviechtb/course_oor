@@ -1,6 +1,18 @@
 ############################################################################
 
+# Course:  Introduction to R
+# Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
+# License: CC BY-NC-SA 4.0
+#
+# last updated: 2022-05-27
+
+############################################################################
+
 # restart the R session (Menu 'Session' - Restart R)
+
+# read in the code from rcode_helper.r
+
+source("rcode_helper.r")
 
 # read in data
 
@@ -71,15 +83,17 @@ fisher.test(table(dat$sex, dat$smoke))
 # https://en.wikipedia.org/wiki/Logistic_regression
 
 res <- glm(smoke ~ sex, data=dat, family=binomial)
+summary(res)
 
 # the outcome variable for logistic regression must be coded 0/1 or can be a
-# factor (but then you have to figure out what the reference level is, so you
-# know which of the two events is being predicted)
+# character/factor variable (but then you have to figure out what the
+# reference level is, so you know which of the two events is being predicted)
 
 factor(dat$smoke)
 
-res <- glm(factor(smoke) ~ sex, data=dat, family=binomial)
-summary(res)
+# the *second* level is the event that the model is predicting (so, the model
+# above is one that predicts the probability, or more precisely the log odds,
+# of being a smoker)
 
 # it may be safer to do the coding manually
 
@@ -128,9 +142,7 @@ anova(res0, res1, test="Chisq")
 
 # install (if necessary) the 'pROC' package and load it
 
-if (!suppressWarnings(require(pROC))) install.packages("pROC")
-
-library(pROC)
+loadpkg(pROC)
 
 # fit model (note: set na.action=na.exclude, so that the predict() function
 # below will return NA for persons where data are missing)
@@ -155,9 +167,7 @@ auc(res)
 
 # using the 'Epi' package
 
-if (!suppressWarnings(require(Epi))) install.packages("Epi")
-
-library(Epi)
+loadpkg(Epi)
 
 ROC(dat$pred, dat$smoke1, plot="ROC")
 

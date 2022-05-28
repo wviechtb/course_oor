@@ -1,5 +1,13 @@
 ############################################################################
 
+# Course:  Introduction to R
+# Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
+# License: CC BY-NC-SA 4.0
+#
+# last updated: 2022-05-27
+
+############################################################################
+
 # just in case, clear the workspace
 
 rm(list=ls())
@@ -7,6 +15,8 @@ rm(list=ls())
 # or even better: at the beginning of each new script, and more generally,
 # whenever you switch to a different project/analysis, restart the R session
 # (Menu 'Session' - Restart R)
+
+############################################################################
 
 # we start with some basic data structures
 
@@ -101,6 +111,11 @@ x != 3
 (x > 3) & (x < 6)
 (x < 3) | (x > 5)
 
+# find the position of TRUE values
+
+x > 3
+which(x > 3)
+
 # missing values
 
 # say x is equal to 2 and 4 for the first and third person, but unknown for
@@ -113,6 +128,8 @@ x <- c(2,,4)
 x <- c(2, ,4)
 
 # nope!
+
+# but this works
 
 x <- c(2, NA, 4)
 x

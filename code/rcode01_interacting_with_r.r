@@ -1,5 +1,13 @@
 ############################################################################
 
+# Course:  Introduction to R
+# Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
+# License: CC BY-NC-SA 4.0
+#
+# last updated: 2022-05-27
+
+############################################################################
+
 # start RStudio
 
 # open this script: Menu 'File' - Open File (or Ctrl+o / Command+o)
@@ -10,9 +18,9 @@
 # - top right:    Environment, Command History, Connections
 # - bottom right: File Browser, Plots, Packages, Help, Viewer
 
-# first check that it says "R version 4.1.2 (2021-11-01)" in the Console; if
-# not, you do not have the current version of R installed (maybe you should
-# update, especially if the version you have installed is quite old)
+# first check that it says "R version 4.2.0" in the Console; if not, you do
+# not have the current version of R installed (maybe you should update,
+# especially if the version you have installed is quite old ...)
 
 ############################################################################
 
@@ -44,8 +52,8 @@ print(x)
 
 boxplot(x)
 
-# in the Console, the up/down arrows scroll through your command history; use
-# Escape to stop showing commands from your command history
+# in the Console, the up/down arrows scroll through your 'command history';
+# hit Escape to stop showing commands from your command history
 
 ############################################################################
 
@@ -56,7 +64,7 @@ boxplot(x)
 # - Windows: Ctrl+Enter
 # - macOS:   Command+Enter
 #
-# try this out with lines 23 and 24 above
+# try this out with the x <- c(4,2,3,6) and mean(x) lines above
 #
 # note that the cursor automatically moves to the next line each time you use
 # the shortcut, so this way you can quickly run through a bunch of commands
@@ -84,7 +92,7 @@ sqrt(vx)
 
 sqrt(var(x))
 
-# list objects in environment (see also 'Environment' in RStudio)
+# list objects in the environment (see also 'Environment' in RStudio)
 
 ls()
 
@@ -104,7 +112,7 @@ quit()
 
 # or just close the window
 
-# to avoid the prompt for saving the workspace
+# to avoid the prompt for saving the workspace when closing R/RStudio
 
 quit(save="no")
 
@@ -115,7 +123,7 @@ quit(save="no")
 # the script should automatically load (i.e., RStudio automatically reopens
 # the script(s) you last worked on)
 
-# list objects in environment
+# list objects in the environment
 
 ls()
 
@@ -132,14 +140,14 @@ rm(list=ls())
 
 unlink(".RData")
 
-# recommendations:
+# my recommendations:
 # Menu 'Tools' - Global Options:
 # - uncheck 'Restore .RData into workspace at startup'
 # - set 'Save workspace to .RData on exit' to 'Never'
 
 # depending on your computer / OS, double-clicking on an .r (.R) file can
-# automatically load an R script in RStudio (might have to configure your OS
-# first to always use RStudio for opening .r (.R) files)
+# automatically load an R script in RStudio (you might have to configure your
+# computer first to always use RStudio for opening .r (.R) files)
 
 ############################################################################
 
