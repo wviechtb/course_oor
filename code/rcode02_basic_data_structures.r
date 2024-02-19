@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2022-05-27
+# last updated: 2024-01-23
 
 ############################################################################
 
@@ -14,7 +14,7 @@ rm(list=ls())
 
 # or even better: at the beginning of each new script, and more generally,
 # whenever you switch to a different project/analysis, restart the R session
-# (Menu 'Session' - Restart R)
+# (Menu 'Session' - 'Restart R')
 
 ############################################################################
 
@@ -28,7 +28,7 @@ x <- 2.5
 
 x
 
-# can also use = but better use <-
+# can also use =
 
 x = 5
 x
@@ -59,12 +59,12 @@ x
 
 # quickly create a vector of consecutive numbers
 
-x <- c(20:100)
+x <- c(1:100)
 x
 
 # actually don't even need c() here
 
-x <- 20:100
+x <- 1:100
 x
 
 # note: if the vector is too long to fit into a single line, the output is
@@ -141,7 +141,6 @@ x
 # - contain alphanumeric symbols (A-Z, a-z, 0-9)
 # - can also use . and _
 # - are case-sensitive
-# - no (relevant) restriction on length
 # names should not:
 # - correspond to commands (confusion/errors)
 # - contain spaces
@@ -188,8 +187,7 @@ age
 2 * 5 - 4 / 2 + 4
 2 * ((5 - 4) / 2) + 4
 
--2^2
-(-2)^2
+4^2
 
 log(2)   # natural log
 log10(2) # log to base 10
@@ -235,13 +233,15 @@ sqrt(2) * sqrt(2)
 
 sqrt(2) * sqrt(2) - 2
 
-# what is going on here?
+# what is going on here? why is this not zero?
 
 print(sqrt(2) * sqrt(2), digits=18)
 
 # wtf?!?
 
 # this is actually a FAQ: https://cran.r-project.org/doc/FAQ/R-FAQ.html#Why-doesn_0027t-R-think-these-numbers-are-equal_003f
+
+# see also: https://0.30000000000000004.com
 
 ############################################################################
 
@@ -259,17 +259,5 @@ log(x)
 # an example of a non-vectorized operation
 
 mean(x)
-
-# an example where we use vectorized and non-vectorized functions
-
-x
-length(x)
-x - mean(x)
-(x - mean(x))^2
-sum((x - mean(x))^2)
-sum((x - mean(x))^2) / (length(x)-1)
-sqrt(sum((x - mean(x))^2) / (length(x)-1))
-
-sd(x)
 
 ############################################################################

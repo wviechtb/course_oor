@@ -30,9 +30,7 @@ bibliography: references.bib
 # code to install/load packages (at the very beginning of the document)
 
 if (suppressWarnings(!require(pander))) {install.packages("pander"); library(pander)}
-
 if (suppressWarnings(!require(knitr))) {install.packages("knitr"); library(knitr)}
-
 if (suppressWarnings(!require(texreg))) {install.packages("texreg"); library(texreg)}
 
 # for bookdown output formats:
@@ -45,7 +43,7 @@ if (suppressWarnings(!require(texreg))) {install.packages("texreg"); library(tex
 
 # Introduction
 
-This is an example of a R markdown document. With some basic formating codes you can make text *italic* and **bold**.
+This is an example of a R markdown document. With some basic formatting codes you can make text *italic* and **bold**.
 
 ## Subheading
 
@@ -64,6 +62,8 @@ Or numbered lists:
 ### Subsubheading
 
 Lots of text here followed by a footnote. [^1]
+
+[comment]: # (This is a comment in Rmarkdown)
 
 # Equations
 
@@ -94,7 +94,7 @@ Of course, in a manuscript or presentation, you may not want to show the code it
 
 Using regular R code, you can also create graphs, which then get automatically embedded in the document.
 
-```{r models, fig.width=7, fig.height=5.5, fig.align='center', fig.cap='R Skills as a Function of Time in the Course'}
+```{r models, fig.width=7, fig.height=5.5, fig.align='center', fig.cap='R Skills as a Function of Time in the Course', echo=FALSE}
 par(mar=c(5,4,2,2))
 plot(x, y, pch=19, xlab="Time in R Course", ylab="Your R Skills")
 abline(res1, lty="dotted")
@@ -139,6 +139,7 @@ To learn more about R Markdown, you may want to check out these websites:
 * [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
 * [bookdown: Authoring Books and Technical Documents with R Markdown](https://bookdown.org/yihui/bookdown/)
 * [Advanced R Markdown](https://rpubs.com/bpbond/630335) by Ben Bond-Lamberty
+* [papaja](https://cran.r-project.org/package=papaja): to create dynamic, submission-ready manuscripts conforming to APA guidelines ([workshop](https://frederikaust.com/papaja-workshop/))
 
 ***
 

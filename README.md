@@ -107,7 +107,7 @@ After an introductory lecture, the format of the course will be quite simple: I 
 
 You will need a computer with the current version of R installed. You can download R from the [Comprehensive R Archive Network](https://cran.r-project.org/) (CRAN). Follow the appropriate "Download R" link depending on your operating system (OS) and follow the instructions for downloading and installing R. If you already have R installed, please check that it is the current version (you can check what the 'latest release' of R is by going to [CRAN](https://cran.r-project.org/) and then compare this with the version shown when you start R). If not, please update.
 
-Although not strictly necessary, it will also be useful to install an integrated development environment (IDE) for R. A popular choice these days is RStudio. So, unless you already have a different setup, download the appropriate installer of RStudio for your OS from [here](https://rstudio.com/products/rstudio/download/#download) and install in the usual manner.
+Although not strictly necessary, it will also be useful to install an integrated development environment (IDE) for R. A popular choice these days is RStudio. So, unless you already have a different setup, download the appropriate installer of RStudio for your OS from [here](https://posit.co/products/open-source/rstudio/) and install in the usual manner.
 
 You do not need to have a Twitch account to watch the stream, but if you would like to post comments or questions via the chat (see below), then you do need to be signed in. To create an account, go to [Twitch](https://www.twitch.tv/), click on "Sign Up", and follow the instructions. Make sure you also verify your email address as part of the registration procedure (otherwise you cannot use the chat).
 
@@ -162,7 +162,7 @@ The following are relevant links in general:
 
 * [R Project Website](https://www.r-project.org/)
 * [CRAN Website](https://cran.r-project.org/)
-* [RStudio Website](https://www.rstudio.com/)
+* [RStudio Website](https://posit.co/products/open-source/rstudio/)
 * [Cross Validated](https://stats.stackexchange.com/tour)
 * [Stack Overflow](https://stackoverflow.com/tour)
 

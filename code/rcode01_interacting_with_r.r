@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2022-05-27
+# last updated: 2024-02-19
 
 ############################################################################
 
@@ -18,7 +18,7 @@
 # - top right:    Environment, Command History, Connections
 # - bottom right: File Browser, Plots, Packages, Help, Viewer
 
-# first check that it says "R version 4.2.0" in the Console; if not, you do
+# first check that it says "R version 4.3.2" in the Console; if not, you do
 # not have the current version of R installed (maybe you should update,
 # especially if the version you have installed is quite old ...)
 
@@ -26,10 +26,13 @@
 
 # using R interactively
 
-# click on the Console and type in:
+# click on the Console (bottom left pane) and type in:
 
 x <- c(4,2,3,6)
 mean(x)
+
+# x <- c(4,2,3,6) means: combine the numbers 4, 2, 3, and 6 (into a 'vector')
+# and put this collection of numbers into an object called 'x'
 
 # to see the contents of an object, just type its name
 
@@ -39,13 +42,13 @@ x
 
 print(x)
 
-# note: object 'x' is listed under 'Environment' in RStudio
+# note: object 'x' is listed under 'Environment' in RStudio (top right pane)
 
 # the 'Environment' lists all objects in your 'workspace'; these can be simple
 # things like 'x', datasets, the results from some statistical analysis, etc.
 
 # try out tab completion (works in the Console and Editor):
-# - type 'box' - should get a list with possible matches
+# - type 'box' - should get a list with possible matches (may have to hit tab)
 # - type 'p' - now 'boxplot' should be the first option
 # - hit tab (or enter); should complete to 'boxplot'
 # - now complete with '(x)' so we get
@@ -71,10 +74,6 @@ boxplot(x)
 #
 # you can also select/highlight multiple lines and run them all at once
 #
-# you can also run the entire script (don't do this now!) with:
-# - Windows: Ctrl+Shift+Enter
-# - MacOS:   Command+Shift+Enter
-#
 # note: tab completion and running commands from the script will not work if
 # RStudio doesn't recognize that you are working with an R script (e.g., if
 # the file extension is .txt instead of .r or .R); you can manually change the
@@ -91,6 +90,8 @@ vx
 sqrt(vx)
 
 sqrt(var(x))
+
+# so one can nest multiple commands inside of each other
 
 # list objects in the environment (see also 'Environment' in RStudio)
 
@@ -141,7 +142,7 @@ rm(list=ls())
 unlink(".RData")
 
 # my recommendations:
-# Menu 'Tools' - Global Options:
+# Menu 'Tools' - 'Global Options':
 # - uncheck 'Restore .RData into workspace at startup'
 # - set 'Save workspace to .RData on exit' to 'Never'
 
@@ -164,7 +165,7 @@ getwd()
 
 # if this is *not* the directory/folder where you put the course materials:
 #
-# Menu 'Session' - Set Working Directory - 'To Source File Location'
+# Menu 'Session' - 'Set Working Directory' - 'To Source File Location'
 #
 # this sets the working directory to the location of the script (note that
 # this actually runs the setwd() command with the correct location)
@@ -174,8 +175,8 @@ getwd()
 getwd()
 
 # another approach: in the 'Files' tab in the bottom right pane, click your
-# way to the directory/folder with the materials, then click 'More', and
-# select 'Set As Working Directory'
+# way to the directory/folder with the materials, then click 'More' (or the
+# symbol that looks like a gear), and select 'Set As Working Directory'
 
 # don't forget to save the script once in a while (Ctrl+s / Command+s) and add
 # comments to the script as needed

@@ -4,11 +4,11 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2022-05-27
+# last updated: 2023-01-30
 
 ############################################################################
 
-# restart the R session (Menu 'Session' - Restart R)
+# restart the R session (Menu 'Session' - 'Restart R')
 
 # read in the code from rcode_helper.r
 
@@ -186,6 +186,8 @@ points(dat$age, dat$circumference, pch=19)
 # note: if-else statements are really different than ifelse(); ifelse() is a
 # vectorized function that takes a logical vector as input and turns this
 # vector into a different vector
+
+load("data_survey_edit.rdata")
 
 ifelse(dat$smoke == "yes", "red", "blue")
 

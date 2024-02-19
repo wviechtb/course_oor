@@ -4,11 +4,11 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2022-05-27
+# last updated: 2024-02-04
 
 ############################################################################
 
-# restart the R session (Menu 'Session' - Restart R)
+# restart the R session (Menu 'Session' - 'Restart R')
 
 # show installed packages
 
@@ -31,6 +31,11 @@ installed.packages()[,c("LibPath", "Version", "Priority")]
 # list loaded packages (have to explicitly use print())
 
 print(.packages())
+
+# in principle, it is possible to change the startup behavior of R so that it
+# automatically loads additional packages, but this is not recommended (when
+# sharing a script with others, they will not automatically load the same
+# packages, which creates all kinds of confusion)
 
 ############################################################################
 
@@ -73,13 +78,17 @@ dat <- read.table(header=TRUE, colClasses=c("character", "integer", "Date"), tex
 4.0.2 16261 2020-09-15
 4.1.2 18544 2021-12-06
 4.1.3 18977 2022-03-14
-4.2.0 18579 2022-05-27")
+4.2.0 18579 2022-05-27
+4.2.2 19003 2023-01-12
+4.2.3 19300 2023-03-19
+4.3.2 20292 2024-01-23")
 
 par(mar=c(6,5.5,4,2))
 par(mgp=c(4,1,0))
-plot(dat$date, dat$count, pch=19, cex=1.2, xlab="", ylab="Number of CRAN Packages", xaxt="n", yaxt="n")
+plot(dat$date, dat$count, pch=19, cex=1.2, xlab="", ylab="Number of CRAN Packages",
+     xaxt="n", yaxt="n", ylim=c(0,21000))
 axis(side=1, at=dat$date, label=dat$date, las=2, cex.axis=.7)
-axis(side=2, at=seq(0,19000,1000), las=2)
+axis(side=2, at=seq(0,21000,1000), las=2)
 axis(side=3, at=dat$date, label=dat$vers, las=2, cex.axis=.7)
 grid(nx=10, ny=10)
 
@@ -94,7 +103,7 @@ points(dat$date, dat$count, pch=19, cex=1.2)
 # all packages available on CRAN:
 # https://cran.r-project.org/web/packages/available_packages_by_name.html
 
-# CRAN task views: https://cran.r-project.org/web/views
+# CRAN task views: https://cran.r-project.org/web/views/
 
 # install the 'lme4' package (from CRAN)
 
@@ -105,7 +114,7 @@ install.packages("lme4")
 library(lme4)
 
 # if you put install.packages("pkg") into your script, this will reinstall the
-# package everytime you rerun the script; to avoid this, you could put a # in
+# package every time you rerun the script; to avoid this, you could put a # in
 # front of the install.packages("pkg") so that it turns into a comment
 
 # in rcode_helper.r, there is also a little helper function called loadpkg()
@@ -208,7 +217,7 @@ pkg_search_addin("structural equation")
 # - has a 'vignette' or other supporting documentation
 # - paper/book about package has been published
 # - help files are comprehensive and free of errors
-# - has been cited in papers
+# - has been cited in papers / recommended by peers
 # - number of downloads
 # - ...
 
@@ -240,8 +249,11 @@ citation("lme4")
 # - StackExchange: https://stackexchange.com
 #   - https://stackoverflow.com
 #   - https://stats.stackexchange.com
-# - https://community.rstudio.com (for questions related to RStudio and
-#   packages that have been written by RStudio staff, esp. tidyverse stuff)
+# - https://community.rstudio.com (for questions related to RStudio, packages
+#   that have been written by RStudio/Posit staff, and esp. tidyverse stuff)
+# - try asking ChatGPT (or some other large language model) for an answer
+# - R User Group at Maastricht University (RUG@UM):
+#   https://wviechtb.github.io/r-user-group/
 
 ############################################################################
 

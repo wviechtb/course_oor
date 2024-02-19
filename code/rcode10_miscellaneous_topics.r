@@ -4,11 +4,11 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2022-05-27
+# last updated: 2024-02-08
 
 ############################################################################
 
-# restart the R session (Menu 'Session' - Restart R)
+# restart the R session (Menu 'Session' - 'Restart R')
 
 # read in the code from rcode_helper.r
 
@@ -16,12 +16,64 @@ source("rcode_helper.r")
 
 ############################################################################
 
-# psychometrics
-# https://en.wikipedia.org/wiki/Psychometrics
-
-# read in data
+# load the data
 
 load("data_survey_edit.rdata")
+
+# inspect the first 6 rows of the dataset
+
+head(dat)
+
+# open the codebook pdf via this script
+
+browseURL("data_survey.pdf")
+
+############################################################################
+
+# attach some description to variables (variable labels)
+
+# a simple solution: using comment()
+
+comment(dat$source) <- "Primary source of stress."
+comment(dat$lotr1) <- "In uncertain times, I usually expect the best."
+comment(dat$lotr2) <- "If something can go wrong for me, it will."
+comment(dat$lotr3) <- "I'm always optimistic about my future."
+comment(dat$lotr4) <- "I hardly ever expect things to go my way."
+comment(dat$lotr5) <- "I rarely count on good things happening to me."
+comment(dat$lotr6) <- "Overall, I expect more good things to happen to me than bad."
+
+# labels do not show up when looking at the dataset
+
+head(dat)
+
+# but we can extract them
+
+comment(dat$source)
+
+# or get all of them
+
+sapply(dat, comment)
+
+# only show labels for variables that have one
+
+res <- sapply(dat, comment)
+res <- res[!sapply(res, is.null)]
+res
+
+# print as a data frame
+
+res <- data.frame(label=unlist(res))
+print(res, right=FALSE)
+
+# there are packages specifically for creating/extracting labels; for example:
+#
+# https://cran.r-project.org/package=tinylabels
+# https://cran.r-project.org/package=labelled
+
+############################################################################
+
+# psychometrics
+# https://en.wikipedia.org/wiki/Psychometrics
 
 head(dat)
 
@@ -29,7 +81,7 @@ head(dat)
 
 loadpkg(psych)
 
-# install (if necessary) the 'GPArotation' package
+# install (if necessary) the 'GPArotation' package and load it
 
 loadpkg(GPArotation)
 
@@ -55,6 +107,9 @@ grep("lotr", names(dat))
 # actually searches for a 'regular expression', which allows for the
 # specification of very complex search patterns; for more details, see:
 # https://en.wikipedia.org/wiki/Regular_expression
+
+# can also read more about regular expressions as used in R
+help(regexp)
 
 # this will search for 'lotr' followed by a number between 0 and 9
 
@@ -104,144 +159,26 @@ fa(sub, nfactors=2, rotate="oblimin", fm="pa")
 
 ############################################################################
 
-# heatmaps
-# https://en.wikipedia.org/wiki/Heat_map
+# the 'psych' package has a bunch of other useful functions; for example, the
+# describe() function provides summary statistics for all quantitative
+# variables in a dataset
 
-rm(list=ls())
+describe(dat, omit=TRUE)
 
-# read in data
+# the 'skimr' package also creates nice summaries of datasets
 
-load("data_survey_edit.rdata")
+# install (if necessary) the 'skimr' package and load it
 
-# create a dataset for which we want to create a heatmap
+loadpkg(skimr)
 
-mat <- cor(dat[c("age", "lotr", "mastery", "pss", "rses", "posaff", "negaff")],
-           use = "complete.obs")
-mat
-dat <- as.data.frame(mat)
-rownames(dat) <- 1:nrow(dat)
-dat <- cbind(var=colnames(dat), dat)
-dat
+skim(dat)
+skim_without_charts(dat) # if there are problems with drawing the mini histograms
 
-# remove first column
+# note: for character variables, the information provided is not so useful;
+# it helps to turn such variables into factors
 
-dat[2:8]
-dat[-1]
-
-# a basic heatmap
-
-heatmap(dat[-1])
-
-# heatmap doesn't take data frames as input; need to supply a matrix
-
-heatmap(as.matrix(dat[-1]))
-
-# add row names based on 'var' variable
-
-heatmap(as.matrix(dat[-1]), labRow=dat$var)
-
-# switch to viridis color scheme
-
-heatmap(as.matrix(dat[-1]), col=hcl.colors(50), labRow=dat$var)
-
-# reverse the order of the columns
-
-heatmap(as.matrix(dat[-1]), col=hcl.colors(50), labRow=dat$var, revC=TRUE)
-
-# no dendograms
-
-heatmap(as.matrix(dat[-1]), col=hcl.colors(50), labRow=dat$var, revC=TRUE,
-        Rowv=NA, Colv=NA)
-
-# more space for margins (default is c(5,5))
-
-heatmap(as.matrix(dat[-1]), col=hcl.colors(50), labRow=dat$var, revC=TRUE,
-        Rowv=NA, Colv=NA, margins=c(7,7))
-
-# don't rescale values
-
-heatmap(as.matrix(dat[-1]), col=hcl.colors(50), labRow=dat$var, revC=TRUE,
-        Rowv=NA, Colv=NA, margins=c(7,7), scale="none")
-
-# add a legend (manually)
-
-heatmap(as.matrix(dat[-1]), col=hcl.colors(50), labRow=dat$var, revC=TRUE,
-        Rowv=NA, Colv=NA, margins=c(7,16), scale="none")
-
-legend("right", fill=hcl.colors(21), legend=round(seq(min(dat[-1]),max(dat[-1]),length=21), 2))
-
-# install (if necessary) the 'pheatmap' package and load it
-
-loadpkg(pheatmap)
-
-pheatmap(as.matrix(dat[-1]), col=hcl.colors(50), labels_row=dat$var)
-
-pheatmap(as.matrix(dat[-1]), col=hcl.colors(50),
-         labels_row=dat$var, fontsize=16)
-
-pheatmap(as.matrix(dat[-1]), col=hcl.colors(50),
-         labels_row=dat$var, fontsize=16,
-         cluster_rows=FALSE, cluster_col=FALSE)
-
-# install (if necessary) the 'heatmaply' package and load it
-
-loadpkg(heatmaply)
-
-heatmaply(dat[-1])
-ggheatmap(dat[-1])
-
-############################################################################
-
-# plot of intensity at x and y coordinates
-
-set.seed(1234)
-n <- 200
-dat <- data.frame(x = runif(n), y = runif(n))
-#dat$intensity <- 0.55 - 1 * (dat$x-0.7)^2 + 1 * (dat$y-0.2)^3 + rnorm(n, 0, .04)
-dat$intensity <- 0.55 - 1 * (dat$x-0.7)^2 + 1 * (dat$y-0.23)^3 + rnorm(n, 0, .04)
-head(dat)
-range(dat$intensity)
-
-plot(dat$x, dat$y, pch=19, col=hcl.colors(100)[round(dat$intensity*100)])
-
-# install (if necessary) the 'akima' package and load it
-
-loadpkg(akima)
-
-# interpolate points
-
-res <- interp(dat$x, dat$y, dat$intensity)
-
-filled.contour(res, color=hcl.colors, xlab="x", ylab="y")
-
-res$z[is.na(res$z)] <- 0
-
-filled.contour(res, color=hcl.colors, xlab="x", ylab="y")
-
-filled.contour(res, color=hcl.colors, xlab="x", ylab="y", nlevels=100)
-
-# something really fancy
-
-loadpkg(plotly)
-
-plot_ly(x = ~ res$x, y = ~ res$y, z = ~ res$z) %>%
-add_surface(
-   contours = list(
-      z = list(
-         show = TRUE,
-         usecolormap = TRUE,
-         highlightcolor = "#ff0000",
-         project = list(z=TRUE)
-      )
-   )
-) %>%
-layout(
-   scene = list(
-      camera = list(
-         eye = list(x=1.87, y=0.88, z=-0.64)
-      )
-   )
-)
+dat$sex <- factor(dat$sex)
+skim(dat)
 
 ############################################################################
 
@@ -317,6 +254,48 @@ dat
 dat <- merge(dat1, dat2, by="id", all=TRUE)
 dat
 
+# a more complex situation where dat2 includes (for some subjects) repeated
+# measurements of a particular variable
+
+dat2 <- data.frame(id   = c(1,1,1,2,3,3,4,5,6,6),
+                   time = c(1,2,3,1,1,3,1,1,1,2),
+                   pss  = c(30,27,22,25,36,22,33,29,39,32))
+dat2
+
+dat <- merge(dat1, dat2, all=TRUE, sort=FALSE)
+dat
+dat <- dat[order(dat$id, dat$time),]
+rownames(dat) <- NULL
+dat
+
+# combining two datasets containing different subjects (with some common
+# variables and possibly with some different variables)
+
+dat1 <- data.frame(id = c(1,2,3), pss = c(30,27,32), rses=c(34,NA,37))
+dat2 <- data.frame(id = c(4,5),   pss = c(22,18), smoker=c("no","yes"))
+dat1
+dat2
+
+# this does not work since the variables in the two datasets are not identical
+
+dat <- rbind(dat1, dat2)
+
+# create variables with NAs for variables not present in a dataset
+
+dat1[setdiff(names(dat2), names(dat1))] <- NA
+dat2[setdiff(names(dat1), names(dat2))] <- NA
+dat1
+dat2
+
+# now bind the rows together (note that the position of the variables does not
+# matter, since rbind() correctly figures out how to match things up)
+
+dat <- rbind(dat1, dat2)
+dat
+
+# note: dplyr::bind_rows(dat1, dat2) also works without having to first create
+# the variables with NAs
+
 ############################################################################
 
 # restructure a dataset from wide to long format
@@ -328,20 +307,26 @@ dat.wide <- data.frame(subj = 1:5,
 dat.wide
 
 dat.long <- reshape(dat.wide, direction="long", varying=list(2:4),
-                    v.names="y", timevar="week", idvar="id")
+                    v.names="y", timevar="timepoint", idvar="id")
 dat.long
 
 dat.long <- dat.long[order(dat.long$id),]
 dat.long
 
 dat.long$id <- NULL
-rownames(dat.long) <- 1:nrow(dat.long)
+rownames(dat.long) <- NULL
 dat.long
 
 # restructure a dataset from long to wide format
 
-reshape(dat.long, direction="wide", idvar="subj", timevar="week",
-        v.names = "y", sep="")
+dat <- reshape(dat.long, direction="wide", idvar="subj", timevar="timepoint",
+               v.names="y", sep="")
+dat
+rownames(dat) <- NULL
+dat
+
+# the reshape package (https://cran.r-project.org/package=reshape) is also
+# supposed to be very good for this kind of restructuring
 
 ############################################################################
 
@@ -349,11 +334,12 @@ reshape(dat.long, direction="wide", idvar="subj", timevar="week",
 
 dat.long
 
-# get the mean of y for each subject
+# get the mean of y for each subject (note: this automatically handles NAs)
 
-aggregate(dat.long$y, by=list(dat.long$subj), FUN=mean)
+aggregate(y ~ subj, data=dat.long, FUN=mean)
 
-aggregate(dat.long$y, by=list(dat.long$subj), FUN=mean, na.rm=TRUE)
+# this essentially does the same as using by(), but by() returns a vector,
+# while aggregate returns a data frame
 
 by(dat.long$y, dat.long$subj, mean)
 c(by(dat.long$y, dat.long$subj, mean, na.rm=TRUE))
@@ -362,6 +348,9 @@ c(by(dat.long$y, dat.long$subj, mean, na.rm=TRUE))
 
 dat.long$ym <- ave(dat.long$y, dat.long$subj, FUN=mean)
 dat.long
+
+# unfortunately, cannot use na.rm=TRUE with ave(), so we have to write our own
+# little function to compute the mean with na.rm set to TRUE automatically
 
 dat.long$ym <- ave(dat.long$y, dat.long$subj,
                    FUN = function(x) mean(x, na.rm=TRUE))
@@ -373,7 +362,7 @@ dat.long
 
 rm(list=ls())
 
-# read in data
+# load the data
 
 load("data_survey_edit.rdata")
 
@@ -520,15 +509,27 @@ plot(bill_length_mm ~ flipper_length_mm, data=penguins,
 
 # same idea also works for using different plotting symbols for the groups
 
-plot(bill_length_mm ~ flipper_length_mm, data=penguins,
-     xlab="Flipper length (mm)", ylab="Bill length (mm)", bty="l",
-     pch=c(19,17,15)[species], col=c("darkorange","purple","cyan4")[species])
+plot(bill_length_mm ~ flipper_length_mm, data=penguins, pch=NA,
+     xlab="Flipper length (mm)", ylab="Bill length (mm)", bty="l")
+
+grid()
+
+points(bill_length_mm ~ flipper_length_mm, data=penguins,
+       pch=c(19,17,15)[species], col=c("darkorange","purple","cyan4")[species])
 
 # note: we do not have to use penguins$species when using the 'data' argument
+
+legend("bottomright", pch=c(19,17,15), col=c("darkorange","purple","cyan4"),
+       legend=c("Adelie","Chinstrap","Gentoo"), bty="n", title="Penguin species")
 
 ############################################################################
 
 # string manipulation
+
+# pasting together things as strings
+
+paste("R", "is so awesome!")
+paste("Mean flipper length:", round(mean(penguins$flipper_length_mm, na.rm=TRUE), 2))
 
 # say the 'id' variable includes the subject initials and their year of birth
 
@@ -561,6 +562,10 @@ nchar(id)-3
 
 substr(id, start=nchar(id)-3, stop=nchar(id))
 as.numeric(substr(id, start=nchar(id)-3, stop=nchar(id)))
+
+# some packages for string manipulations:
+# https://cran.r-project.org/package=stringi
+# https://cran.r-project.org/package=stringr
 
 ############################################################################
 
@@ -660,8 +665,9 @@ load("data_survey_edit.rdata")
 
 dat$pss
 
-dat$pss[is.na(dat$pss)] <- mean(dat$pss, na.rm=TRUE)
+# mean imputation (not a good method ...)
 
+dat$pss[is.na(dat$pss)] <- mean(dat$pss, na.rm=TRUE)
 dat$pss
 
 ############################################################################
@@ -682,12 +688,13 @@ sub <- dat[c("pss", "age", "smoke", "rses")]
 res <- lm(pss ~ age + smoke + rses, data=sub)
 summary(res)
 
-# set up predictor matrix
+# set up predictor matrix (1 means that the variable in the column is used to
+# predict the variable in the row, a 0 means that it is not used)
 
 predMatrix <- make.predictorMatrix(sub)
 predMatrix
 
-# set up imputation methods vector
+# set up imputation methods vector (pmm = 'predictive mean matching')
 
 impMethod <- make.method(sub)
 impMethod
@@ -777,10 +784,89 @@ summary(res)
 res <- lm(scale(posaff) ~ 0 + scale(lotr) + scale(rses), data=tmp)
 summary(res)
 
+# note: we create the 'tmp' dataset above, since scale() standardizes each
+# variable seprately and if there are different sets of missings in the
+# variables, then the variables would be standardized based on different
+# subsets of the data; by first creating 'tmp', we know that all variables are
+# standardized based on the same set of subjects (with complete data on the
+# variables of interest)
+
+############################################################################
+
+# creating a 'Table 1' for a paper
+
+rm(list=ls())
+
+load("data_survey_edit.rdata")
+
+# install (if necessary) the 'tableone' and 'labelled' packages and load them
+
+loadpkg(tableone)
+loadpkg(labelled)
+
+# attach some variable labels to some variables in the dataset
+
+var_label(dat) <- list(age="Age", marital="Marital Status",
+                       educ="Educational Level", pss="PSS")
+
+# create Table 1 and print it
+
+tab <- CreateTableOne(vars=c("age", "marital", "educ", "pss"),
+                      strata="sex" , data=dat)
+print(tab, varLabels=TRUE)
+
+# instead of testing, show standardized mean differences
+
+print(tab, varLabels=TRUE, test=FALSE, smd=TRUE)
+
+# turn marital into a factor and set the reference level
+
+dat$marital <- relevel(factor(dat$marital), ref="single")
+
+# recreate the table
+
+tab <- CreateTableOne(vars=c("age", "marital", "educ", "pss"),
+                      strata="sex" , data=dat)
+print(tab, varLabels=TRUE, test=FALSE, smd=TRUE)
+
+# turn educ into a factor and set the levels in the desired order
+
+dat$educ <- factor(dat$educ)
+levels(dat$educ)
+levels(dat$educ)[c(3,5,2,4,6,1)]
+dat$educ <- factor(dat$educ, levels=levels(dat$educ)[c(3,5,2,4,6,1)])
+levels(dat$educ)
+
+# recreate the table
+
+tab <- CreateTableOne(vars=c("age", "marital", "educ", "pss"),
+                      strata="sex" , data=dat)
+print(tab, varLabels=TRUE, test=FALSE, smd=TRUE)
+
+# save table as a csv file
+
+out <- print(tab, varLabels=TRUE, test=FALSE, smd=TRUE, quote=FALSE)
+write.csv(out, "table1.csv")
+
+# can now import this into Excel, edit if needed, and copy-paste into Word
+
+# the 'table1' package also provides this kind of functionality
+
+loadpkg(table1)
+
+label(dat$age)     <- "Age"
+label(dat$marital) <- "Marital Status"
+label(dat$educ)    <- "Educational Level"
+label(dat$pss)     <- "PSS"
+
+table1(~ age + marital + educ + pss | sex, data=dat)
+
+# this creates an HTML table, which one can copy-paste into Word
+
 ############################################################################
 
 # some other techniques/packages/functions:
-# - generalized estimating equations: gee, geepack
+# - generalized estimating equations: gee, geepack, glmtoolbox
 # - time series: ts(), arima()
 # - bootstrapping: boot
 # - CFA/SEM: lavaan, sem
@@ -794,12 +880,75 @@ summary(res)
 
 ############################################################################
 
+# confirmatory factor analysis (CFA) / structural equation modeling (SEM)
+# https://en.wikipedia.org/wiki/Confirmatory_factor_analysis
+# https://en.wikipedia.org/wiki/Structural_equation_modeling
+
+# install (if necessary) the 'lavaan' package and load it
+
+loadpkg(lavaan)
+
+# load the data
+
+load("data_survey_edit.rdata")
+
+# fit a one-factor CFA model to the items of the PSS scale
+
+model1 <- 'PSS =~ pss1 + pss2 + pss3 + pss4 + pss5 + pss6 + pss7 + pss8 + pss9 + pss10'
+
+res1 <- cfa(model1, data=dat, estimator="ML", std.lv=TRUE)
+summary(res1, fit.measures=TRUE, standardized=TRUE)
+
+# fit a two-factor CFA model to the items of the PSS scale
+
+model2 <- '
+PSSpos =~ pss1 + pss2 + pss3 + pss6 + pss9 + pss10
+PSSneg =~ pss4 + pss5 + pss7 + pss8'
+
+res2 <- cfa(model2, data=dat, estimator="ML", std.lv=TRUE)
+summary(res2, fit.measures=TRUE, standardized=TRUE)
+
+# LRT comparing the fit of the two models
+
+anova(res1, res2)
+
+# an example of a structural equation model
+
+model <- '
+# measurement model
+  RSES =~ rses1 + rses2 + rses3 + rses4 + rses5 + rses6 + rses7 + rses8 + rses9 + rses10
+  PSSpos =~ pss1 + pss2 + pss3 + pss6 + pss9 + pss10
+  PSSneg =~ pss4 + pss5 + pss7 + pss8
+  LOTR =~ lotr1 + lotr2 + lotr3 + lotr4 + lotr5 + lotr6
+# regressions
+  PSSpos ~ RSES
+  PSSneg ~ RSES
+  LOTR ~ PSSpos + PSSneg'
+
+res <- sem(model, data=dat, estimator="ML", std.lv=TRUE)
+summary(res, fit.measures=TRUE, standardized=TRUE)
+
+# plot the model
+
+loadpkg(lavaanPlot)
+lavaanPlot(model=res, coef=TRUE, stars="regress")
+
+# packages semPlot (https://cran.r-project.org/package=semPlot) and tidySEM
+# (https://cran.r-project.org/package=tidySEM) also provide functions for
+# plotting SEM models
+
+############################################################################
+
 # we have mostly been using 'base R graphics' throughout this course; but
 # there are other plotting systems, most notably the 'ggplot2' package
 
-# restart the R session (Menu 'Session' - Restart R)
+# restart the R session (Menu 'Session' - 'Restart R')
 
-# read in data
+# read in the code from rcode_helper.r
+
+source("rcode_helper.r")
+
+# load the data
 
 load("data_survey_edit.rdata")
 
@@ -915,7 +1064,7 @@ dat %>%
 
 # To learn more, see https://www.tidyverse.org. These RStudio 'cheatsheets'
 # are also quite nice and focused on tidyverse packages (but not exclusively):
-# https://www.rstudio.com/resources/cheatsheets/
+# https://posit.co/resources/cheatsheets/
 
 ############################################################################
 
@@ -926,17 +1075,11 @@ dat |> pull(pss) |> mean(na.rm=TRUE)
 # pull() is a function from dplyr; if we want to do thing entirely in 'base R'
 # without a tidyverse package, we could do the following
 
-dat |> (function(x) x$pss)() |> mean(na.rm=TRUE)
+dat |> _$pss |> mean(na.rm=TRUE)
 
-# this is a bit ugly; could do this
+# this looks a bit weird; a bit nicer in my opinion is this
 
-dat |> subset(select=pss, drop=TRUE) |> mean(na.rm=TRUE)
-
-# or with the help of the 'pipebind' package, one can do this
-
-loadpkg(pipebind)
-
-dat |> bind(d, d$pss) |> mean(na.rm=TRUE)
+dat |> with(mean(pss, na.rm=TRUE))
 
 ############################################################################
 

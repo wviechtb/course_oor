@@ -4,11 +4,11 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2022-05-27
+# last updated: 2024-01-23
 
 ############################################################################
 
-# restart the R session (Menu 'Session' - Restart R)
+# restart the R session (Menu 'Session' - 'Restart R')
 
 ############################################################################
 
@@ -24,7 +24,8 @@ dat <- data.frame(id, age, sex, grp)
 dat
 
 # notes:
-# - on the very left, we have the row names (not a variable!)
+# - on the very left, we have the row names (not a variable!); by default,
+#   they are just consecutive numbers, but don't have to be
 # - character variables are not shown with quotes
 
 # note: in the Environment pane, we now have a 'Data' object called 'dat'
@@ -225,16 +226,13 @@ dat
 # note: the variable that is being changed does not have to be the same
 # variable that is used to select cases
 
-dat$y[dat$age <= 21] <- 4
+dat$y[dat$id == "John"] <- 8
 dat
+
+# this way you can make corrections to a dataset
 
 dat$y[3] <- 8
 dat
-
-dat$y[dat$id == "Sue"] <- 5
-dat
-
-# this is a very straightforward way to make corrections to a dataset
 
 # rename a variable
 
@@ -281,6 +279,8 @@ dat$ymean <- NULL
 dat
 
 dat[c("y1","y2")]
+rowSums(dat[c("y1","y2")])
+rowMeans(dat[c("y1","y2")])
 
 dat$ysum  <- rowSums(dat[c("y1","y2")])
 dat$ymean <- rowMeans(dat[c("y1","y2")])
@@ -310,13 +310,6 @@ dat
 dat$y1 >= 2
 dat[dat$y1 >= 2,] # not good :(
 
-# better but complex
-
-is.na(dat$y1)
-!is.na(dat$y1)
-!is.na(dat$y1) & dat$y1 >= 2
-dat[!is.na(dat$y1) & dat$y1 >= 2,]
-
 # easier
 
 dat$y1 >= 2
@@ -327,10 +320,55 @@ dat[which(dat$y1 >= 2),]
 
 subset(dat, y1 >= 2)
 
-# a couple other examples
+############################################################################
 
-dat
-subset(dat, !is.na(y1))
-subset(dat, subject != 1)
+# quick summary of the bracket notation:
+#
+# say 'x' is a vector (could also be something like dat$x), then we can use []
+# to select one or multiple elements from that vector (e.g., x[2] or x[1:3])
+#
+# say 'dat' is a data frame, then we can use:
+# - dat[] to select one or more columns (e.g., dat[3] or dat["age"])
+# - dat[row(s),column(s)] to select one or more rows and one or more columns
+#   (e.g., dat[1:3,3] or dat[1:3,"age"])
+# - when leaving out row(s) or column(s), then this means to select all rows
+#   or columns (e.g., dat[1:3,] or dat[,"age"])
+#
+# often we use 'logicals' for selection/subsetting (e.g., dat[dat$age > 21,])
+
+############################################################################
+
+# a few other object types
+
+# matrices: similar to data frames (i.e., have rows and columns), but all
+# elements in a matrix must be of the same type (numeric, character, etc.)
+
+# arrays: similar to matrices but can have more than two dimensions
+
+# lists: a collection of objects (components); a list allows you to gather a
+# variety of (possibly unrelated) objects under one name
+
+# example of a list with 4 components
+
+w <- list(name="Fred", age=24, grades=c(7,8,6,9,5,6),
+          address=c("14 Pine Ave, Nicetown", "104 South Street, Bad City"))
+w
+
+# note: data frames are really just a special case of lists, where each
+# component is of the same length
+
+# factors: a special data type for nominal variables
+
+gender <- c("Male","Male","Male","Male","Female","Male","Male","Female","Male")
+gender
+gender <- factor(gender)
+gender
+
+# internally, factors are stored as integers that are mapped to the levels
+# (here: 1 = Female, 2 = Male)
+
+# R now treats gender as a nominal variable
+
+summary(gender)
 
 ############################################################################

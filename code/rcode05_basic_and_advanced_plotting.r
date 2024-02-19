@@ -4,21 +4,21 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2022-05-27
+# last updated: 2024-01-30
 
 ############################################################################
 
-# restart the R session (Menu 'Session' - Restart R)
+# restart the R session (Menu 'Session' - 'Restart R')
 
 # read in the code from rcode_helper.r
 
 source("rcode_helper.r")
 
-# read in data (note: from now on, we will be working with the edited dataset
+# read in the data (from now on, we will be working with the edited dataset
 # where we reversed coded some items and then computed some sum scores for the
 # various scales in the dataset; we did this in rcode04.r, but if you skipped
 # this part and do not have the 'data_survey_edit.rdata' file, then you can
-# download this edited dataset from the course materials page)
+# download the edited dataset from the course materials page)
 
 load("data_survey_edit.rdata")
 
@@ -38,7 +38,7 @@ barplot(table(dat$marital))
 #
 # Error in plot.new() : figure margins too large
 #
-# this indicates that the size of the 'plotting device' is too small to
+# then this indicates that the size of the 'plotting device' is too small to
 # accommodate the plot you are trying to create; this can happen more easily
 # in RStudio because the pane for plots at the bottom right is a bit small; if
 # this happen, you just have to make the size of the plotting pane larger
@@ -53,16 +53,16 @@ barplot(table(dat$marital), las=2)
 
 # check default margins (order is: bottom, left, top, right)
 
-par()$mar
+par("mar")
 
 # make the bottom margin larger (and reduce the top margin)
 
-par(mar=c(9,4,4,2))
+par(mar=c(9,4,2,2))
 barplot(table(dat$marital), las=2)
 
 # horizontal bars
 
-par(mar=c(4,9,4,2))
+par(mar=c(4,9,2,2))
 barplot(table(dat$marital), horiz=TRUE, las=1)
 
 # las=1 to make the axis labels horizontal
@@ -186,6 +186,11 @@ plot(density(dat$age, adjust=1.5), main="Distribution of Age")
 hist(dat$age, xlab="Age", main="Histogram of Age", xlim=c(0,100), freq=FALSE)
 lines(density(dat$age, adjust=1.5), lwd=3)
 
+# note: by default, a histogram shows the number (frequency) of observations
+# falling within the various bins, but in order to combine the histogram with
+# the kernel density estimate in the same figure, we need to show the
+# probability densities (which we can get by using freq=FALSE as shown above)
+
 ############################################################################
 
 # scatterplots
@@ -193,11 +198,7 @@ lines(density(dat$age, adjust=1.5), lwd=3)
 
 plot(dat$pss, dat$posaff)
 
-# note: if you get an error ("need finite 'xlim' values" or "'x' and 'y'
-# lengths differ") then your dataset probably does not include the 'pss'
-# and/or the 'posaff' variable we created earlier (in rode04.r)
-
-# adjust some settings
+# adjust some settings to make the plot nicer
 
 plot(dat$pss, dat$posaff, xlab="Stress", ylab="Positive Affect",
      main="Scatterplot of Stress versus Positive Affect",
@@ -216,7 +217,7 @@ ifelse(dat$smoke == "yes", "red", "blue")
 plot(dat$pss, dat$posaff, xlab="Stress", ylab="Positive Affect",
      main="Scatterplot of Stress versus Positive Affect",
      pch=19, xlim=c(10,50), ylim=c(10,50),
-     col=ifelse(dat$smoke == "yes", "red", "blue"), cex=0.5)
+     col=ifelse(dat$smoke == "yes", "red", "blue"), cex=0.6)
 
 # note: 'cex' is for changing the size of the plotting symbol
 
@@ -225,9 +226,10 @@ plot(dat$pss, dat$posaff, xlab="Stress", ylab="Positive Affect",
 legend("topright", inset=.02, pch=c(19,19), cex=0.8,
        col=c("red","blue"), legend=c("smoker","non-smoker"))
 
-# if the x and y values are measured coarsely, we may get overlapping points,
-# which can make it more difficult to see any trends/patterns; one solution is
-# to indicate the number of overlapping points at a location via the point sizes
+# if the x and y values are measured coarsely (e.g., as integers), we may get
+# overlapping points, which can make it difficult to see any trends/patterns;
+# one solution is to indicate the number of overlapping points at a location
+# via the point sizes
 
 # binning of x-y values
 
@@ -267,7 +269,7 @@ plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
 # note: the jittering is random, so each time you rerun the command above, the
 # plot will look (slightly) different; to make the look of the plot fully
 # reproducible, we can set the 'seed' of the random number generator before
-# creating the plot (the seed number is arbitrary)
+# creating the plot (the seed number is arbitrary; use your favorite number!)
 
 set.seed(1234)
 plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
@@ -304,17 +306,18 @@ rm(x, y)
 
 ############################################################################
 
-# not recommended: using the 'Export' button under 'Plots' in RStudio (or if
-# using R directly, right-clicking on an image and using save/copy); this
-# isn't fully reproducible, since the plot will look different depending on
-# the size of the plotting pane / window; always use *code* to save plots
+# not recommended: using the 'Export' button under 'Plots' in RStudio or
+# right-clicking on an image and using save/copy; this isn't a fully
+# reproducible workflow, since the plot will look different depending on the
+# size of the plotting pane / window; always use *code* to save plots
 
-# saving a plot (in various formats) (saved to current working directory)
+# saving a plot (in various formats) (saved to the current working directory)
 
 # with pdf(), we open the pdf plotting device; then we create the plot, then
 # with dev.off() we close the plotting device (don't forget this last step!)
 
 pdf("plot_stress_vs_posaff.pdf")
+set.seed(1234)
 plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
      pch=19, xlab="Stress", ylab="Positive Affect")
 dev.off()
@@ -371,14 +374,14 @@ plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
 
 dev.off()
 
-# fonts are a tricky issue in general and there can be differences across 
-# operating systems (the following commands are specific to different OSs)
+# fonts are a tricky issue in general and there can be differences across
+# operating systems
 #
 # Windows typically uses Arial as the default font
 
 windowsFonts()
 
-# the same should go for macOS
+# the same should go for macOS (or it might be Helvetica)
 
 quartzFonts()
 
@@ -389,24 +392,20 @@ X11Fonts()
 # Arial and Helvetica look very similar, so the difference will only be
 # noticeable to font-nerds who really care about such things ...
 
-# under Windows, you can try the following: 
+# to set a different font, can try the following:
 
-# windowsFonts(sans = windowsFont("Comic Sans MS"))
-# tiff(...)
-# <code to create the figure>
-# dev.off()
+tiff("plot_stress_vs_posaff.tiff", width=2000, height=1600, res=300,
+     compression="lzw", type="cairo", family="Comic Sans MS")
 
-# under macOS, you can try the following:
+par(mar=c(4.2,4.2,1,1))
 
-# quartzFonts(sans = quartzFont(rep("Comic Sans MS", 4)))
-# tiff(...)
-# <code to create the figure>
-# dev.off()
+set.seed(1234)
 
-# under Linux, using family="" should switch the font, so you use:
-# tiff(..., family="Arial")
-# <code to create the figure>
-# dev.off()
+plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
+     pch=19, cex=0.8, xlim=c(10,50), ylim=c(10,50),
+     xlab="Stress", ylab="Positive Affect")
+
+dev.off()
 
 ############################################################################
 
@@ -445,15 +444,17 @@ contour(res, nlevels=14, xlab="Stress", ylab="PA")
 
 filled.contour(res, xlab="Stress", ylab="PA")
 
-filled.contour(res, color=topo.colors, xlab="Stress", ylab="PA")
-filled.contour(res, color=gray.colors, xlab="Stress", ylab="PA")
+filled.contour(res, color=topo.colors,    xlab="Stress", ylab="PA")
+filled.contour(res, color=gray.colors,    xlab="Stress", ylab="PA")
 filled.contour(res, color=terrain.colors, xlab="Stress", ylab="PA")
-filled.contour(res, color=heat.colors, xlab="Stress", ylab="PA")
-filled.contour(res, color=cm.colors, xlab="Stress", ylab="PA")
+filled.contour(res, color=heat.colors,    xlab="Stress", ylab="PA")
+filled.contour(res, color=cm.colors,      xlab="Stress", ylab="PA")
 
 # use the 'viridis' color palette
 
 filled.contour(res, color=hcl.colors, xlab="Stress", ylab="PA")
+
+# https://en.wikipedia.org/wiki/Color_blindness#Ordered_Information
 
 # check if filled.contour() has a 'color' argument; what is going on here?
 
@@ -581,7 +582,7 @@ dev.off()
 dat.m <- dat[dat$sex == "male",]
 dat.f <- dat[dat$sex == "female",]
 
-#png("stress_pa_association.png", width=2000, height=1900, res=300)
+#png("plot_stress_pa_association.png", width=2000, height=1900, res=300)
 
 # set up an empty plot but with labeled axes and axis limits set
 
@@ -604,7 +605,8 @@ title("Stress versus Positive Affect")
 
 # add legend
 
-legend("topright", inset=.02, pch=c(19,19), legend=c("male","female"), col=c("#1fc3aa","#8624f5"))
+legend("topright", inset=.02, pch=c(19,19), legend=c("male","female"),
+       col=c("#1fc3aa","#8624f5"), cex=0.8)
 
 # add an arbitrary (curved) line (just for illustration purposes)
 
@@ -624,8 +626,8 @@ text(50,  8, "Academics ...",   pos=2, font=2)
 
 # how to control what is shown on the x- and/or y-axis
 
-plot(NA, xlab="Stress", ylab="Positive Affect", 
-     xlim=c(10,50), ylim=c(8,50), xaxt="n")
+plot(NA, xlab="Stress", ylab="Positive Affect",
+     xlim=c(10,50), ylim=c(10,50), xaxt="n")
 
 # xaxt="n" means: do not add the axis tick marks and numbers
 # then we add the axis 'manually' (side=1 means: at the bottom)
@@ -634,8 +636,8 @@ axis(side=1, at=c(10,30,50))
 
 # you can also change what text is shown at the tick marks
 
-plot(NA, xlab="Stress", ylab="Positive Affect", 
-     xlim=c(10,50), ylim=c(8,50), xaxt="n")
+plot(NA, xlab="Stress", ylab="Positive Affect",
+     xlim=c(10,50), ylim=c(10,50), xaxt="n")
 
 axis(side=1, at=c(10,30,50), label=c("Low","Medium","High"))
 
@@ -644,10 +646,10 @@ axis(side=1, at=c(10,30,50), label=c("Low","Medium","High"))
 # change the type of box that is drawn around a plot
 
 plot(NA, xlab="Stress", ylab="Positive Affect",
-     xlim=c(10,50), ylim=c(8,50), bty="l")
+     xlim=c(10,50), ylim=c(10,50), bty="l")
 
 plot(NA, xlab="Stress", ylab="Positive Affect",
-     xlim=c(10,50), ylim=c(8,50), bty="n")
+     xlim=c(10,50), ylim=c(10,50), bty="n")
 
 ############################################################################
 
@@ -669,7 +671,7 @@ plot(NA, xlab="Stress", ylab="Positive Affect",
 # the default values are par(mar=c(5.1,4.1,4.1,2.1)), so just change the
 # appropriate number to increase/decrease the size of the corresponding margin
 #
-# par(mfrow=c(2,2)) to split the plotting device into a two rows and two columns
+# par(mfrow=c(2,2)) to split the plotting device into two rows and two columns
 #
 # barplot()       for a barplot
 # hist()          for a histogram
@@ -694,7 +696,7 @@ loadpkg(ggplot2)
 
 # illustration of a basic scatterplot with ggplot2
 ggplot(dat, aes(x=pss, y=posaff, color=sex)) +
-    geom_point()
+   geom_point()
 
 # see:  https://ggplot2-book.org
 #       https://ggplot2.tidyverse.org

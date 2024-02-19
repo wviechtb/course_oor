@@ -4,17 +4,17 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2022-05-27
+# last updated: 2024-02-01
 
 ############################################################################
 
-# restart the R session (Menu 'Session' - Restart R)
+# restart the R session (Menu 'Session' - 'Restart R')
 
 # read in the code from rcode_helper.r
 
 source("rcode_helper.r")
 
-# read in data
+# load the data
 
 load("data_survey_edit.rdata")
 
@@ -39,7 +39,6 @@ by(dat$age, dat$sex, sd)
 # by() combined with barplot() (PSS = Perceived Stress Scale)
 
 by(dat$pss, dat$marital, mean)
-
 by(dat$pss, dat$marital, mean, na.rm=TRUE)
 
 barplot(by(dat$pss, dat$marital, mean, na.rm=TRUE),
@@ -176,6 +175,8 @@ par(mar=c(5,9,4,2))
 ridgeline(dat$pss, dat$marital, xlim=c(10,50), xlab="PSS",
           main="Perceived Stress by Marital Status")
 
+dev.off()
+
 ############################################################################
 
 # t-test
@@ -189,9 +190,18 @@ t.test(pss ~ sex, data=dat)
 
 t.test(pss ~ sex, data=dat, var.equal=TRUE)
 
-# visualize densities of the two groups
+# test whether the variances are equal in the two groups
 
-res.m <- density(dat$pss[dat$sex == "male"], na.rm = TRUE)
+var.test(pss ~ sex, data=dat)
+
+# Levene's test (as it is done in SPSS)
+
+loadpkg(car)
+leveneTest(pss ~ factor(sex), data=dat, center=mean)
+
+# visualize the densities of the two groups
+
+res.m <- density(dat$pss[dat$sex == "male"],   na.rm = TRUE)
 res.f <- density(dat$pss[dat$sex == "female"], na.rm = TRUE)
 
 plot(res.m, xlab="Perceived Stress Scale Value", main="Kernel Density Estimates of Stress for Males and Females")
@@ -229,6 +239,8 @@ sav
 
 par(mar=c(5,16,4,2))
 plot(sav, las=1)
+
+dev.off()
 
 ############################################################################
 
@@ -291,7 +303,7 @@ TukeyHSD(res)
 res <- aov(pss ~ marital + sex, data=dat)
 summary(res)
 
-# for example, the test of 'martial' above is *not* adjusted for 'sex', but
+# in the model above, the test of 'martial' is *not* adjusted for 'sex', but
 # the test of 'sex' is adjusted for 'marital'
 
 # we can get Type III tests (marginal tests) with the 'car' package
@@ -316,7 +328,7 @@ summary(aov(pss ~ marital + sex, data=dat))
 # within-subject factors) with the aov() function, but we won't cover this
 #
 # some examples can be found here:
-# https://stats.idre.ucla.edu/r/seminars/repeated-measures-analysis-with-r
+# https://stats.oarc.ucla.edu/r/seminars/repeated-measures-analysis-with-r/
 #
 # see also the ezANOVA() function from the 'ez' package that might be easier
 # to use for complex ANOVA models (https://cran.r-project.org/package=ez)
@@ -330,7 +342,7 @@ summary(aov(pss ~ marital + sex, data=dat))
 
 cor(dat$posaff, dat$negaff)
 
-# correlation matrix for multiple variables
+# correlation matrix for multiple variables (error!)
 
 cor(dat$posaff, dat$negaff, dat$pss)
 
@@ -350,6 +362,21 @@ cor.test(dat$posaff, dat$negaff)
 # https://en.wikipedia.org/wiki/Spearman's_rank_correlation_coefficient
 
 cor(dat$posaff, dat$negaff, method="spearman")
+
+# correlation matrix with testing
+
+loadpkg(Hmisc)
+
+res <- rcorr(as.matrix(dat[c("posaff", "negaff", "pss")]))
+res
+
+# do a Bonferroni correction on the p-values
+
+res$P * 3
+
+# note: 3 is the number of correlations tested (i.e., pairs of variables); in
+# general, when there are x variables, then there are x*(x-1)/2 pairs (e.g.,
+# if x = 5, then there are 5*4/2 = 10 pairs)
 
 ############################################################################
 
@@ -374,17 +401,16 @@ summary(res)
 
 abline(res, lwd=3, col="red")
 
-# fitted values, residuals, standarized residuals
+# fitted values, residuals, standardized residuals
 
 fitted(res)
 residuals(res)
 rstandard(res)
 
-# fitted values versus standarized residuals plot
+# fitted values versus standardized residuals plot
 
 plot(fitted(res), rstandard(res), pch=19,
      xlab="Fitted Values", ylab="Residuals")
-
 abline(h=0)
 
 # histogram of the standardized residuals
@@ -396,6 +422,11 @@ hist(rstandard(res))
 
 qqnorm(rstandard(res), pch=19)
 qqline(rstandard(res))
+
+# Shapiro-Wilk test of normality of the standardized residuals
+# https://en.wikipedia.org/wiki/Shapiro–Wilk_test
+
+shapiro.test(rstandard(res))
 
 # plot of the Cook's distances
 # https://en.wikipedia.org/wiki/Cook's_distance
@@ -515,6 +546,19 @@ lines(newdat$age, pred$upr, lty="dotted", col="blue")
 
 # https://en.wikipedia.org/wiki/Prediction_interval#Regression_analysis
 
+# the matlines() function is also useful for adding multiple lines to a plot;
+# for completeness sake, here is the full code (but leaving out the prediction
+# interval, since it is less common to plot this)
+
+plot(pss ~ age, data=dat, pch=19)
+res <- lm(pss ~ age, data=dat)
+newdat <- data.frame(age = 10:90)
+pred <- predict(res, newdata=newdat, interval="confidence")
+matlines(x=newdat$age, y=pred, lty=c(1,2,2), lwd=c(2,1,1), col=c("red","red","red"))
+points(pss ~ age, data=dat, pch=19)
+
+# note: for lty, 1=solid, 2=dashed, 3=dotted, 4=dotdash, 5=longdash, 6=twodash
+
 ############################################################################
 
 # transformation of the outcome variable
@@ -528,7 +572,7 @@ plot(fitted(res), residuals(res), pch=19,
      xlab="Fitted Values", ylab="Residuals")
 abline(h=0)
 
-plot(jitter(fitted(res), amount=0.5), jitter(residuals(res), amount=2),
+plot(jitter(fitted(res), amount=0.5), jitter(residuals(res), amount=0.5),
      pch=19, xlab="Fitted Values", ylab="Residuals")
 abline(h=0)
 
@@ -676,7 +720,7 @@ summary(res)
 
 ############################################################################
 
-# numerical and categorical predictors in the same model
+# categorical and numerical predictors in the same model
 
 res <- lm(pss ~ sex + negaff, data=dat)
 summary(res)

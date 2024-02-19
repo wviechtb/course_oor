@@ -4,14 +4,15 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2022-05-27
+# last updated: 2023-01-30
 
 ############################################################################
 
-# restart the R session (Menu 'Session' - Restart R)
+# restart the R session (Menu 'Session' - 'Restart R')
 
 # make sure the working directory is set to the directory/folder where this
-# script and the data are stored; if not, first set it (see rcode01)
+# script and the data (data_survey.dat) are stored; if this is not the case,
+# first set the working directory correctly (see rcode01_interacting_with_r.r)
 
 # make sure 'rcode_helper.r' is also in the same directory as this script
 
@@ -69,6 +70,10 @@ options(max.print = 99999)
 
 dat
 
+# look at the first 6 rows of 'dat'
+
+head(dat)
+
 # but if there are many variables, then these are wrapped, which is also
 # confusing; instead, large datasets are more easily inspected with View()
 
@@ -97,7 +102,8 @@ dat2 <- read_excel("data_survey.xlsx")
 head(dat2)
 
 # note: read_excel() creates a 'tibble', which is essentially like a data
-# frame, but we can make it a regular data frame with as.data.frame()
+# frame (but with some subtle differences and it is displayed in a slightly
+# different way); we can make it a regular data frame with as.data.frame()
 
 dat2 <- as.data.frame(dat2)
 
@@ -119,18 +125,17 @@ head(dat3)
 
 dat3 <- zap_widths(zap_formats(zap_labels(as_factor(dat3))))
 dat3 <- as.data.frame(dat3)
-
+dat3[] <- lapply(dat3, function(x) if (is.factor(x)) as.character(x) else x)
 head(dat3)
 
-# the 'foreign' package (doesn't need to be installed since it comes with R,
-# so just load it with library(foreign)) also has functions for importing SPSS
-# and Stata datasets: read.spss() and read.dta()
+# the 'foreign' package also has functions for importing SPSS and Stata
+# datasets: read.spss() and read.dta()
 
 # see also the R Data Import/Export manual:
 # https://cran.r-project.org/doc/manuals/R-data.html
 # which provides further information of data import/export
 
-# in RStudio, you can also use menu 'File' - Import Dataset
+# in RStudio, you can also use menu 'File' - 'Import Dataset'
 # - if you use this, make sure you copy-paste the code to your script
 # - you may want to adjust the name of the object this creates
 
@@ -404,7 +409,7 @@ head(dat)
 
 # can save a bit of typing by using the with() command
 
-dat$posaff <- with(dat, panas1 + panas4 + panas6 + panas7 + panas9  +
+dat$posaff <- with(dat, panas1 + panas4 + panas6 + panas7 + panas9 +
                         panas12 + panas13 + panas15 + panas17 + panas18)
 dat$negaff <- with(dat, panas2 + panas3 + panas5 + panas8 + panas10 +
                         panas11 + panas14 + panas16 + panas19 + panas20)
@@ -436,6 +441,8 @@ save(dat, file="data_survey_edit.rdata")
 # - all properties of the data/objects are exactly preserved
 # disadvantage:
 # - cannot import .rdata files into other software
+
+# note: some people prefer .rda as the file extension for R data files
 
 ############################################################################
 
