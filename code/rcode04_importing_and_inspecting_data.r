@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2023-01-30
+# last updated: 2024-04-22
 
 ############################################################################
 
@@ -177,6 +177,8 @@ table(dat$age)
 
 mean(dat$smokenum)
 mean(dat$smokenum, na.rm=TRUE)
+
+# na.rm=TRUE removes the missing values first before computing the mean
 
 ############################################################################
 

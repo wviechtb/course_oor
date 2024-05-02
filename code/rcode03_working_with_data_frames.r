@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2024-01-23
+# last updated: 2024-05-02
 
 ############################################################################
 
@@ -171,41 +171,18 @@ dat
 dat$y <- c(5, 7, 999)
 dat
 
-# make a copy of an object
-
-dat2 <- dat
-dat2
-
 # sort a vector
 
-dat2$age
-sort(dat2$age)
-dat2
+sort(dat$age)
 
-# as before, this is not a permanent change unless you 'back assign' it
+# sort a data frame
 
-dat2$age <- sort(dat2$age)
-dat2
+sort_by(dat, ~ age)
 
-# note: this is NOT the right way to sort a data frame; it just sorts the age
-# variable within dat2, but all of the other variables are unchanged, so now
-# dataset dat2 is totally screwed up
-
-rm(dat2)
-
-# how to sort a data frame
-
-dat
-order(dat$age)
-
-# this means: the 2nd person has the lowest age, the 1st person has the next
-# higher age, and the 3rd person has the highest age
-
-# so we can use this order using the 'subsetting' notation introduced earlier
+# sort_by() was added in R 4.4.0; if you have an older version of R, you can use
+# the following (and should upgrade the R version)
 
 dat[order(dat$age),]
-
-# now the entire dataset has been sorted correctly by age
 
 # but again, this is not permanent
 
@@ -213,7 +190,7 @@ dat
 
 # to make this permanent, back-assign it
 
-dat <- dat[order(dat$age),]
+dat <- sort_by(dat, ~ age)
 dat
 
 # value replacement (suppose 999 actually stands for missing data)
@@ -357,7 +334,7 @@ w
 # note: data frames are really just a special case of lists, where each
 # component is of the same length
 
-# factors: a special data type for nominal variables
+# factors: a special data type for nominal (categorical) variables
 
 gender <- c("Male","Male","Male","Male","Female","Male","Male","Female","Male")
 gender

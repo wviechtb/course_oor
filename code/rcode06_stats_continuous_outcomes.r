@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2024-02-01
+# last updated: 2024-04-22
 
 ############################################################################
 
@@ -39,6 +39,10 @@ by(dat$age, dat$sex, sd)
 # by() combined with barplot() (PSS = Perceived Stress Scale)
 
 by(dat$pss, dat$marital, mean)
+
+# note that some means are missing (NA); we can again use na.rm=TRUE to
+# compute the means after removing the missing values
+
 by(dat$pss, dat$marital, mean, na.rm=TRUE)
 
 barplot(by(dat$pss, dat$marital, mean, na.rm=TRUE),

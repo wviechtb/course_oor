@@ -220,6 +220,8 @@ boxplot(pss ~ marital, data=dat, col=palette.colors(8, palette="Set 2"),
         xlab="PSS", ylab="", pch=19, horizontal=TRUE, las=1,
         main="Perceived Stress by Marital Status", boxwex=0.6)
 
+dev.off()
+
 # palette.colors() is also useful if you quickly need a number of colors for
 # points or lines corresponding to different groups (e.g., in a scatterplot)
 

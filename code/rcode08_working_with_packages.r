@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2024-02-04
+# last updated: 2024-04-22
 
 ############################################################################
 
@@ -81,7 +81,8 @@ dat <- read.table(header=TRUE, colClasses=c("character", "integer", "Date"), tex
 4.2.0 18579 2022-05-27
 4.2.2 19003 2023-01-12
 4.2.3 19300 2023-03-19
-4.3.2 20292 2024-01-23")
+4.3.2 20292 2024-01-23
+4.3.3 20580 2024-02-22")
 
 par(mar=c(6,5.5,4,2))
 par(mgp=c(4,1,0))
