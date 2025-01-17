@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2024-04-22
+# last updated: 2024-11-05
 
 ############################################################################
 
@@ -397,6 +397,7 @@ head(dat)
 
 dat$mastery <- rowSums(dat[grep("mastery", names(dat))])
 dat$pss     <- rowSums(dat[grep("pss",     names(dat))])
+dat$swls    <- rowSums(dat[grep("swls",    names(dat))])
 dat$rses    <- rowSums(dat[grep("rses",    names(dat))])
 
 # PANAS has two subscales, one for positive and one for negative affect, so

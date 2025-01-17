@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2024-02-08
+# last updated: 2025-01-17
 
 ############################################################################
 
@@ -35,12 +35,12 @@ browseURL("data_survey.pdf")
 # a simple solution: using comment()
 
 comment(dat$source) <- "Primary source of stress."
-comment(dat$lotr1) <- "In uncertain times, I usually expect the best."
-comment(dat$lotr2) <- "If something can go wrong for me, it will."
-comment(dat$lotr3) <- "I'm always optimistic about my future."
-comment(dat$lotr4) <- "I hardly ever expect things to go my way."
-comment(dat$lotr5) <- "I rarely count on good things happening to me."
-comment(dat$lotr6) <- "Overall, I expect more good things to happen to me than bad."
+comment(dat$lotr1)  <- "In uncertain times, I usually expect the best."
+comment(dat$lotr2)  <- "If something can go wrong for me, it will."
+comment(dat$lotr3)  <- "I'm always optimistic about my future."
+comment(dat$lotr4)  <- "I hardly ever expect things to go my way."
+comment(dat$lotr5)  <- "I rarely count on good things happening to me."
+comment(dat$lotr6)  <- "Overall, I expect more good things to happen to me than bad."
 
 # labels do not show up when looking at the dataset
 
@@ -264,9 +264,9 @@ dat2 <- data.frame(id   = c(1,1,1,2,3,3,4,5,6,6),
                    pss  = c(30,27,22,25,36,22,33,29,39,32))
 dat2
 
-dat <- merge(dat1, dat2, all=TRUE, sort=FALSE)
+dat <- merge(dat1, dat2, by="id", all=TRUE)
 dat
-dat <- dat[order(dat$id, dat$time),]
+dat <- sort_by(dat, ~ id + time)
 rownames(dat) <- NULL
 dat
 
@@ -302,7 +302,7 @@ dat
 
 # restructure a dataset from wide to long format
 
-dat.wide <- data.frame(subj = 1:5,
+dat.wide <- data.frame(subj = c("Bob", "Sue", "Joe", "Anne", "Rick"),
                        y1 = c(5,3,6,7,3),
                        y2 = c(4,NA,6,5,4),
                        y3 = c(2,3,4,4,1))
@@ -312,7 +312,7 @@ dat.long <- reshape(dat.wide, direction="long", varying=list(2:4),
                     v.names="y", timevar="timepoint", idvar="id")
 dat.long
 
-dat.long <- dat.long[order(dat.long$id),]
+dat.long <- sort_by(dat.long, ~ id)
 dat.long
 
 dat.long$id <- NULL
@@ -473,7 +473,7 @@ sapply(dat$x, switch,
 
 loadpkg(car)
 
-recode(dat$x , "
+recode(dat$x, "
    'grp1' = 'red';
    'grp2' = 'blue';
    'grp3' = 'green'
@@ -620,15 +620,15 @@ summary(res)
 # Kaplan-Meier plot with 95% CI
 
 plot(res, lty = c("dotted", "dashed"), lwd=3)
-legend("topright", inset=.02, c("Maintained","Nonmaintained"),
+legend("topright", inset=0.02, c("Maintained","Nonmaintained"),
        lty = c("dotted","dashed"), lwd=3)
 
 # Kaplan-Meier plot with 95% CI
 
 plot(res, col=c("blue","red"), lwd=3)
 lines(res, conf.int=TRUE, col=c("blue","red"), lty="dotted") # add confidence intervals
-legend("topright", inset=.02, c("Maintained","Nonmaintained"),
-       lty = c("dotted","dashed"), lwd=3, bg="white")
+legend("topright", inset=0.02, c("Maintained","Nonmaintained"),
+       col = c("blue","red"), lwd=3, bg="white")
 
 # log-rank test
 # https://en.wikipedia.org/wiki/Logrank_test
@@ -651,7 +651,7 @@ pred
 plot(pred$surv[,1] ~ pred$time, ylim=c(0,1), type="s", col="blue")
 lines(pred$surv[,2] ~ pred$time, type="s", col="red")
 legend("topright", legend=c("Maintained","Nonmaintained"),
-       lty="solid", col=c("blue","red"), inset=.02)
+       lty="solid", col=c("blue","red"), inset=0.02)
 
 # testing the proportional hazards assumption
 
@@ -787,7 +787,7 @@ res <- lm(scale(posaff) ~ 0 + scale(lotr) + scale(rses), data=tmp)
 summary(res)
 
 # note: we create the 'tmp' dataset above, since scale() standardizes each
-# variable seprately and if there are different sets of missings in the
+# variable separately and if there are different sets of missings in the
 # variables, then the variables would be standardized based on different
 # subsets of the data; by first creating 'tmp', we know that all variables are
 # standardized based on the same set of subjects (with complete data on the
@@ -814,7 +814,7 @@ var_label(dat) <- list(age="Age", marital="Marital Status",
 # create Table 1 and print it
 
 tab <- CreateTableOne(vars=c("age", "marital", "educ", "pss"),
-                      strata="sex" , data=dat)
+                      strata="sex", data=dat)
 print(tab, varLabels=TRUE)
 
 # instead of testing, show standardized mean differences
@@ -828,7 +828,7 @@ dat$marital <- relevel(factor(dat$marital), ref="single")
 # recreate the table
 
 tab <- CreateTableOne(vars=c("age", "marital", "educ", "pss"),
-                      strata="sex" , data=dat)
+                      strata="sex", data=dat)
 print(tab, varLabels=TRUE, test=FALSE, smd=TRUE)
 
 # turn educ into a factor and set the levels in the desired order
@@ -842,7 +842,7 @@ levels(dat$educ)
 # recreate the table
 
 tab <- CreateTableOne(vars=c("age", "marital", "educ", "pss"),
-                      strata="sex" , data=dat)
+                      strata="sex", data=dat)
 print(tab, varLabels=TRUE, test=FALSE, smd=TRUE)
 
 # save table as a csv file

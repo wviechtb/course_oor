@@ -63,7 +63,7 @@ Or numbered lists:
 
 Lots of text here followed by a footnote. [^1]
 
-[comment]: # (This is a comment in Rmarkdown)
+[comment]: This is a comment in Rmarkdown.
 
 # Equations
 

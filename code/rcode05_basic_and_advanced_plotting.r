@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2024-01-30
+# last updated: 2024-11-08
 
 ############################################################################
 
@@ -223,7 +223,7 @@ plot(dat$pss, dat$posaff, xlab="Stress", ylab="Positive Affect",
 
 # add a legend
 
-legend("topright", inset=.02, pch=c(19,19), cex=0.8,
+legend("topright", inset=0.02, pch=c(19,19), cex=0.8,
        col=c("red","blue"), legend=c("smoker","non-smoker"))
 
 # if the x and y values are measured coarsely (e.g., as integers), we may get
@@ -283,7 +283,7 @@ plot(dat$pss, dat$posaff, xlab="Stress", ylab="PA", pch=19)
 
 # last number for rgb(): 0 = full transparency, 1 = no transparency
 
-plot(dat$pss, dat$posaff, xlab="Stress", ylab="PA", pch=19, col=rgb(0,0,0,.2))
+plot(dat$pss, dat$posaff, xlab="Stress", ylab="PA", pch=19, col=rgb(0,0,0,0.2))
 
 # https://en.wikipedia.org/wiki/RGBA_color_model
 
@@ -605,7 +605,7 @@ title("Stress versus Positive Affect")
 
 # add legend
 
-legend("topright", inset=.02, pch=c(19,19), legend=c("male","female"),
+legend("topright", inset=0.02, pch=c(19,19), legend=c("male","female"),
        col=c("#1fc3aa","#8624f5"), cex=0.8)
 
 # add an arbitrary (curved) line (just for illustration purposes)

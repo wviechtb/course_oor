@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2024-04-22
+# last updated: 2024-11-08
 
 ############################################################################
 
@@ -209,10 +209,10 @@ res.m <- density(dat$pss[dat$sex == "male"],   na.rm = TRUE)
 res.f <- density(dat$pss[dat$sex == "female"], na.rm = TRUE)
 
 plot(res.m, xlab="Perceived Stress Scale Value", main="Kernel Density Estimates of Stress for Males and Females")
-polygon(res.m, col=rgb(0,0,1,.2))
+polygon(res.m, col=rgb(0,0,1,0.2))
 lines(res.f)
-polygon(res.f, col=rgb(1,0,0,.2))
-legend("topright", inset=.02, legend=c("Males", "Females"), fill=c(rgb(0,0,1,.2), rgb(1,0,0,.2)))
+polygon(res.f, col=rgb(1,0,0,0.2))
+legend("topright", inset=0.02, legend=c("Males", "Females"), fill=c(rgb(0,0,1,0.2), rgb(1,0,0,0.2)))
 
 # try with a grouping variable that has more than 2 levels (error!)
 
@@ -628,7 +628,7 @@ lines(newdat$age, exp(pred), lwd=3, col="red")
 # https://en.wikipedia.org/wiki/Polynomial_regression
 
 set.seed(1234)
-plot(jitter(dat$negaff, amount=.5), jitter(dat$pss, amount=.5), pch=19,
+plot(jitter(dat$negaff, amount=0.5), jitter(dat$pss, amount=0.5), pch=19,
      xlab="Negative Affect", ylab="Perceived Stress", cex=0.5)
 
 res <- lm(pss ~ negaff, data=dat)
@@ -765,14 +765,14 @@ lines(newdat$negaff, pred, lwd=3, col="red")
 # add a legend
 
 legend("topleft", legend=c("female","male"), col=c("red","blue"),
-       pch=c(19,19), lty=c("solid","solid"), inset=.02)
+       pch=c(19,19), lty=c("solid","solid"), inset=0.02)
 
 ############################################################################
 
 # smoothers
 
 set.seed(4321)
-plot(jitter(dat$negaff, amount=.5), jitter(dat$pss, amount=.5), pch=19,
+plot(jitter(dat$negaff, amount=0.5), jitter(dat$pss, amount=0.5), pch=19,
      xlab="Negative Affect", ylab="Perceived Stress", cex=0.5)
 
 res <- lm(pss ~ negaff + I(negaff^2), data=dat)
@@ -805,7 +805,7 @@ res
 
 lines(res$x, res$y, col="orange", lwd=3)
 
-legend("bottomright", inset=.02, col=c("red","blue","green","orange"),
+legend("bottomright", inset=0.02, col=c("red","blue","green","orange"),
        legend=c("2nd Degree Polynomial","Smoother (span = 0.75)","Smoother (span = 0.40)","Super Smoother"),
        lty="solid", lwd=3, cex=0.8)
 
@@ -813,7 +813,7 @@ legend("bottomright", inset=.02, col=c("red","blue","green","orange"),
 
 # add an approximate 95% CI to the loess smoother
 
-plot(jitter(dat$negaff, amount=.5), jitter(dat$pss, amount=.5), pch=19,
+plot(jitter(dat$negaff, amount=0.5), jitter(dat$pss, amount=0.5), pch=19,
      xlab="Negative Affect", ylab="Perceived Stress", cex=0.5)
 res <- loess(pss ~ negaff, data=dat)
 newdat <- data.frame(negaff = 0:50)

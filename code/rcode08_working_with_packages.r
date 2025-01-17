@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2024-04-22
+# last updated: 2024-11-03
 
 ############################################################################
 
@@ -82,15 +82,16 @@ dat <- read.table(header=TRUE, colClasses=c("character", "integer", "Date"), tex
 4.2.2 19003 2023-01-12
 4.2.3 19300 2023-03-19
 4.3.2 20292 2024-01-23
-4.3.3 20580 2024-02-22")
+4.3.3 20580 2024-02-22
+4.4.2 21606 2024-11-03")
 
 par(mar=c(6,5.5,4,2))
 par(mgp=c(4,1,0))
 plot(dat$date, dat$count, pch=19, cex=1.2, xlab="", ylab="Number of CRAN Packages",
-     xaxt="n", yaxt="n", ylim=c(0,21000))
-axis(side=1, at=dat$date, label=dat$date, las=2, cex.axis=.7)
-axis(side=2, at=seq(0,21000,1000), las=2)
-axis(side=3, at=dat$date, label=dat$vers, las=2, cex.axis=.7)
+     xaxt="n", yaxt="n", ylim=c(0,22000))
+axis(side=1, at=dat$date, label=dat$date, las=2, cex.axis=0.7)
+axis(side=2, at=seq(0,22000,1000), las=2)
+axis(side=3, at=dat$date, label=dat$vers, las=2, cex.axis=0.7)
 grid(nx=10, ny=10)
 
 res <- loess(count ~ as.numeric(date), data=dat)

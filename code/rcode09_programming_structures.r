@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2023-01-30
+# last updated: 2024-11-08
 
 ############################################################################
 
@@ -219,7 +219,7 @@ for (i in 1:10000) {
    pvals[i] <- res$p.value
 }
 
-sig.pvals <- ifelse(pvals <= .05, 1, 0)
+sig.pvals <- ifelse(pvals <= 0.05, 1, 0)
 mean(sig.pvals)
 
 for (i in 1:10000) {
@@ -229,7 +229,7 @@ for (i in 1:10000) {
    pvals[i] <- res$p.value
 }
 
-sig.pvals <- ifelse(pvals <= .05, 1, 0)
+sig.pvals <- ifelse(pvals <= 0.05, 1, 0)
 mean(sig.pvals)
 
 # use the 'equation approach' to determine the power of the t-test in this scenario
@@ -256,7 +256,7 @@ while (i <= iters) {
 
 }
 
-sig.pvals <- ifelse(pvals <= .05, 1, 0)
+sig.pvals <- ifelse(pvals <= 0.05, 1, 0)
 mean(sig.pvals)
 
 # plot density of a chi-square distributed variable with df=1

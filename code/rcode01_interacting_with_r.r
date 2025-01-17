@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2024-05-02
+# last updated: 2024-11-05
 
 ############################################################################
 
@@ -18,7 +18,7 @@
 # - top right:    Environment, Command History, Connections
 # - bottom right: File Browser, Plots, Packages, Help, Viewer
 
-# first check that it says "R version 4.4.0" in the Console; if not, you do
+# first check that it says "R version 4.4.2" in the Console; if not, you do
 # not have the current version of R installed (ideally you should update,
 # especially if the version you have installed is quite old ...)
 
