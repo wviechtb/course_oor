@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2024-11-03
+# last updated: 2025-02-12
 
 ############################################################################
 
@@ -158,39 +158,19 @@ RSiteSearch("structural equation")
 
 ############################################################################
 
-# install (if necessary) and load the 'sos' package
-
-loadpkg(sos)
-
-# search all packages on CRAN for a term
-
-findFn("structural equation")
-
-############################################################################
-
-# install (if necessary) and load the 'packagefinder' package
-# https://www.zuckarelli.de/packagefinder/tutorial.html
-
-loadpkg(packagefinder)
-
-findPackage("structural equation", limit.results = 100)
-
-############################################################################
-
-# install (if necessary) and load the 'CRANsearcher' package
-
-loadpkg(CRANsearcher)
-
-CRANsearcher()
-
-############################################################################
+# there are several packages that provide improved functionality for searching
+# among all of the CRAN packages, including packages 'sos', 'packagefinder',
+# 'CRANsearcher', and 'pkgsearch'; let's try out the last one
 
 # install (if necessary) and load the 'pkgsearch' package
-# https://r-hub.github.io/pkgsearch/
 
 loadpkg(pkgsearch)
 
+# do a search for the same term as above
+
 pkg_search("structural equation")
+
+# more details about this package can be found here: https://r-hub.github.io/pkgsearch/
 
 # there is also a nicer interface; need to install some packages first
 
@@ -225,7 +205,7 @@ pkg_search_addin("structural equation")
 
 loadpkg(cranlogs)
 
-# examine number of daily downloads for a package
+# examine the number of daily downloads for a package
 tmp <- cran_downloads(packages="lme4", from="2010-01-01", to="last-day")
 head(tmp)
 plot(tmp$date, tmp$count, type="l", xlab="Date", ylab="Downloads")
@@ -293,21 +273,23 @@ dat <- structure(...)
 dat <- structure(list(vers = c("1.3", "1.4", "1.5", "1.7", "1.8", "1.9",
 "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "2.10",
 "2.13", "2.15", "3.0.2", "3.1", "3.2", "3.2.2", "3.2.3", "3.3.1", "3.3.2",
-"3.4.3", "3.6.3", "4.0.2", "4.1.2", "4.1.3", "4.2.0"), count = c(110L, 129L,
-161L, 219L, 273L, 357L, 406L, 548L, 647L, 739L, 911L, 1000L, 1300L, 1495L,
-1614L, 1907L, 2008L, 3000L, 3976L, 5000L, 5745L, 6706L, 7547L, 7969L, 9004L,
-9961L, 11991L, 15537L, 16261L, 18544L, 18977L, 18579L), date =
-structure(c(11494, 11673, 11850, 12197, 12372, 12574, 12703, 12952, 13133,
+"3.4.3", "3.6.3", "4.0.2", "4.1.2", "4.1.3", "4.2.0", "4.2.2", "4.2.3",
+"4.3.2", "4.3.3", "4.4.2" ), count = c(110L, 129L, 161L, 219L, 273L, 357L,
+406L, 548L, 647L, 739L, 911L, 1000L, 1300L, 1495L, 1614L, 1907L, 2008L, 3000L,
+3976L, 5000L, 5745L, 6706L, 7547L, 7969L, 9004L, 9961L, 11991L, 15537L,
+16261L, 18544L, 18977L, 18579L, 19003L, 19300L, 20292L, 20580L, 21606L), date
+= structure(c(11494, 11673, 11850, 12197, 12372, 12574, 12703, 12952, 13133,
 13299, 13494, 13615, 13833, 13956, 14172, 14351, 14543, 15106, 15604, 16017,
 16304, 16593, 16776, 16861, 17035, 17194, 17515, 18353, 18520, 18967, 19065,
-19139), class = "Date")), class = "data.frame", row.names = c(NA, -32L))
+19139, 19369, 19435, 19745, 19775, 20030), class = "Date")), class =
+"data.frame", row.names = c(NA, -37L))
 
 plot(dat$date, dat$count, xlab="", ylab="Number of CRAN Packages")
 
-# I am trying to change the x-axis limits so that they go from 2000 to 2025. I
-# tried using xlim=c(2000,2025) but this is obviously not correct.
+# I am trying to change the x-axis limits so that they go from 2000 to 2030. I
+# tried using xlim=c(2000,2030) but this is obviously not correct.
 
-plot(dat$date, dat$count, xlab="", ylab="Number of CRAN Packages", xlim=c(2000,2025))
+plot(dat$date, dat$count, xlab="", ylab="Number of CRAN Packages", xlim=c(2000,2030))
 
 # Any help/suggestions would be greatly appreciated.
 
@@ -323,7 +305,7 @@ plot(dat$date, dat$count, xlab="", ylab="Number of CRAN Packages", xlim=c(2000,2
 # can create such a vector with as.Date(). Try this:
 
 plot(dat$date, dat$count, xlab="", ylab="Number of CRAN Packages",
-     xlim=as.Date(c("2000-01-01","2025-01-01")))
+     xlim=as.Date(c("2000-01-01","2030-01-01")))
 
 # Hope this helps!
 
