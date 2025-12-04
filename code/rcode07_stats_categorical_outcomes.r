@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2024-02-19
+# last updated: 2025-11-27
 
 ############################################################################
 
@@ -37,22 +37,23 @@ addmargins(table(dat$sex, dat$smoke))
 # proportions
 
 table(dat$sex)
-prop.table(table(dat$sex))
+proportions(table(dat$sex))
+prop.table(table(dat$sex)) # same thing
 
 table(dat$sex, dat$smoke)
 
-prop.table(table(dat$sex, dat$smoke))
+proportions(table(dat$sex, dat$smoke))
 
 # note: proportions are computed out of the total sample size
 
 # add margin proportions
 
-addmargins(prop.table(table(dat$sex, dat$smoke)))
+addmargins(proportions(table(dat$sex, dat$smoke)))
 
 # can also compute proportions over rows (1) or columns (2)
 
-prop.table(table(dat$sex, dat$smoke), margin=1)
-prop.table(table(dat$sex, dat$smoke), margin=2)
+proportions(table(dat$sex, dat$smoke), margin=1)
+proportions(table(dat$sex, dat$smoke), margin=2)
 
 ############################################################################
 
@@ -83,7 +84,7 @@ fisher.test(table(dat$sex, dat$smoke))
 # can also examine the association between larger tables
 
 table(dat$marital, dat$smoke)
-prop.table(table(dat$marital, dat$smoke), margin=1)
+proportions(table(dat$marital, dat$smoke), margin=1)
 chisq.test(dat$marital, dat$smoke)
 
 # but note the warning: the chi^2 test may not be accurate here

@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2024-05-02
+# last updated: 2025-11-27
 
 ############################################################################
 
@@ -206,9 +206,9 @@ dat
 dat$y[dat$id == "John"] <- 8
 dat
 
-# this way you can make corrections to a dataset
+# there is also the replace() function for the same purpose
 
-dat$y[3] <- 8
+dat$y <- replace(dat$y, dat$id == "John", 8)
 dat
 
 # rename a variable

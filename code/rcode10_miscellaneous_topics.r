@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2025-01-17
+# last updated: 2025-12-02
 
 ############################################################################
 
@@ -792,6 +792,45 @@ summary(res)
 # subsets of the data; by first creating 'tmp', we know that all variables are
 # standardized based on the same set of subjects (with complete data on the
 # variables of interest)
+
+############################################################################
+
+# creating (regression) tables
+
+rm(list=ls())
+
+load("data_survey_edit.rdata")
+
+# say we have fitted a model like this
+
+dat$stress <- ifelse(dat$source %in% c("children", "family", "friendships", "spouse/partner"), "interpers", dat$source)
+dat$stress <- ifelse(dat$stress %in% c("health/illness", "lack of time", "life in general", "money/finances"), "other", dat$stress)
+res <- lm(posaff ~ sex + stress + lotr + rses, data=dat)
+summary(res)
+
+# you want to include the results from this model as a table in your paper
+
+tab <- round(coef(summary(res)), digits=3) # extract the table and round the values
+tab <- as.data.frame(tab)                  # turn the matrix into a data frame
+tab <- cbind(rownames(tab), tab)           # add the row names as a variable
+names(tab) <- c(" ", "Estimate", "SE", "t-Value", "p-Value") # adjust the variable names
+tab[["p-Value"]] <- ifelse(tab[["p-Value"]] < 0.001, "<0.001", tab[["p-Value"]]) # nicer p-values
+tab
+
+# install (if necessary) the 'flextable' package and load them
+
+loadpkg(flextable)
+
+# create the table (can be copy-pasted into Word)
+
+flextable(tab)
+
+# some minor customization
+
+set_flextable_defaults(font.size = 12, text.align = "right")
+tab <- flextable(tab, cwidth=1.25, cheight=0.45)
+tab <- align(tab, align = "right", part = "all")
+tab
 
 ############################################################################
 

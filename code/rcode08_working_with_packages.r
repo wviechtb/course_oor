@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2025-02-12
+# last updated: 2025-11-26
 
 ############################################################################
 
@@ -83,7 +83,8 @@ dat <- read.table(header=TRUE, colClasses=c("character", "integer", "Date"), tex
 4.2.3 19300 2023-03-19
 4.3.2 20292 2024-01-23
 4.3.3 20580 2024-02-22
-4.4.2 21606 2024-11-03")
+4.4.2 21606 2024-11-03
+4.5.2 23032 2025-11-06")
 
 par(mar=c(6,5.5,4,2))
 par(mgp=c(4,1,0))
@@ -206,11 +207,9 @@ pkg_search_addin("structural equation")
 loadpkg(cranlogs)
 
 # examine the number of daily downloads for a package
-tmp <- cran_downloads(packages="lme4", from="2010-01-01", to="last-day")
+tmp <- cran_downloads(packages="lme4", from="2012-01-01", to="last-day")
 head(tmp)
 plot(tmp$date, tmp$count, type="l", xlab="Date", ylab="Downloads")
-
-# or use this: https://ipub.com/dev-corner/apps/r-package-downloads/
 
 # Journal of Statistical Software: https://www.jstatsoft.org
 

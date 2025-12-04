@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2024-11-08
+# last updated: 2025-11-27
 
 ############################################################################
 
@@ -409,6 +409,17 @@ dev.off()
 
 ############################################################################
 
+# when saving graphs, do not forget to run dev.off() to actually close the
+# plotting device (i.e., save the graph); otherwise any further plots created
+# will be send to the same png/tiff (or whatever) plotting device and opening
+# up another png/tiff plotting device while one is already open will create
+# all kinds of confusion; you can use the following command to close *all*
+# plotting devices (in case multiple are open)
+
+graphics.off()
+
+############################################################################
+
 # some advanced plotting
 
 # load the 'MASS' package (comes with R, so no need to install it)
@@ -487,18 +498,6 @@ add_surface(plot_ly(x = res$x, y = res$y, z = res$z))
 # clean up
 
 rm(tmp, res, nrz, ncz, nbcol, color, zfacet, facetcol)
-
-############################################################################
-
-# scatterplots with smoothed densities
-
-smoothScatter(dat$pss, dat$posaff, xlab="Stress", ylab="PA")
-
-smoothScatter(dat$pss, dat$posaff, xlab="Stress", ylab="PA",
-              colramp=hcl.colors, col="white")
-
-smoothScatter(dat$pss, dat$posaff, xlab="Stress", ylab="PA",
-              colramp=hcl.colors, col="white", nbin=200)
 
 ############################################################################
 

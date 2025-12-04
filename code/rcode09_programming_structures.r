@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2024-11-08
+# last updated: 2025-11-27
 
 ############################################################################
 
@@ -140,6 +140,62 @@ ggplot(dat, aes(x = pss, y = marital, fill = marital)) +
    geom_density_ridges() +
    theme_ridges() +
    theme(legend.position = "none")
+
+############################################################################
+
+# a more comprehensive example based on a real data analysis
+
+# load the dataset needed for this example
+load("data_mirna.rdata")
+
+# examine the first 10 rows and the first 5 columns
+dat[1:10,1:5]
+
+# Braak staging: https://en.wikipedia.org/wiki/Braak_staging
+
+# stages 0-2 are coded as Braak = 0
+# stages 5-6 are coded as Braak = 1
+# (and stages 3 and 4 are dropped from this dataset)
+# this variable indicates severity of Alzheimer's disease
+
+# the remaining variables are microRNA expression levels
+
+# microRNA: https://en.wikipedia.org/wiki/MicroRNA
+
+# the goal of this analysis is to examine which microRNAs are differentially
+# expressed in the two Braak groups
+
+# manually fit 490 simple regression models with 'Braak' as the predictor
+# variable and each of the other variables as outcome variables
+
+summary(lm(dat[,2] ~ Braak, data=dat))
+summary(lm(dat[,3] ~ Braak, data=dat))
+#...
+summary(lm(dat[,491] ~ Braak, data=dat))
+
+# but who's got time for that?!?
+
+res <- matrix(data=NA, nrow=490, ncol=4)
+
+for (i in 2:491) {
+   fit <- lm(dat[,i] ~ Braak, data=dat)
+   res[i-1,] <- coef(summary(fit))[2,]
+}
+
+colnames(res) <- c("Estimate","SE","t","p-value")
+rownames(res) <- colnames(dat)[2:491]
+
+# examine the first 6 rows
+
+head(res)
+
+# order the matrix by the p-values (lowest to highest)
+
+res <- res[order(res[,4]),]
+
+# inspect the first 6 rows (the most significant microRNAs)
+
+head(res)
 
 ############################################################################
 
