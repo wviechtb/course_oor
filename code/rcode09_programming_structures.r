@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2025-11-27
+# last updated: 2026-02-06
 
 ############################################################################
 
@@ -182,16 +182,20 @@ for (i in 2:491) {
    res[i-1,] <- coef(summary(fit))[2,]
 }
 
-colnames(res) <- c("Estimate","SE","t","p-value")
+colnames(res) <- c("Estimate","SE","t","p_value")
 rownames(res) <- colnames(dat)[2:491]
 
 # examine the first 6 rows
 
 head(res)
 
-# order the matrix by the p-values (lowest to highest)
+# turn the matrix into a data frame
 
-res <- res[order(res[,4]),]
+res <- as.data.frame(res)
+
+# order the data frame by the p-values (lowest to highest)
+
+res <- sort_by(res, ~ p_value)
 
 # inspect the first 6 rows (the most significant microRNAs)
 
