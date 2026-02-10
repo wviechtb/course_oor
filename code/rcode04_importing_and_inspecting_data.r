@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2024-11-05
+# last updated: 2026-02-10
 
 ############################################################################
 
@@ -147,31 +147,31 @@ rm(dat2, dat3)
 
 # other ways to inspect the data
 
-str(dat)
-head(dat)
-head(dat, 10)
-tail(dat)
-ncol(dat)
-nrow(dat)
-dim(dat)
-names(dat)
+str(dat)      # shows the 'structure' of the object (for data frames, gives info about the variables)
+head(dat)     # shows the first 6 rows of the data frame
+head(dat, 10) # show the first 10 rows instead
+tail(dat)     # shows the last 6 rows of the data frame
+ncol(dat)     # number of columns
+nrow(dat)     # number of rows
+dim(dat)      # dimensions (number of rows and columns)
+names(dat)    # variable names
 summary(dat)
 
 # get more information on a quantitative variables
 
-mean(dat$age)
-var(dat$age)
-sd(dat$age)
-median(dat$age)
-quantile(dat$age, probs=c(0.05,0.95))
-IQR(dat$age)
-min(dat$age)
-max(dat$age)
-range(dat$age)
-max(dat$age) - min(dat$age)
-summary(dat$age)
-fivenum(dat$age)
-table(dat$age)
+mean(dat$age)    # mean
+var(dat$age)     # variance
+sd(dat$age)      # standard deviation
+median(dat$age)  # median
+quantile(dat$age, probs=c(0.05,0.95)) # e.g., 5% of people are <= 21.0 in age
+IQR(dat$age)     # interquartile range (https://en.wikipedia.org/wiki/Interquartile_range)
+min(dat$age)     # minimum
+max(dat$age)     # maximum
+range(dat$age)   # minimum and maximum
+max(dat$age) - min(dat$age) # maximum - minimum is also called the 'range'
+summary(dat$age) # minimum, 1st quartile, median, mean, 3rd quartile, maximum
+fivenum(dat$age) # five-number summary (https://en.wikipedia.org/wiki/Five-number_summary)
+table(dat$age)   # e.g., 6 people are 18 years old
 
 # what if there are missing values?
 

@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2024-01-23
+# last updated: 2026-02-10
 
 ############################################################################
 
@@ -178,6 +178,17 @@ age
 
 age <- c(Bob=25, Sue=21, John=30)
 age
+
+# selecting elements from a vector
+
+age[2]
+age[2:3]
+age[c(1,3)]
+
+# can also select elements via logicals
+
+age >= 25
+age[age >= 25]
 
 ############################################################################
 

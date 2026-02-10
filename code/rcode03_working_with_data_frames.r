@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2025-11-27
+# last updated: 2026-02-10
 
 ############################################################################
 
@@ -144,7 +144,25 @@ dat.f
 
 rm(dat.m, dat.f)
 
-# using the subset() command
+############################################################################
+
+# quick summary of the bracket notation:
+#
+# say 'x' is a vector (could also be something like dat$x), then we can use []
+# to select one or multiple elements from that vector (e.g., x[2] or x[1:3])
+#
+# say 'dat' is a data frame, then we can use:
+# - dat[] to select one or more columns (e.g., dat[3], dat["age"], dat[1:2])
+# - dat[row(s),column(s)] to select one or more rows and one or more columns
+#   (e.g., dat[1:3,3] or dat[1:3,"age"])
+# - when leaving out row(s) or column(s), then this means to select all rows
+#   (e.g., dat[,"age"]) or all columns (e.g., dat[1:3,])
+#
+# often we use 'logicals' for selection/subsetting (e.g., dat[dat$age > 21,])
+
+############################################################################
+
+# the subset() command (another way to do subsetting)
 
 subset(dat, sex == "Male")
 subset(dat, age >= 25)
@@ -164,6 +182,8 @@ subset(dat, sex == "Male", select = age)
 subset(dat, sex == "Male", select = age, drop = TRUE)
 
 # drop = TRUE to turn the one column data frame into a vector
+
+############################################################################
 
 # add a new variable to a data frame
 
@@ -296,22 +316,6 @@ dat[which(dat$y1 >= 2),]
 # easiest
 
 subset(dat, y1 >= 2)
-
-############################################################################
-
-# quick summary of the bracket notation:
-#
-# say 'x' is a vector (could also be something like dat$x), then we can use []
-# to select one or multiple elements from that vector (e.g., x[2] or x[1:3])
-#
-# say 'dat' is a data frame, then we can use:
-# - dat[] to select one or more columns (e.g., dat[3] or dat["age"])
-# - dat[row(s),column(s)] to select one or more rows and one or more columns
-#   (e.g., dat[1:3,3] or dat[1:3,"age"])
-# - when leaving out row(s) or column(s), then this means to select all rows
-#   or columns (e.g., dat[1:3,] or dat[,"age"])
-#
-# often we use 'logicals' for selection/subsetting (e.g., dat[dat$age > 21,])
 
 ############################################################################
 
