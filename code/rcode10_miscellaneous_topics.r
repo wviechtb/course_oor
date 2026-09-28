@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2025-12-02
+# last updated: 2026-05-05
 
 ############################################################################
 
@@ -80,10 +80,6 @@ head(dat)
 # install (if necessary) the 'psych' package and load it
 
 loadpkg(psych)
-
-# install (if necessary) the 'GPArotation' package and load it
-
-loadpkg(GPArotation)
 
 # Cronbach's alpha
 # https://en.wikipedia.org/wiki/Cronbach's_alpha

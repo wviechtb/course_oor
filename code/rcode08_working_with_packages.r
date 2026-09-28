@@ -4,7 +4,7 @@
 # Author:  Wolfgang Viechtbauer (https://www.wvbauer.com)
 # License: CC BY-NC-SA 4.0
 #
-# last updated: 2025-11-26
+# last updated: 2026-09-28
 
 ############################################################################
 
@@ -25,6 +25,11 @@ installed.packages()[,c("LibPath", "Version", "Priority")]
 # the 'base' and 'recommended' packages (see 'Priority' column) are installed
 # with R automatically; it is also possible to install an updated version of
 # recommended packages (if there is an update)
+
+# show all 'base' and 'recommended' packages
+
+library(tools)
+standard_package_names()
 
 # in RStudio, there is also the 'Packages' pane (bottom-right)
 
@@ -84,14 +89,15 @@ dat <- read.table(header=TRUE, colClasses=c("character", "integer", "Date"), tex
 4.3.2 20292 2024-01-23
 4.3.3 20580 2024-02-22
 4.4.2 21606 2024-11-03
-4.5.2 23032 2025-11-06")
+4.5.2 23032 2025-11-06
+4.6.1 25172 2026-09-28")
 
 par(mar=c(6,5.5,4,2))
 par(mgp=c(4,1,0))
 plot(dat$date, dat$count, pch=19, cex=1.2, xlab="", ylab="Number of CRAN Packages",
-     xaxt="n", yaxt="n", ylim=c(0,22000))
+     xaxt="n", yaxt="n", ylim=c(0,26000))
 axis(side=1, at=dat$date, label=dat$date, las=2, cex.axis=0.7)
-axis(side=2, at=seq(0,22000,1000), las=2)
+axis(side=2, at=seq(0,26000,1000), las=2)
 axis(side=3, at=dat$date, label=dat$vers, las=2, cex.axis=0.7)
 grid(nx=10, ny=10)
 
